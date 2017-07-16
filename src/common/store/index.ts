@@ -1,0 +1,34 @@
+import { routerMiddleware } from "react-router-redux";
+import { applyMiddleware, createStore, Middleware, Store } from "redux";
+import createSagaMiddleware, { END, Task } from "redux-saga";
+import reducer, { IAppState } from "../reducers";
+
+export interface IAppStore extends Store<IAppState> {
+  runSaga: (saga: () => Iterator<any>) => Task;
+  close: () => void;
+}
+
+export default function(
+  history,
+  initialState: IAppState = {},
+  ...middlewares: Middleware[]
+): IAppStore {
+  const sagaMiddleware = createSagaMiddleware();
+  const middleware: Middleware[] = [
+    routerMiddleware(history),
+    sagaMiddleware
+  ].concat(middlewares);
+
+  const store: IAppStore = {
+    ...createStore<IAppState>(
+      reducer,
+      initialState,
+      applyMiddleware(...middleware)
+    ),
+    runSaga: sagaMiddleware.run,
+    close() {
+      this.dispatch(END);
+    }
+  };
+  return store;
+}

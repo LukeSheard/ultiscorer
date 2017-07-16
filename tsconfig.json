@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2015", "es2016", "es2017", "dom", "esnext.asynciterable"],
+    "allowJs": true,
+    "jsx": "react",
+    "declaration": false,
+    "removeComments": false,
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "outDir": "dist",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["./src", "./webpack.config.ts"]
+}
