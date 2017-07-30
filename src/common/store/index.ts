@@ -1,5 +1,5 @@
 import { routerMiddleware } from "react-router-redux";
-import { applyMiddleware, createStore, Middleware, Store } from "redux";
+import { applyMiddleware, createStore, Store } from "redux";
 import createSagaMiddleware, { END, Task } from "redux-saga";
 import reducer, { IAppState } from "../reducers";
 
@@ -11,13 +11,12 @@ export interface IAppStore extends Store<IAppState> {
 export default function(
   history,
   initialState: IAppState = {},
-  ...middlewares: Middleware[]
+  ...middlewares
 ): IAppStore {
   const sagaMiddleware = createSagaMiddleware();
-  const middleware: Middleware[] = [
-    routerMiddleware(history),
-    sagaMiddleware
-  ].concat(middlewares);
+  const middleware = [routerMiddleware(history), sagaMiddleware].concat(
+    middlewares
+  );
 
   const store: IAppStore = {
     ...createStore<IAppState>(
