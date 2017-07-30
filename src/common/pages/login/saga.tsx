@@ -24,6 +24,13 @@ export function* loginUser(action) {
       )
     );
 
+    yield put(
+      createNotification({
+        intent: Intent.SUCCESS,
+        message: "Logged In"
+      })
+    );
+
     return yield put(push(redirect));
   } catch (e) {
     console.error(e);
