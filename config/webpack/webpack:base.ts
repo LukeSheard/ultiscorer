@@ -10,6 +10,7 @@ export default function(env: string) {
         "Access-Control-Allow-Origin": "*"
       }
     },
+    devtool: "inline-source-map",
     entry: "./src/client",
     module: {
       rules: [
