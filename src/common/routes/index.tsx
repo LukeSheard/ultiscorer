@@ -1,9 +1,28 @@
 import * as React from "react";
 import { IndexRedirect, IndexRoute, Route } from "react-router";
+import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
 import { userIsAuthenticated } from "./wrappers/user-authenticated";
 import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
+
+/*
+  ultiscorer.com
+    /                     - What is page
+
+    /login                - Login Form
+    /login/create-account - Sign Up
+    /login/forgotten      - Forgotten Password
+
+    /dashboard            - Personal Game List (Private)
+    /dashboard/account    - Edit Account Page (Private)
+
+    /games                - View list of games and live scores
+    /games/new            - View list of games and live scores
+    /games/:gameid        - View Game Score (Public)
+    /games/:gameid/edit   - Edit Game Details (Private)
+    /games/:gameid/play   - Play Game with scoring
+*/
 
 export default function(store: IAppStore) {
   const connect = createConnect(store);
@@ -31,6 +50,20 @@ export default function(store: IAppStore) {
           )}
         />
       </Route>
+      <Route path="game" component={Wrap}>
+        <Route
+          path="new"
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "dashboard-container" */ "../pages/games/new")
+          )}
+        />
+        <Route
+          path=":gameid"
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "dashboard-container" */ "../pages/games")
+          )}
+        />
+      </Route>
       <Route
         path="dashboard"
         getComponent={loadModule(() =>
@@ -41,12 +74,6 @@ export default function(store: IAppStore) {
         <IndexRoute
           getComponent={loadModule(() =>
             import(/* webpackChunkName: "dashboard" */ "../pages/dashboard")
-          )}
-        />
-        <Route
-          path=":game"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "game" */ "../pages/game")
           )}
         />
       </Route>

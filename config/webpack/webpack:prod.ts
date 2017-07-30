@@ -53,7 +53,7 @@ const config: webpack.Configuration = {
     ]
   },
   output: {
-    filename: "[chunkhash].min.js"
+    filename: "[name][id].min.js"
   },
   plugins: [
     new ExtractTextPlugin({

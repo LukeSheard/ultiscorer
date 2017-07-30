@@ -4,9 +4,7 @@ import * as webpack from "webpack";
 export default function(env: string) {
   const config: webpack.Configuration = {
     context: join(__dirname, "../../"),
-    entry: {
-      main: "./src/client"
-    },
+    entry: "./src/client",
     module: {
       rules: [
         {
@@ -20,23 +18,33 @@ export default function(env: string) {
       ]
     },
     output: {
-      chunkFilename: "[chunkhash].min.js",
+      chunkFilename: "[name][id].min.js",
       path: join(__dirname, "../../", "build"),
       publicPath: "/"
     },
     plugins: [
+      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(env)
       }),
       new webpack.optimize.CommonsChunkPlugin({
-        minChunks(module) {
+        children: true,
+        name: "main",
+        minChunks(module, count) {
           return (
-            module.context && module.context.indexOf("node_modules") !== -1
+            module.context && /node_modules/.test(module.context) && count > 3
           );
-        },
-        name: "common"
+        }
       }),
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.optimize.CommonsChunkPlugin({
+        async: true,
+        children: true,
+        minChunks(module, count) {
+          return (
+            module.context && /node_modules/.test(module.context) && count > 3
+          );
+        }
+      })
     ],
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"]

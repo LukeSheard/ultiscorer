@@ -3,9 +3,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const config: webpack.Configuration = {
   devtool: "source-map",
-  entry: {
-    main: ["webpack-hot-middleware/client", "./src/client"]
-  },
+  entry: ["webpack-hot-middleware/client", "./src/client"],
   module: {
     rules: [
       {

@@ -1,7 +1,9 @@
-import { get } from "lodash";
+import { Intent } from "@blueprintjs/core";
+import * as get from "lodash.get";
 import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, select, take, takeLatest } from "redux-saga/effects";
 import request from "../../api";
+import { createNotification } from "../../reducers/notification";
 import { USER_ACTION_TYPES } from "../../reducers/user";
 
 export function* loginUser(action) {
@@ -24,7 +26,14 @@ export function* loginUser(action) {
 
     return yield put(push(redirect));
   } catch (e) {
-    yield put({ type: USER_ACTION_TYPES.SIGNUP_FAILURE });
+    console.error(e);
+    yield put(
+      createNotification({
+        intent: Intent.DANGER,
+        message: "Incorrect login details"
+      })
+    );
+    yield put({ type: USER_ACTION_TYPES.LOGIN_FAILURE });
   }
 }
 

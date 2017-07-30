@@ -14,7 +14,7 @@ export class SignUpPage extends React.Component<any, any> {
 
     return (
       <form className={style.login_form} onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
+        <h2>Login</h2>
         <Input name="email" type="email" label="Email" required />
         <Input name="password" type="password" label="Password" required />
         <Button

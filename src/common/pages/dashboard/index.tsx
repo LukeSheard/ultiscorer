@@ -7,6 +7,4 @@ export class DashboardPage extends React.Component<any, any> {
   }
 }
 
-export const x = UserIsAuthenticated(DashboardPage);
-
-export default DashboardPage;
+export default UserIsAuthenticated(DashboardPage);
