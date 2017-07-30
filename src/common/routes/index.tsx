@@ -15,13 +15,15 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
     /login/forgotten      - Forgotten Password
 
     /dashboard            - Personal Game List (Private)
-    /dashboard/account    - Edit Account Page (Private)
+    /dashboard/account    - Edit Account Page
+    /dashboard/teams      - View a list of your teams
+    /dashboard/teams/:id  - Edit a team
 
     /games                - View list of games and live scores
-    /games/new            - View list of games and live scores
+    /games/new            - Create a new game (Private)
     /games/:gameid        - View Game Score (Public)
     /games/:gameid/edit   - Edit Game Details (Private)
-    /games/:gameid/play   - Play Game with scoring
+    /games/:gameid/play   - Play Game with scoring (Private)
 */
 
 export default function(store: IAppStore) {

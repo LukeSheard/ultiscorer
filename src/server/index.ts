@@ -60,7 +60,7 @@ webpack.waitUntilValid(() => {
     )
     .then(() => {
       log("Connected to database");
-      app.listen(8080, () => {
+      app.listen(config.PORT, () => {
         log("Server started");
       });
     })

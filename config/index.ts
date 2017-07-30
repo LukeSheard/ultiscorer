@@ -11,6 +11,7 @@ export interface IAppConfig {
   COOKIE_SECRET: string;
   MONGODB_URI: string;
   NODE_ENV: NODE_ENV;
+  PORT: number;
 }
 
 const config: IAppConfig = envalid.cleanEnv(
@@ -31,6 +32,10 @@ const config: IAppConfig = envalid.cleanEnv(
       choices: [NODE_ENV.DEVELOPMENT, NODE_ENV.PRODUCTION],
       default: NODE_ENV.DEVELOPMENT,
       desc: "App enviroment"
+    }),
+    PORT: envalid.num({
+      default: 8080,
+      desc: "The port the app should listen on"
     })
   },
   { dotEnvPath: null } as any
