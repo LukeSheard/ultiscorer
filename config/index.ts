@@ -9,7 +9,7 @@ export interface IAppConfig {
   LOG_LEVEL: string;
   COOKIE_NAME: string;
   COOKIE_SECRET: string;
-  DB_URI: string;
+  MONGODB_URI: string;
   NODE_ENV: NODE_ENV;
 }
 
@@ -24,7 +24,7 @@ const config: IAppConfig = envalid.cleanEnv(
       desc: "Secret String used to encode client cookie",
       devDefault: "secret"
     }),
-    DB_URI: envalid.str({
+    MONGODB_URI: envalid.str({
       desc: "Database connection URI"
     }),
     NODE_ENV: envalid.str({

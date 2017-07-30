@@ -53,7 +53,7 @@ webpack.waitUntilValid(() => {
   }
   mongoose
     .connect(
-      config.DB_URI,
+      config.MONGODB_URI,
       {
         useMongoClient: true
       } as IMongooseOptions
