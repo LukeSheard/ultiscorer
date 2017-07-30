@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === `development`) {
 const INITIAL_STATE = JSON.parse(
   (document.getElementById("app-initial-state") as HTMLElement).innerHTML
 );
-const store = createStore(browserHistory, INITIAL_STATE, middlewares);
+const store = createStore(browserHistory, INITIAL_STATE, ...middlewares);
 const history = syncHistoryWithStore(browserHistory, store);
 const routes = createRoutes(store);
 

@@ -21,6 +21,14 @@ export default class HTML extends React.Component<IHTMLProps, {}> {
       <html>
         <head>
           <title>My App</title>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `html, body, #root {
+              height: 100%;
+              width: 100%;
+            }`
+            }}
+          />
           {this.createStylesheet(assets.common)}
           {this.createStylesheet(assets.main)}
           {this.createStylesheet(assets[url])}

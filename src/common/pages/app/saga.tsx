@@ -1,17 +1,16 @@
 import { Intent } from "@blueprintjs/core";
 import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
-import request from "../../../api";
-import { NOTIFICATION_ACTION_TYPES } from "../../../reducers/notification";
-import { USER_ACTION_TYPES } from "../../../reducers/user";
+import request from "../../api";
+import { NOTIFICATION_ACTION_TYPES } from "../../reducers/notification";
+import { USER_ACTION_TYPES } from "../../reducers/user";
 
 export function* logoutUser(action) {
   try {
-    const response = yield request("/auth/sign-out", {
+    yield request("/auth/sign-out", {
       body: action.payload,
       method: "POST"
     });
-    console.log(response);
     yield put({
       payload: {
         intent: Intent.SUCCESS,
