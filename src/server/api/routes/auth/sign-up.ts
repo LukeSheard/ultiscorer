@@ -7,7 +7,7 @@ import User from "../../../models/user";
 const log = debug("app:api:sign-up");
 
 export default function(req: Request, res: Response) {
-  const { email, password, password_confirm } = req.body;
+  const { email, name, password, password_confirm } = req.body;
 
   if (password !== password_confirm) {
     res.status(400);
@@ -24,6 +24,7 @@ export default function(req: Request, res: Response) {
 
       return new User({
         email,
+        name,
         password
       }).save();
     })

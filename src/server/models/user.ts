@@ -3,6 +3,7 @@ import { Document, model, Schema } from "mongoose";
 
 export interface User {
   email: string;
+  name: string;
   password: string;
 }
 
@@ -15,6 +16,10 @@ export const UserSchema = new Schema({
     index: {
       unique: true
     },
+    required: true,
+    type: String
+  },
+  name: {
     required: true,
     type: String
   },

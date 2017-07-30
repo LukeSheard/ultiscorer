@@ -10,7 +10,7 @@ export default function(req: Request, res: Response) {
   const { email, password } = req.body;
 
   return User.findOne({ email })
-    .select("_id email password ")
+    .select("+password")
     .then(user => {
       if (!user) {
         throw Error("User Not Found");
@@ -20,7 +20,8 @@ export default function(req: Request, res: Response) {
     .then(user => {
       const payload = {
         _id: user._id,
-        email: user.email
+        email: user.email,
+        name: user.name
       };
       const token = jwt.sign(payload, config.COOKIE_SECRET, {
         expiresIn: "12h"

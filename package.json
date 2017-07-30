@@ -66,6 +66,7 @@
     "mongoose": "^4.11.3",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
+    "pretty-error": "^2.1.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
