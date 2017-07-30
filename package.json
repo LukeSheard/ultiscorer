@@ -8,12 +8,6 @@
     "npm": "^5.0.0"
   },
   "betterScripts": {
-    "start": {
-      "env": {
-        "NODE_ENV": "production"
-      },
-      "command": "ts-node --disableWarnings --fast src/server"
-    },
     "start:dev": {
       "env": {
         "DEBUG": "**",
@@ -26,7 +20,7 @@
     "prebuild": "rm -rf build",
     "build": "webpack -p --env=production",
     "lint": "tslint --project tsconfig.json --type-check",
-    "start": "better-npm-run start",
+    "start": "ts-node --disableWarnings --fast src/server",
     "start:dev": "better-npm-run start:dev",
     "test": "jest --config config/jest.config.js"
   },
