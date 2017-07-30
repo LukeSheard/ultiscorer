@@ -31,7 +31,7 @@ const config: webpack.Configuration = {
               importLoaders: 1,
               localIdentName: "[hash:base64:5]",
               module: true,
-              sourceMap: true
+              sourceMap: false
             }
           }
         })
@@ -45,7 +45,7 @@ const config: webpack.Configuration = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              sourceMap: true
+              sourceMap: false
             }
           }
         })
@@ -56,12 +56,6 @@ const config: webpack.Configuration = {
     new ExtractTextPlugin({
       allChunks: true,
       filename: "[chunkhash].min.css"
-    }),
-    new ManifestPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-      logLevel: "silent",
-      openAnalyzer: false
     }),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,

@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
-import { NODE_ENV } from "../../../../config";
+import { __DEV__ } from "../../../../config";
 import { IAppStore } from "../../../common/store";
 
 export function toChunkList(chunks: string | string[] | undefined): string[] {
@@ -29,10 +29,7 @@ export default class HTML extends React.Component<IHTMLProps, {}> {
           <div
             id="root"
             dangerouslySetInnerHTML={{
-              __html:
-                process.env.NODE_ENV === NODE_ENV.PRODUCTION
-                  ? ReactDOM.renderToString(children)
-                  : ""
+              __html: __DEV__ ? ReactDOM.renderToString(children) : ""
             }}
           />
           <script

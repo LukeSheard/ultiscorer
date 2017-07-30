@@ -7,8 +7,6 @@ import prod from "./config/webpack/webpack:prod";
 function createConfig(env: string): webpack.Configuration {
   const config = merge(base(env), env === "production" ? prod : dev);
 
-  console.log(config.output);
-
   return config;
 }
 

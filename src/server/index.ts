@@ -2,7 +2,7 @@ import * as cookieParser from "cookie-parser";
 import "css-modules-require-hook/preset";
 import debug from "debug";
 import * as Express from "express";
-import config, { NODE_ENV } from "../../config";
+import config, { __DEV__ } from "../../config";
 import mongoose from "./models/db";
 
 import api from "./api";
@@ -20,7 +20,7 @@ const app: Express.Express = Express();
   Static Files including hot middleware in development
 */
 app.use(webpack);
-if (process.env.NODE_ENV !== NODE_ENV.PRODUCTION) {
+if (__DEV__) {
   log("Initializing Hot Middleware");
   const hotWebpack = require("./middleware/webpack/hot").default;
   app.use(hotWebpack);
@@ -48,7 +48,7 @@ webpack.waitUntilValid(() => {
     Webpack Middleware
     NOTE: In Production we close the middleware to stop looking for updates.
   */
-  if (process.env.NODE_ENV === NODE_ENV.PRODUCTION) {
+  if (!__DEV__) {
     webpack.close();
   }
   mongoose

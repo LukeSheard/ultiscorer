@@ -14,6 +14,13 @@
         "NODE_ENV": "development"
       },
       "command": "nodemon ./src/server"
+    },
+    "start:prod": {
+      "env": {
+        "DEBUG": "app:**",
+        "NODE_ENV": "production"
+      },
+      "command": "npm start"
     }
   },
   "scripts": {
@@ -22,6 +29,7 @@
     "lint": "tslint --project tsconfig.json --type-check",
     "start": "ts-node --disableWarnings --fast src/server",
     "start:dev": "better-npm-run start:dev",
+    "start:prod": "better-npm-run start:prod",
     "test": "jest --config config/jest.config.js"
   },
   "keywords": [],
@@ -78,7 +86,6 @@
     "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-middleware": "^1.11.0",
-    "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {

@@ -19,7 +19,7 @@ export default function(env: string) {
       ]
     },
     output: {
-      chunkFilename: "[name].min.js",
+      chunkFilename: "[chunkhash].min.js",
       filename: "[chunkhash].min.js",
       path: join(__dirname, "../../", "build"),
       publicPath: appConfig.WEBPACK_PUBLIC_PATH

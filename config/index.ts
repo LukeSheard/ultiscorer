@@ -46,4 +46,6 @@ const config: IAppConfig = envalid.cleanEnv(
   { dotEnvPath: null } as any
 );
 
+export const __DEV__ = config.NODE_ENV !== NODE_ENV.PRODUCTION;
+
 export default config;
