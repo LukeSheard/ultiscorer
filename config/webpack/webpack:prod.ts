@@ -52,9 +52,6 @@ const config: webpack.Configuration = {
       }
     ]
   },
-  output: {
-    filename: "[name][id].min.js"
-  },
   plugins: [
     new ExtractTextPlugin({
       allChunks: true,

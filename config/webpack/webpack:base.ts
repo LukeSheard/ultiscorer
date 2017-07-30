@@ -18,7 +18,8 @@ export default function(env: string) {
       ]
     },
     output: {
-      chunkFilename: "[name][id].min.js",
+      chunkFilename: "[name].min.js",
+      filename: "[chunkhash].min.js",
       path: join(__dirname, "../../", "build"),
       publicPath: "/"
     },
