@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IndexRedirect, IndexRoute, Route } from "react-router";
+import { IndexRedirect, IndexRoute, Redirect, Route } from "react-router";
 import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
@@ -85,6 +85,7 @@ export default function(store: IAppStore) {
           import(/* webpackChunkName: "/not-found" */ "../pages/not-found")
         )}
       />
+      <Redirect from="*" to="/not-found" />
     </Route>
   );
 }
