@@ -5,6 +5,11 @@ import appConfig from "../";
 export default function(env: string) {
   const config: webpack.Configuration = {
     context: join(__dirname, "../../"),
+    devServer: {
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
     entry: "./src/client",
     module: {
       rules: [

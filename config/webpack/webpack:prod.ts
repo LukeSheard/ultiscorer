@@ -1,7 +1,5 @@
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
 import * as webpack from "webpack";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import * as ManifestPlugin from "webpack-manifest-plugin";
 
 const config: webpack.Configuration = {
   module: {
