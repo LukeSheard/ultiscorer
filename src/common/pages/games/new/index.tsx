@@ -1,14 +1,7 @@
 import * as React from "react";
-import { reduxForm } from
 
-export class GameNewPage extends React.Component<any, any> {
+export default class GameNewPage extends React.Component<any, any> {
   public render() {
-    return (
-      <div>
-
-      </div>
-    );
+    return <div>Create a New Game</div>;
   }
 }
-
-export default connect()(GameNewPage);
