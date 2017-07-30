@@ -1,19 +1,9 @@
 language: node_js
-
-node_js:
-- '8'
-
-cache:
-  directories:
-  - node_modules
-
-notifications:
-  email: 'never'
-
-sudo: required
-dist: trusty
-
-jobs:
-  include:
-  - script: npm run lint
-  - script: npm run build
+node_js: '8'
+deploy:
+  provider: heroku
+  api_key:
+    secure: IKC/mii2hQZ184A/OnsFTqLtiIjzDHgEjNQazRzm4DByrFzHOAJ7kMN2snWAd7YOQsxKQmGtOh74hz0zlFzBGgtuoeIiGyFTbW/4RYxJucn8sGmC3XNYHUDD7uToSSzDl+tf25InruUg0OmIVlxpfJnZYvDKf2pWccHTNcC+qVlkeJLvjPD0E3m24KlCbXhqRvWNtqZiXBkvw6MPMjZ1+mg4opRqg25rVhvL+6Le83ZSAJQuaSVF/DPjgyovlo8LcdCy9hh4k3DfjQ7dTD0pqi8i/ihVtSIGAf+GklBeSl/FaprJ2tZS37bVWIP1o1VqZq2fPlkwVf/0n1W6vK6fWZETkVqHp3fWZFhEyU6JXaVPtVOm6uAp7mehTfF3SBIlSs3v3QmocRHWblk8QF2LGcvCpr2U8laiLaYenzuiyp4ptDAEHijnApsoxzP9y55BN15hUNhZeECsOw13zTug4y/dYjDkCYdsHHb0HkYsoh3IAz+L7siiv/TpLOio8VWWFrd2YZuleIqje6tXT0tfIxM7aK6+gYMtlwHwkanYP5gNa78AKyXh8ZPdqaqbGroy0wLpE5zP3Aq1GmUOHb0oKwaxPll4usTv6ZKaLMAwOK7X9+Xz49uWQcM1V+0rc3JWGn3T0IYTqHy7SE6emySYE/IEV4zrW7KxiXo1pY/S6qc=
+  app: ultiscorer
+  on:
+    repo: LukeSheard/ultiscorer
