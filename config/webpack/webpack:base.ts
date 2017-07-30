@@ -1,5 +1,6 @@
 import { join } from "path";
 import * as webpack from "webpack";
+import appConfig from "../";
 
 export default function(env: string) {
   const config: webpack.Configuration = {
@@ -21,7 +22,7 @@ export default function(env: string) {
       chunkFilename: "[name].min.js",
       filename: "[chunkhash].min.js",
       path: join(__dirname, "../../", "build"),
-      publicPath: "/"
+      publicPath: appConfig.WEBPACK_PUBLIC_PATH
     },
     plugins: [
       new webpack.NoEmitOnErrorsPlugin(),

@@ -12,6 +12,7 @@ export interface IAppConfig {
   MONGODB_URI: string;
   NODE_ENV: NODE_ENV;
   PORT: number;
+  WEBPACK_PUBLIC_PATH: string;
 }
 
 const config: IAppConfig = envalid.cleanEnv(
@@ -36,6 +37,10 @@ const config: IAppConfig = envalid.cleanEnv(
     PORT: envalid.num({
       default: 8080,
       desc: "The port the app should listen on"
+    }),
+    WEBPACK_PUBLIC_PATH: envalid.str({
+      default: "/",
+      desc: "Public path webpack should load chunks from"
     })
   },
   { dotEnvPath: null } as any
