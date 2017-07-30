@@ -11,7 +11,7 @@ import createStore from "../common/store";
 const middlewares: any[] = [];
 
 if (process.env.NODE_ENV === `development`) {
-  const { logger } = require(`redux-logger`);
+  const logger = require(`redux-logger`).default;
 
   middlewares.push(logger);
 }
