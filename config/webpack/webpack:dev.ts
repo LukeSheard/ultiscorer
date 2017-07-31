@@ -2,6 +2,7 @@ import * as webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const config: webpack.Configuration = {
+  devtool: "inline-source-map",
   entry: ["webpack-hot-middleware/client", "./src/client"],
   module: {
     rules: [
