@@ -2,6 +2,7 @@ import * as bcrypt from "bcrypt";
 import { Document, model, Schema } from "mongoose";
 
 export interface User {
+  confirmed: boolean;
   email: string;
   name: string;
   password: string;
@@ -12,6 +13,10 @@ export interface IUserModel extends User, Document {
 }
 
 export const UserSchema = new Schema({
+  confirmed: {
+    default: false,
+    type: Boolean
+  },
   email: {
     index: {
       unique: true

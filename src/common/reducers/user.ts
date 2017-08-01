@@ -1,3 +1,4 @@
+import * as jwt from "jwt-decode";
 import { Action } from "redux";
 
 export enum USER_ACTION_TYPES {
@@ -51,9 +52,11 @@ export default function(
     }
     case USER_ACTION_TYPES.SIGNUP_SUCCESS:
     case USER_ACTION_TYPES.LOGIN_SUCCESS: {
+      const user = jwt(action.payload.token);
       return {
-        ...action.payload,
-        loading: false
+        loading: false,
+        token: action.payload,
+        user
       };
     }
     case USER_ACTION_TYPES.SIGNUP_FAILURE:

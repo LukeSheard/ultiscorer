@@ -6,9 +6,10 @@ export enum NODE_ENV {
 }
 
 export interface IAppConfig {
-  LOG_LEVEL: string;
   COOKIE_NAME: string;
   COOKIE_SECRET: string;
+  MAILGUN_API_KEY: string;
+  MAILGUN_DOMAIN_NAME: string;
   MONGODB_URI: string;
   NODE_ENV: NODE_ENV;
   PORT: number;
@@ -26,6 +27,13 @@ const config: IAppConfig = envalid.cleanEnv(
       desc: "Secret String used to encode client cookie",
       devDefault: "secret"
     }),
+    MAILGUN_API_KEY: envalid.str({
+      desc: "MAILGUN API KEY"
+    }),
+    MAILGUN_DOMAIN_NAME: envalid.str({
+      default: "ultiscorer.herokuapp.com",
+      desc: "Mailgun account name"
+    }),
     MONGODB_URI: envalid.str({
       desc: "Database connection URI"
     }),
@@ -35,8 +43,8 @@ const config: IAppConfig = envalid.cleanEnv(
       desc: "App enviroment"
     }),
     PORT: envalid.num({
-      default: 8080,
-      desc: "The port the app should listen on"
+      desc: "The port the app should listen on",
+      devDefault: 8080
     }),
     WEBPACK_PUBLIC_PATH: envalid.str({
       default: "/",

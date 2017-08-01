@@ -30,7 +30,7 @@ export function* logoutUser(action) {
     yield put({
       type: USER_ACTION_TYPES.SIGNOUT_SUCCESS
     });
-    yield put(push("/login"));
+    yield put(push("/"));
   }
 }
 

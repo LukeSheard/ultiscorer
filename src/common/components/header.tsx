@@ -8,11 +8,18 @@ import { createUserAction, USER_ACTION_TYPES } from "../reducers/user";
 export function LoggedinNavbar({ logout }) {
   return (
     <div className="pt-navbar-group pt-align-right">
-      <Button className="pt-minimal" iconName="plus" text="New Game" />
+      <Link to="/game/new">
+        <Button className="pt-minimal" iconName="plus" text="New Game" />
+      </Link>
+      <Link to="/dashboard/teams">
+        <Button className="pt-minimal" text="My Teams" />
+      </Link>
       <span className="pt-navbar-divider" />
-      <Tooltip content="Account" position={Position.LEFT}>
-        <Button className="pt-minimal" iconName="user" />
-      </Tooltip>
+      <Link to="/dashboard/account">
+        <Tooltip content="Account" position={Position.LEFT}>
+          <Button className="pt-minimal" iconName="user" />
+        </Tooltip>
+      </Link>
       <Tooltip content="Logout" position={Position.LEFT}>
         <Button className="pt-minimal" iconName="log-out" onClick={logout} />
       </Tooltip>
@@ -26,7 +33,7 @@ export function LoggedoutNavbar() {
       <Link to="/sign-up">
         <Button className="pt-minimal" iconName="user" text="Sign Up" />
       </Link>
-      <Link to="/login">
+      <Link to="/sign-in">
         <Button className="pt-minimal" iconName="log-in" text="Log In" />
       </Link>
     </div>

@@ -43,8 +43,7 @@ export default function(req: Request, res: Response) {
       });
 
       return res.json({
-        token,
-        user: payload
+        token
       });
     })
     .catch((error: Error) => {

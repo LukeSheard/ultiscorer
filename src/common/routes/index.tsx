@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IndexRedirect, IndexRoute, Redirect, Route } from "react-router";
+import { IndexRoute, Redirect, Route } from "react-router";
 import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
@@ -14,14 +14,15 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
     /login/create-account - Sign Up
     /login/forgotten      - Forgotten Password
 
-    /dashboard            - Personal Game List (Private)
+    (Private)
+    /dashboard            - Personal Game List
     /dashboard/account    - Edit Account Page
     /dashboard/teams      - View a list of your teams
     /dashboard/teams/:id  - Edit a team
 
     /games                - View list of games and live scores
     /games/new            - Create a new game (Private)
-    /games/:gameid        - View Game Score (Public)
+    /games/:gameid        - View Game Score
     /games/:gameid/edit   - Edit Game Details (Private)
     /games/:gameid/play   - Play Game with scoring (Private)
 */
@@ -29,6 +30,8 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
 export default function(store: IAppStore) {
   const connect = createConnect(store);
   const loadModule = createLoadModule(store);
+
+  const getBlank = loadModule(() => import("./blank"));
 
   return (
     <Route
@@ -38,9 +41,9 @@ export default function(store: IAppStore) {
       )}
     >
       <Route onEnter={connect(userIsNotAuthenticated)}>
-        <IndexRedirect to="login" />
+        <IndexRoute getComponent={getBlank} />
         <Route
-          path="login"
+          path="sign-in"
           getComponent={loadModule(() =>
             import(/* webpackChunkName: "/login" */ "../pages/login")
           )}
@@ -51,6 +54,7 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/sign-up" */ "../pages/sign-up")
           )}
         />
+        <Route path="forgotten-password" getComponent={getBlank} />
       </Route>
       <Route path="game" component={Wrap}>
         <Route
@@ -59,12 +63,15 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "dashboard-container" */ "../pages/games/new")
           )}
         />
-        <Route
-          path=":gameid"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "dashboard-container" */ "../pages/games")
-          )}
-        />
+        <Route path=":gameid" component={Wrap}>
+          <IndexRoute
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "dashboard-container" */ "../pages/games")
+            )}
+          />
+          <Route path="play" getComponent={getBlank} />
+          <Route path="edit" getComponent={getBlank} />
+        </Route>
       </Route>
       <Route
         path="dashboard"
@@ -78,6 +85,15 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "dashboard" */ "../pages/dashboard")
           )}
         />
+        <Route
+          path="account"
+          getComponent={loadModule(() => import("../pages/dashboard/account"))}
+        />
+        <Route path="teams" component={Wrap}>
+          <IndexRoute getComponent={getBlank} />
+          <Route path="new" getComponent={getBlank} />
+          <Route path=":id" getComponent={getBlank} />
+        </Route>
       </Route>
       <Route
         path="not-found"
