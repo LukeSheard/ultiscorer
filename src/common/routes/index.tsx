@@ -8,24 +8,26 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
 
 /*
   ultiscorer.com
-    /                     - What is page
+    /                           - What is page
 
-    /login                - Login Form
-    /login/create-account - Sign Up
-    /login/forgotten      - Forgotten Password
+    /login                      - Login Form
+    /login/create-account       - Sign Up
 
-    /games                - View list of games and live scores
-    /games/new            - Create a new game (Private)
-    /games/:gameid        - View Game Score
-    /games/:gameid/edit   - Edit Game Details (Private)
-    /games/:gameid/play   - Play Game with scoring (Private)
+    /games                      - View list of games and live scores
+    /games/new                  - Create a new game (Private)
+    /games/:gameid              - View Game Score
+    /games/:gameid/edit         - Edit Game Details (Private)
+    /games/:gameid/play         - Play Game with scoring (Private)
 
-    (Private)
-    /dashboard            - Personal Game List
-    /dashboard/account    - Edit Account Page
-    /dashboard/setup      - Setup account flow (profile / teams)
-    /dashboard/teams      - View a list of your teams
-    /dashboard/teams/:id  - Edit a team
+    /dashboard                  - Personal Game List / Tournaments (Private)
+
+    /teams                      - View all teams
+
+    /tournaments                - View tournaments
+    /tournaments/new            - New Tournament
+    /tournaments/:id            - View Tournament
+    /tournaments/:id/edit       - View Tournament
+    /tournaments/:id/:division  - View Tournament Divison
 */
 
 export default function(store: IAppStore) {

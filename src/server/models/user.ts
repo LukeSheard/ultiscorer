@@ -1,22 +1,18 @@
 import * as bcrypt from "bcrypt";
 import { Document, model, Schema } from "mongoose";
 
-export interface User {
+export interface UserSchema {
   confirmed: boolean;
   email: string;
   name: string;
   password: string;
 }
 
-export interface IUserModel extends User, Document {
-  comparePassword(password: string): Promise<IUserModel>;
-}
+export default interface User extends UserSchema, Document {
+  comparePassword(password: string): Promise<User>;
+};
 
 export const UserSchema = new Schema({
-  confirmed: {
-    default: false,
-    type: Boolean
-  },
   email: {
     index: {
       unique: true
@@ -72,4 +68,4 @@ UserSchema.methods.comparePassword = function(password) {
   });
 };
 
-export default model<IUserModel>("User", UserSchema);
+export default model<User>("User", UserSchema);

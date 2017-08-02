@@ -1,5 +1,5 @@
 import { Document, model, Schema } from "mongoose";
-import { User } from "./user";
+import User from "./user";
 
 export interface Game {
   away: string;

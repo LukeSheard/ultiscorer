@@ -5,7 +5,7 @@ import {
   createUserAction,
   USER_ACTION_TYPES
 } from "../../common/reducers/user";
-import User, { IUserModel } from "../models/user";
+import User from "../models/user";
 
 export default function(req: Request, res: Response, next: NextFunction) {
   const token = req.signedCookies[config.COOKIE_NAME];
@@ -17,7 +17,7 @@ export default function(req: Request, res: Response, next: NextFunction) {
       {
         algorithms: ["HS256"]
       },
-      (error, payload: IUserModel) => {
+      (error, payload: User) => {
         if (error) {
           res.clearCookie(config.COOKIE_NAME);
           return next(error);

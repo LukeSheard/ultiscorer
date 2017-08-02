@@ -5,7 +5,7 @@ export default class BlankRoute extends React.Component<any, {}> {
     return (
       <div>
         <span>
-          {JSON.stringify(this.props)}
+          {JSON.stringify(this.props, null, 4)}
         </span>
         <div>
           {this.props.children}
