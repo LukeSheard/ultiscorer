@@ -30,6 +30,7 @@
     "start": "ts-node --disableWarnings --fast src/server",
     "start:dev": "better-npm-run start:dev",
     "start:prod": "better-npm-run start:prod",
+    "start:api": "nodemon src/server/api",
     "test": "jest --config config/jest.config.js"
   },
   "keywords": [],
