@@ -6,25 +6,49 @@ interface NumberList {
 }
 
 interface TeamSchema {
-  owner: User;
   captains: User[];
-  players: User[];
-  numbers: NumberList;
+  location: string;
   name: string;
+  numbers: NumberList;
+  owner: User;
+  players: User[];
 }
 
 export default interface Team extends TeamSchema, Document {};
 
 export const TeamSchema = new Schema({
+  captains: [
+    {
+      index: true,
+      ref: "User",
+      type: Schema.Types.ObjectId
+    }
+  ],
+  location: {
+    required: true,
+    type: String
+  },
   name: {
     required: true,
     type: String
   },
-  tournament: {
-    ref: "Tournament",
+  numbers: {
+    default: {},
+    type: Object
+  },
+  owner: {
+    index: true,
+    ref: "User",
     required: true,
     type: Schema.Types.ObjectId
-  }
+  },
+  players: [
+    {
+      index: true,
+      ref: "User",
+      type: Schema.Types.ObjectId
+    }
+  ]
 });
 
 export default model<Team>("Team", TeamSchema);

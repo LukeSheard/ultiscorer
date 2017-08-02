@@ -1,4 +1,4 @@
-import { Document, model, Schema } from "mongoose";
+import { Document, Schema } from "mongoose";
 import Team from "./team";
 import User from "./user";
 
@@ -11,8 +11,24 @@ export default interface Point {
 
 export interface IPointModel extends Point, Document {}
 
-export const pointSchema = new Schema({
-  score:
-})
-
-export default model<IPointModel>("Point", pointSchema);
+export default new Schema({
+  assist: {
+    ref: "User",
+    required: true,
+    type: Schema.Types.ObjectId
+  },
+  score: {
+    ref: "User",
+    required: true,
+    type: Schema.Types.ObjectId
+  },
+  team: {
+    ref: "Team",
+    required: true,
+    type: Schema.Types.ObjectId
+  },
+  turns: {
+    default: 0,
+    type: Number
+  }
+});

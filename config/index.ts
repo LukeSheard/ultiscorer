@@ -27,7 +27,8 @@ const config: IAppConfig = envalid.cleanEnv(
       devDefault: "secret"
     }),
     MONGODB_URI: envalid.str({
-      desc: "Database connection URI"
+      desc: "Database connection URI",
+      devDefault: "mongodb://localhost/ultiscorer"
     }),
     NODE_ENV: envalid.str({
       choices: [NODE_ENV.DEVELOPMENT, NODE_ENV.PRODUCTION],

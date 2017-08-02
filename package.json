@@ -8,6 +8,13 @@
     "npm": "^5.0.0"
   },
   "betterScripts": {
+    "start:api": {
+      "env": {
+        "DEBUG": "**",
+        "NODE_ENV": "development"
+      },
+      "command": "nodemon ./src/server/api/api.ts"
+    },
     "start:dev": {
       "env": {
         "DEBUG": "**",
@@ -30,7 +37,7 @@
     "start": "ts-node --disableWarnings --fast src/server",
     "start:dev": "better-npm-run start:dev",
     "start:prod": "better-npm-run start:prod",
-    "start:api": "nodemon src/server/api",
+    "start:api": "better-npm-run start:api",
     "test": "jest --config config/jest.config.js"
   },
   "keywords": [],

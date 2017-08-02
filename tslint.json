@@ -10,7 +10,8 @@
     "jsx-no-lambda": false,
     "no-empty": false,
     "jsx-boolean-value": false,
-    "interface-name": [false]
+    "interface-name": [false],
+    "max-classes-per-file": false
   },
   "rulesDirectory": []
 }

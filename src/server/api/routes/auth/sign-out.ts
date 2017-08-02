@@ -10,5 +10,5 @@ export default function(_, res: Response) {
     signed: true
   });
 
-  return res.json({});
+  return res.sendStatus(204);
 }
