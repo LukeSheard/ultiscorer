@@ -13,7 +13,7 @@ export function LoggedinNavbar() {
       <NavLink to="/tournaments" iconName="comparison" text="Tournaments" />
       <span className="pt-navbar-divider" />
       <NavLink to="/dashboard/account" iconName="user" text="Account" />
-      <NavLink to="/logout" iconName="log-out" text="Log Out" />
+      <NavLink to="/sign-out" iconName="log-out" text="Log Out" />
     </div>
   );
 }

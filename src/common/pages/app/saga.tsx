@@ -5,12 +5,9 @@ import request from "../../api";
 import { NOTIFICATION_ACTION_TYPES } from "../../reducers/notification";
 import { USER_ACTION_TYPES } from "../../reducers/user";
 
-export function* logoutUser(action) {
+export function* logoutUser() {
   try {
-    yield request("/auth/sign-out", {
-      body: action.payload,
-      method: "POST"
-    });
+    yield request("/auth/sign-out");
     yield put({
       payload: {
         intent: Intent.SUCCESS,
