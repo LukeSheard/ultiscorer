@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Field } from "redux-form";
+import { Field, WrappedFieldInputProps } from "redux-form";
 
-export interface IFormInputProps {
+interface IFormInputProps {
   disabled?: boolean;
   label: string;
   name: string;
@@ -9,7 +9,18 @@ export interface IFormInputProps {
   type?: string;
 }
 
-export default class Input extends React.Component<IFormInputProps, {}> {
+interface WrappedInputProps extends IFormInputProps {
+  input: WrappedFieldInputProps;
+}
+
+const createInput = (props: IFormInputProps) => ({ input }) =>
+  <Input {...props} input={input} />;
+
+export default function WrappedInput(props: IFormInputProps) {
+  return <Field component={createInput(props)} name={props.name} />;
+}
+
+export class Input extends React.Component<WrappedInputProps, {}> {
   public static defaultProps = {
     disabled: false,
     name: "",
@@ -18,18 +29,19 @@ export default class Input extends React.Component<IFormInputProps, {}> {
   };
 
   public render() {
-    const { disabled, label, name, type, required } = this.props;
+    const { disabled, label, input, name, type, required } = this.props;
     return (
       <label className="pt-label" htmlFor={name}>
         {label}
         {required ? <span className="pt-text-muted"> (required)</span> : null}
         <div className="pt-input-group">
-          <Field
+          <input
             className="pt-input pt-fill"
-            component="input"
             disabled={disabled}
             type={type}
             name={name}
+            required={required}
+            {...input}
           />
         </div>
       </label>

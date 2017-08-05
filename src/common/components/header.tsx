@@ -9,10 +9,19 @@ export function LoggedinNavbar({ logout }) {
   return (
     <div className="pt-navbar-group pt-align-right">
       <Link to="/game/new">
-        <Button className="pt-minimal" iconName="plus" text="New Game" />
+        <Tooltip content="New Game" position={Position.BOTTOM}>
+          <Button className="pt-minimal" iconName="plus" />
+        </Tooltip>
       </Link>
       <Link to="/dashboard/teams">
-        <Button className="pt-minimal" text="My Teams" />
+        <Tooltip content="My Teams" position={Position.BOTTOM}>
+          <Button className="pt-minimal" iconName="people" />
+        </Tooltip>
+      </Link>
+      <Link to="/dashboard/teams">
+        <Tooltip content="Tournaments" position={Position.BOTTOM}>
+          <Button className="pt-minimal" iconName="comparison" />
+        </Tooltip>
       </Link>
       <span className="pt-navbar-divider" />
       <Link to="/dashboard/account">

@@ -1,15 +1,26 @@
-import { call } from "redux-saga/effects";
+import { call, select } from "redux-saga/effects";
+import { IAppState } from "../reducers";
 import installPolyfills from "./polyfill";
 
 installPolyfills();
 
 export default function* get(endpoint: string, options: RequestInit) {
+  const headers: any = {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  };
+
+  const token = yield select(
+    (state: IAppState) => state.user && state.user.token
+  );
+
+  if (token) {
+    headers.Authorization = token;
+  }
+
   const query: RequestInit = {
     credentials: "include",
-    headers: new Headers({
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    }),
+    headers: new Headers(headers),
     method: options.method || "GET",
     mode: "same-origin",
     redirect: "follow"
@@ -18,6 +29,8 @@ export default function* get(endpoint: string, options: RequestInit) {
   if (options.method !== "GET" && options.body !== null) {
     query.body = JSON.stringify(options.body);
   }
+
+  console.log(token);
 
   const request = new Request(`/api${endpoint}`, query);
 

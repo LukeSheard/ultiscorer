@@ -1,9 +1,10 @@
 .app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .main_app {
-    margin: 40px auto;
-    max-width: 1200px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 10px;
 }

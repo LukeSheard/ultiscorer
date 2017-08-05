@@ -55,7 +55,7 @@ export default function(
       const user = jwt(action.payload.token);
       return {
         loading: false,
-        token: action.payload,
+        token: action.payload.token,
         user
       };
     }
