@@ -8,3 +8,7 @@ deploy:
   on:
     repo: LukeSheard/ultiscorer
     branch: master
+
+
+install: echo "install"
+test: echo "test"
