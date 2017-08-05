@@ -68,6 +68,12 @@ export default function(store: IAppStore) {
         />
       </Route>
       <Route
+        path="sign-out"
+        getComponent={loadModule(() =>
+          import(/* webpackChunkName: "/sign-out" */ "../pages/sign-out")
+        )}
+      />
+      <Route
         path="not-found"
         getComponent={loadModule(() =>
           import(/* webpackChunkName: "/not-found" */ "../pages/not-found")

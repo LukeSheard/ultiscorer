@@ -1,6 +1,7 @@
 import { Button, Position, Tooltip } from "@blueprintjs/core";
 import * as React from "react";
 import { Link } from "react-router";
+const style = require("./link.css");
 
 export interface NavLinkProps {
   to: string;
@@ -21,7 +22,11 @@ export default class NavLink extends React.Component<NavLinkProps, {}> {
     return (
       <Link to={to} onClick={onClick}>
         <Tooltip content={text} position={position}>
-          <Button className="pt-minimal" iconName={iconName} text={text} />
+          <Button
+            className={`${style.navlink} pt-minimal`}
+            iconName={iconName}
+            text={text}
+          />
         </Tooltip>
       </Link>
     );

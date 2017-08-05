@@ -28,13 +28,17 @@ export function createUserAction(
 }
 
 export const INITIAL_STATE = {
-  loading: false,
-  user: {}
+  jwt: {},
+  loading: false
 };
 
 export interface IUserState {
   loading: boolean;
-  user: any;
+  jwt: {
+    exp?: number;
+    iat?: number;
+    user?: any;
+  };
   token?: string;
 }
 
@@ -52,11 +56,11 @@ export default function(
     }
     case USER_ACTION_TYPES.SIGNUP_SUCCESS:
     case USER_ACTION_TYPES.LOGIN_SUCCESS: {
-      const user = jwt(action.payload.token);
+      const jwtPayload = jwt(action.payload.token);
       return {
+        jwt: jwtPayload,
         loading: false,
-        token: action.payload.token,
-        user
+        token: action.payload.token
       };
     }
     case USER_ACTION_TYPES.SIGNUP_FAILURE:

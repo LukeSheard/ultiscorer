@@ -44,6 +44,7 @@ export default function* get(endpoint: string, options: RequestInit) {
 
   // TODO: Deal with error codes
   if (!response.ok) {
+    console.log(response);
     throw new Error(body.error || "There was an error");
   }
 

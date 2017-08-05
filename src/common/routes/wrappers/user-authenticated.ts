@@ -5,8 +5,15 @@ import {
 import { IAppState } from "../../reducers";
 
 const options = {
-  authenticatedSelector: (state: IAppState) =>
-    state.user && state.user.token !== void 0,
+  authenticatedSelector: (state: IAppState) => {
+    if (!state.user) {
+      return false;
+    }
+
+    return (
+      state.user.jwt.exp && new Date(state.user.jwt.exp * 1000) > new Date()
+    );
+  },
   redirectPath: "/login",
   wrapperDisplayName: "UserIsAuthenticated"
 };

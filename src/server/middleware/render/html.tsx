@@ -37,7 +37,7 @@ export default class HTML extends React.Component<IHTMLProps, {}> {
           <div
             id="root"
             dangerouslySetInnerHTML={{
-              __html: __DEV__ ? ReactDOM.renderToString(children) : ""
+              __html: __DEV__ ? "" : ReactDOM.renderToString(children)
             }}
           />
           <script

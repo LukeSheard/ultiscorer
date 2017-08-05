@@ -19,9 +19,11 @@ export default function(req: Request, res: Response) {
     })
     .then(user => {
       const payload = {
-        _id: user._id,
-        email: user.email,
-        name: user.name
+        user: {
+          _id: user._id,
+          email: user.email,
+          name: user.name
+        }
       };
       const token = jwt.sign(payload, config.COOKIE_SECRET, {
         expiresIn: "12h"
