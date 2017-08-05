@@ -13,11 +13,12 @@ interface WrappedInputProps extends IFormInputProps {
   input: WrappedFieldInputProps;
 }
 
-const createInput = (props: IFormInputProps) => ({ input }) =>
-  <Input {...props} input={input} />;
-
-export default function WrappedInput(props: IFormInputProps) {
-  return <Field component={createInput(props)} name={props.name} />;
+export default class WrappedInput extends React.Component<IFormInputProps, {}> {
+  public render() {
+    return (
+      <Field component={Input} props={this.props} name={this.props.name} />
+    );
+  }
 }
 
 export class Input extends React.Component<WrappedInputProps, {}> {

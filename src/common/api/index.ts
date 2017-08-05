@@ -4,8 +4,14 @@ import installPolyfills from "./polyfill";
 
 installPolyfills();
 
+export interface Headers {
+  Accept: string;
+  "Content-Type": string;
+  Authorization?: string;
+}
+
 export default function* get(endpoint: string, options: RequestInit) {
-  const headers: any = {
+  const headers: Headers = {
     Accept: "application/json",
     "Content-Type": "application/json"
   };
@@ -29,8 +35,6 @@ export default function* get(endpoint: string, options: RequestInit) {
   if (options.method !== "GET" && options.body !== null) {
     query.body = JSON.stringify(options.body);
   }
-
-  console.log(token);
 
   const request = new Request(`/api${endpoint}`, query);
 

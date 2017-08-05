@@ -1,37 +1,25 @@
-import { Button, Position, Tooltip } from "@blueprintjs/core";
+import { Button } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
-import { IAppState } from "../reducers";
-import { createUserAction, USER_ACTION_TYPES } from "../reducers/user";
+import { IAppState } from "../../reducers";
+import { createUserAction, USER_ACTION_TYPES } from "../../reducers/user";
+import NavLink from "./link";
 
 export function LoggedinNavbar({ logout }) {
   return (
     <div className="pt-navbar-group pt-align-right">
-      <Link to="/game/new">
-        <Tooltip content="New Game" position={Position.BOTTOM}>
-          <Button className="pt-minimal" iconName="plus" />
-        </Tooltip>
-      </Link>
-      <Link to="/dashboard/teams">
-        <Tooltip content="My Teams" position={Position.BOTTOM}>
-          <Button className="pt-minimal" iconName="people" />
-        </Tooltip>
-      </Link>
-      <Link to="/dashboard/teams">
-        <Tooltip content="Tournaments" position={Position.BOTTOM}>
-          <Button className="pt-minimal" iconName="comparison" />
-        </Tooltip>
-      </Link>
+      <NavLink to="/game/new" iconName="plus" text="New Game" />
+      <NavLink to="/dashboard/teams" iconName="people" text="My Teams" />
+      <NavLink to="/tournaments" iconName="comparison" text="Tournaments" />
       <span className="pt-navbar-divider" />
-      <Link to="/dashboard/account">
-        <Tooltip content="Account" position={Position.LEFT}>
-          <Button className="pt-minimal" iconName="user" />
-        </Tooltip>
-      </Link>
-      <Tooltip content="Logout" position={Position.LEFT}>
-        <Button className="pt-minimal" iconName="log-out" onClick={logout} />
-      </Tooltip>
+      <NavLink to="/dashboard/account" iconName="user" text="Account" />
+      <NavLink
+        to="/logout"
+        iconName="log-out"
+        text="Log Out"
+        onClick={logout}
+      />
     </div>
   );
 }
