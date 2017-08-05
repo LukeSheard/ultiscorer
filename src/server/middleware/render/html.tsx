@@ -20,7 +20,8 @@ export default class HTML extends React.Component<IHTMLProps, {}> {
     return (
       <html>
         <head>
-          <title>My App</title>
+          <title>Ultiscorer</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <style
             dangerouslySetInnerHTML={{
               __html: `html, body, #root {
