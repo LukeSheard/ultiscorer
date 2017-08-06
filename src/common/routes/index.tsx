@@ -105,7 +105,7 @@ export default function(store: IAppStore) {
           import(/* webpackChunkName: "/not-found" */ "../pages/not-found")
         )}
       />
-      <Redirect from="*" to="/not-found" />
+      <Redirect from="*" to="not-found" />
     </Route>
   );
 }
