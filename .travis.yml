@@ -11,4 +11,4 @@ deploy:
 
 
 install: echo "install"
-test: echo "test"
+script: echo "test"
