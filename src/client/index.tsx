@@ -2,11 +2,15 @@ import "@blueprintjs/core/dist/blueprint.css";
 import "normalize.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { browserHistory, match, Router } from "react-router";
+import { browserHistory, match } from "react-router";
 import { syncHistoryWithStore } from "react-router-redux";
 import createRoutes from "../common/routes";
 import createStore from "../common/store";
+import App from "./app";
+
+import * as raven from "raven-js";
+console.log(process.env.SENTRY_DSN);
+raven.config(process.env.SENTRY_DSN as string).install();
 
 const middlewares: any[] = [];
 
@@ -25,9 +29,7 @@ const routes = createRoutes(store);
 
 match({ history, routes }, (_, __, renderProps) => {
   return ReactDOM.render(
-    <Provider store={store}>
-      <Router {...renderProps} />
-    </Provider>,
+    <App store={store} {...renderProps} />,
     document.getElementById("root")
   );
 });

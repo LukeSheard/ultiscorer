@@ -10,7 +10,7 @@ export interface IAppStore extends Store<IAppState> {
 
 export default function(
   history,
-  initialState: IAppState = {},
+  initialState: Partial<IAppState> = {},
   ...middlewares
 ): IAppStore {
   const sagaMiddleware = createSagaMiddleware();
@@ -21,7 +21,7 @@ export default function(
   const store: IAppStore = {
     ...createStore<IAppState>(
       reducer,
-      initialState,
+      initialState as IAppState,
       applyMiddleware(...middleware)
     ),
     runSaga: sagaMiddleware.run,

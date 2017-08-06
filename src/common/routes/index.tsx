@@ -109,6 +109,12 @@ export default function(store: IAppStore) {
         )}
       />
       <Route
+        path="error"
+        getComponent={loadModule(() =>
+          import(/* webpackChunkName: "/error" */ "../pages/error")
+        )}
+      />
+      <Route
         path="not-found"
         getComponent={loadModule(() =>
           import(/* webpackChunkName: "/not-found" */ "../pages/not-found")

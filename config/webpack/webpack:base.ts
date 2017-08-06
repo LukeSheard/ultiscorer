@@ -38,7 +38,8 @@ export default function(env: string) {
     plugins: [
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        "process.env.NODE_ENV": JSON.stringify(env)
+        "process.env.NODE_ENV": JSON.stringify(env),
+        "process.env.SENTRY_DSN": JSON.stringify(appConfig.SENTRY_PUBLIC_DSN)
       }),
       new webpack.optimize.CommonsChunkPlugin({
         children: true,
