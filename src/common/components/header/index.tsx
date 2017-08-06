@@ -1,4 +1,3 @@
-import { Button } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -9,7 +8,7 @@ export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
       <NavLink to="/game/new" iconName="plus" text="New Game" />
-      <NavLink to="/dashboard/teams" iconName="people" text="My Teams" />
+      <NavLink to="/account/teams" iconName="people" text="My Teams" />
       <NavLink to="/tournaments" iconName="comparison" text="Tournaments" />
       <span className="pt-navbar-divider" />
       <NavLink to="/dashboard/account" iconName="user" text="Account" />
@@ -21,12 +20,8 @@ export function LoggedinNavbar() {
 export function LoggedoutNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
-      <Link to="/sign-up">
-        <Button className="pt-minimal" iconName="user" text="Sign Up" />
-      </Link>
-      <Link to="/sign-in">
-        <Button className="pt-minimal" iconName="log-in" text="Log In" />
-      </Link>
+      <NavLink to="/sign-up" iconName="user" text="Sign Up" />
+      <NavLink to="/sign-in" iconName="log-in" text="Sign In" />
     </div>
   );
 }

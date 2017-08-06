@@ -8,26 +8,27 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
 
 /*
   ultiscorer.com
-    /                           - What is page
+    /                                     - What is page
 
-    /login                      - Login Form
-    /login/create-account       - Sign Up
+    /login                                - Login Form
+    /login/create-account                 - Sign Up
 
-    /games                      - View list of games and live scores
-    /games/new                  - Create a new game (Private)
-    /games/:gameid              - View Game Score
-    /games/:gameid/edit         - Edit Game Details (Private)
-    /games/:gameid/play         - Play Game with scoring (Private)
+    /account                              - Account management page
 
-    /dashboard                  - Personal Game List / Tournaments (Private)
+    /games                                - View list of games and live scores
+    /games/new                            - Create a new game (Private)
+    /games/:gameid                        - View Game Score
+    /games/:gameid/edit                   - Edit Game Details (Private)
+    /games/:gameid/play                   - Play Game with scoring (Private)
 
-    /teams                      - View all teams
+    /teams                                - View all teams
+    /teams/new                            - Create a Team
 
-    /tournaments                - View tournaments
-    /tournaments/new            - New Tournament
-    /tournaments/:id            - View Tournament
-    /tournaments/:id/edit       - View Tournament
-    /tournaments/:id/:division  - View Tournament Divison
+    /tournaments                          - View tournaments
+    /tournaments/new                      - New Tournament
+    /tournaments/:id/view                 - View Tournament
+    /tournaments/:id/edit                 - View Tournament
+    /tournaments/:id/divisions/:division  - View Tournament Divison
 */
 
 export default function(store: IAppStore) {
@@ -59,6 +60,11 @@ export default function(store: IAppStore) {
         />
       </Route>
       <Route path="tournaments" component={Wrap}>
+        <IndexRoute
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "/tournament" */ "../pages/tournament/view-all")
+          )}
+        />
         <Route
           path="new"
           onEnter={connect(userIsAuthenticated)}

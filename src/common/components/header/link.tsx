@@ -8,7 +8,6 @@ export interface NavLinkProps {
   position?: Position;
   iconName?: string;
   text: string;
-  onClick?: () => any;
 }
 
 export default class NavLink extends React.Component<NavLinkProps, {}> {
@@ -17,10 +16,10 @@ export default class NavLink extends React.Component<NavLinkProps, {}> {
   };
 
   public render() {
-    const { iconName, onClick, position, text, to } = this.props;
+    const { iconName, position, text, to } = this.props;
 
     return (
-      <Link to={to} onClick={onClick}>
+      <Link to={to}>
         <Tooltip content={text} position={position}>
           <Button
             className={`${style.navlink} pt-minimal`}
