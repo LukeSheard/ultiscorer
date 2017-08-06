@@ -13,7 +13,8 @@ export default function(env: string) {
         "Access-Control-Allow-Methods":
           "GET, POST, PUT, DELETE, PATCH, OPTIONS",
         "Access-Control-Allow-Origin": "*"
-      }
+      },
+      host: "0.0.0.0"
     },
     entry: "./src/client",
     module: {

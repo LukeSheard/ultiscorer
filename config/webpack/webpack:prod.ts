@@ -2,6 +2,9 @@ import * as ExtractTextPlugin from "extract-text-webpack-plugin";
 import * as webpack from "webpack";
 
 const config: webpack.Configuration = {
+  devServer: {
+    compress: true
+  },
   devtool: "source-map",
   module: {
     rules: [
