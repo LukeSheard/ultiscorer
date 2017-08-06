@@ -9,7 +9,10 @@ export enum TOURNAMENT_ACTION_TYPES {
   // Get
   TOURNAMENT_GET_REQUEST = "TOURNAMENT_GET_REQUEST",
   TOURNAMENT_GET_FAILURE = "TOURNAMENT_GET_FAILURE",
-  TOURNAMENT_GET_SUCCESS = "TOURNAMENT_GET_SUCCESS"
+  TOURNAMENT_GET_SUCCESS = "TOURNAMENT_GET_SUCCESS",
+
+  // Select
+  TOURNAMENT_SELECT = "TOURNAMENT_SELECT"
 }
 
 export interface ITournamentAction extends Action {
@@ -35,7 +38,7 @@ export const INITIAL_STATE = {
 export interface ITournamentState {
   loading: boolean;
   tournaments: object;
-  current?: string;
+  selected?: string;
 }
 
 export default function(
@@ -43,9 +46,30 @@ export default function(
   action: ITournamentAction
 ): ITournamentState {
   switch (action.type) {
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_SELECT: {
+      return {
+        selected: action.payload,
+        ...state
+      };
+    }
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_REQUEST:
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_REQUEST: {
+      return {
+        ...state,
+        loading: true
+      };
+    }
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_FAILURE:
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_FAILURE: {
+      return {
+        ...state,
+        loading: false
+      };
+    }
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_SUCCESS: {
       return {
         ...state,
+        loading: false,
         tournaments: {
           ...state.tournaments,
           [action.payload.id]: action.payload
@@ -55,9 +79,11 @@ export default function(
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_SUCCESS: {
       return {
         ...state,
+        loading: false,
+        selected: action.payload.selected,
         tournaments: {
           ...state.tournaments,
-          ...action.payload.reduce((tournaments, tournament) => {
+          ...action.payload.tournaments.reduce((tournaments, tournament) => {
             tournaments[tournament.id] = tournament;
             return tournaments;
           }, {})

@@ -5,14 +5,15 @@ const log = debug("app:routing");
 
 export function createInjectors(store: IAppStore) {
   return {
-    injectSaga: (saga: () => Iterator<any>) => store.runSaga(saga)
+    injectSaga: (saga: () => Iterator<any>, state?: any) =>
+      store.runSaga(saga, state)
   };
 }
 
 export function createLoadModule(store: IAppStore) {
   const { injectSaga } = createInjectors(store);
   return modImport => {
-    return (_, cb) => {
+    return (state, cb) => {
       modImport()
         .catch(error => {
           log(error);
@@ -22,7 +23,7 @@ export function createLoadModule(store: IAppStore) {
           if (mod.saga) {
             log("Injecting saga for route");
             try {
-              injectSaga(mod.saga);
+              injectSaga(mod.saga, state);
             } catch (e) {
               log("Saga error", e);
             }

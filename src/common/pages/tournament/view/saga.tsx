@@ -5,11 +5,12 @@ import {
   TOURNAMENT_ACTION_TYPES
 } from "../../../reducers/tournament";
 
-export default function*() {
+export default function*({ params }) {
   try {
-    const response = yield request("/tournament?expand[]=divisions");
+    const response = yield request(`/tournament?_id=${params.id}`);
     yield put<ITournamentAction>({
       payload: {
+        selected: params.id,
         tournaments: response.data // TODO: Change API API
       },
       type: TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_SUCCESS

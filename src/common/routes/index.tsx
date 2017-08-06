@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IndexRoute, Redirect, Route } from "react-router";
+import { IndexRedirect, IndexRoute, Redirect, Route } from "react-router";
 import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
@@ -72,6 +72,26 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/new")
           )}
         />
+        <Route
+          path=":id"
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view/view")
+          )}
+        >
+          <IndexRedirect to="view" />
+          <Route
+            path="view"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
+            )}
+          />
+          <Route
+            path="divisions/:division"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/divisions")
+            )}
+          />
+        </Route>
       </Route>
       <Route
         path="sign-out"

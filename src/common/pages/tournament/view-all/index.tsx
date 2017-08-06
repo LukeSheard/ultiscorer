@@ -9,6 +9,11 @@ import saga from "./saga";
 export class TournamentsView extends React.Component<any, any> {
   public render() {
     const { loading, tournamentInfo, tournaments } = this.props;
+
+    if (loading) {
+      return <div>Loading</div>;
+    }
+
     return (
       <div
         style={{
@@ -36,16 +41,21 @@ export class TournamentsView extends React.Component<any, any> {
               }}
             >
               <div>
-                <h3>
-                  {tournament.name}
-                </h3>
+                <Link to={`tournaments/${id}`}>
+                  <h3>
+                    {tournament.name}
+                  </h3>
+                </Link>
                 <h5>
                   {tournament.location}
                 </h5>
               </div>
               {(tournament.divisions || []).map(division => {
                 return (
-                  <Link to={`/tournaments/${id}/divisions/${division.id}`}>
+                  <Link
+                    key={division._id}
+                    to={`/tournaments/${id}/divisions/${division._id}`}
+                  >
                     {division.name}
                   </Link>
                 );

@@ -4,7 +4,7 @@ import createSagaMiddleware, { END, Task } from "redux-saga";
 import reducer, { IAppState } from "../reducers";
 
 export interface IAppStore extends Store<IAppState> {
-  runSaga: (saga: () => Iterator<any>) => Task;
+  runSaga: (saga: () => Iterator<any>, ...args) => Task;
   close: () => void;
 }
 
