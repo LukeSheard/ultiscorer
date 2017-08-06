@@ -39,6 +39,7 @@ export class Header extends React.Component<any, any> {
         {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
         <div className="pt-navbar-group pt-align-right">
           <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
+          <NavLink to="/teams/new" iconName="pt-icon-add-to-artifact" text="New Team" />
         </div>
       </nav>
     );
