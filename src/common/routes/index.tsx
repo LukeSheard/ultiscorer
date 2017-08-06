@@ -93,6 +93,15 @@ export default function(store: IAppStore) {
           />
         </Route>
       </Route>
+      <Route path="teams" component={Wrap}>
+        <Route
+          path="new"
+          onEnter={connect(userIsAuthenticated)}
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "/team/new" */ "../pages/team/new")
+          )}
+        />
+      </Route>
       <Route
         path="sign-out"
         getComponent={loadModule(() =>
