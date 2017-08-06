@@ -25,7 +25,7 @@ export const TeamSchema = new Schema({
     }
   ],
   location: {
-    required: true,
+    default: "",
     type: String
   },
   name: {
