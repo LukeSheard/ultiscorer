@@ -24,10 +24,7 @@ export default class HTML extends React.Component<IHTMLProps, {}> {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <style
             dangerouslySetInnerHTML={{
-              __html: `html, body, #root {
-              height: 100%;
-              width: 100%;
-            }`
+              __html: `html, body, #root { height: 100%; width: 100%; }`
             }}
           />
           {this.createStylesheet(assets.common)}

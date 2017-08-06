@@ -9,11 +9,10 @@ import getgames from "./relationships/games";
 
 const router = Router();
 
-router.use(auth);
-
 router.get("/", get);
-router.post("/", post);
-
 router.get("/:team/games", getgames);
+
+router.use(auth);
+router.post("/", post);
 
 export default router;

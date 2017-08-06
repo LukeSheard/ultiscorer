@@ -7,7 +7,9 @@ import post from "./post";
 
 const router = Router();
 
-router.get("/", auth, get);
-router.post("/", auth, post);
+router.get("/", get);
+
+router.use(auth);
+router.post("/", post);
 
 export default router;

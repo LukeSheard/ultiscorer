@@ -7,9 +7,9 @@ import NavLink from "./link";
 export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
+      <NavLink to="/tournaments/new" iconName="add" text="New Tournament" />
       <NavLink to="/game/new" iconName="plus" text="New Game" />
       <NavLink to="/account/teams" iconName="people" text="My Teams" />
-      <NavLink to="/tournaments" iconName="comparison" text="Tournaments" />
       <span className="pt-navbar-divider" />
       <NavLink to="/dashboard/account" iconName="user" text="Account" />
       <NavLink to="/sign-out" iconName="log-out" text="Log Out" />
@@ -37,6 +37,9 @@ export class Header extends React.Component<any, any> {
           </Link>
         </div>
         {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
+        <div className="pt-navbar-group pt-align-right">
+          <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
+        </div>
       </nav>
     );
   }

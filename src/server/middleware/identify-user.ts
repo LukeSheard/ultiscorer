@@ -18,7 +18,7 @@ export default function(req: Request, res: Response, next: NextFunction) {
         algorithms: ["HS256"]
       },
       (error, { user: payload }: { user: User }) => {
-        if (error) {
+        if (error || !payload) {
           res.clearCookie(config.COOKIE_NAME);
           return next(error);
         }

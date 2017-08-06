@@ -10,12 +10,17 @@ import getgames from "./relationships/games";
 
 const router = Router();
 
-router.use(auth);
-
+/*
+  Public API routes
+*/
 router.get("/", get);
-router.post("/", post);
-
 router.get("/:tournament/divisions", getdivisions);
 router.get("/:tournament/games", getgames);
+
+/*
+  Private Routes
+*/
+router.use(auth);
+router.post("/", post);
 
 export default router;

@@ -23,7 +23,7 @@ export default function(req: Request, res: Response, next: NextFunction) {
       {
         algorithms: ["HS256"]
       },
-      (error, payload: User) => {
+      (error, { user: payload }: { user: User }) => {
         if (error) {
           log(error.message);
           res.status(401);

@@ -1,5 +1,5 @@
 import { Intent } from "@blueprintjs/core";
-import { LOCATION_CHANGE } from "react-router-redux";
+import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../../api";
 import { createNotification } from "../../../reducers/notification";
@@ -24,8 +24,8 @@ export function* createTournament(action) {
         message: "Tournament Created"
       })
     );
+    yield put(push(`/tournaments/${response.data.id}`));
   } catch (e) {
-    console.error(e);
     yield put(
       createNotification({
         intent: Intent.DANGER,
