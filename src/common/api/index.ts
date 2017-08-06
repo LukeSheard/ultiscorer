@@ -1,8 +1,11 @@
+import debug from "debug";
 import { call, select } from "redux-saga/effects";
 import { IAppState } from "../reducers";
 import installPolyfills from "./polyfill";
 
 installPolyfills();
+
+const log = debug("app:api");
 
 export interface Headers {
   Accept: string;
@@ -44,7 +47,8 @@ export default function* get(endpoint: string, options?: RequestInit) {
 
   // TODO: Deal with error codes
   if (!response.ok) {
-    throw new Error(body.error || "There was an error");
+    log(body.error || "Unknown Error");
+    throw new Error(body.error || "Unknown Error");
   }
 
   return body;
