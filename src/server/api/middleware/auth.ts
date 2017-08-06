@@ -1,8 +1,8 @@
 import debug from "debug";
 import { NextFunction, Request, Response } from "express";
-import { verify } from "jsonwebtoken";
 import config from "../../../../config";
 import User from "../../models/user";
+import { decode, JWTTokenPayload } from "../../util/jwt";
 
 const log = debug("app:api:authorization");
 
@@ -17,41 +17,38 @@ export default function(req: Request, res: Response, next: NextFunction) {
       });
     }
 
-    return verify(
-      token,
-      config.COOKIE_SECRET,
-      {
-        algorithms: ["HS256"]
-      },
-      (error, { user: payload }: { user: User }) => {
-        if (error) {
-          log(error.message);
-          res.status(401);
-          return res.json({
-            error: "Unauthorized: Invalid Authorization"
-          });
+    log(`Found Token: ${token}`);
+    return decode(token)
+      .then((payload: JWTTokenPayload) => {
+        return User.findOne({
+          _id: payload.user._id,
+          email: payload.user.email
+        }).exec();
+      })
+      .then(user => {
+        if (user) {
+          if (user === null) {
+            throw Error("User Not Found");
+          }
+
+          log(user);
+
+          res.locals.user = user;
+          return next();
         }
-
-        return User.findOne({ _id: payload._id, email: payload.email })
-          .then(user => {
-            if (user === null) {
-              throw Error("User Not Found");
-            }
-
-            log(user);
-
-            res.locals.user = user;
-            return next();
-          })
-          .catch(userFindErr => {
-            log(userFindErr.message);
-            res.status(401);
-            return res.json({
-              error: "Unauthorized: Invalid Authorization"
-            });
-          });
-      }
-    );
+        return next();
+      })
+      .catch(userFindErr => {
+        res.clearCookie(config.COOKIE_NAME);
+        next(userFindErr);
+      })
+      .catch(error => {
+        log(`Error for token ${token}: ${error}`);
+        res.status(401);
+        return res.json({
+          error: "Unauthorized: Invalid Authorization"
+        });
+      });
   }
 
   res.status(401);
