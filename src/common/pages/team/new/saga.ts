@@ -1,12 +1,12 @@
 import { Intent } from "@blueprintjs/core";
+import debug from "debug";
 import { LOCATION_CHANGE } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../../api";
 import { createNotification } from "../../../reducers/notification";
-import {
-  ITeamAction,
-  TEAM_ACTION_TYPES
-} from "../../../reducers/team";
+import { ITeamAction, TEAM_ACTION_TYPES } from "../../../reducers/team";
+
+const log = debug("app:team:new:saga");
 
 export function* createTeam(action) {
   try {
@@ -25,7 +25,7 @@ export function* createTeam(action) {
       })
     );
   } catch (e) {
-    console.error(e);
+    log(e);
     yield put(
       createNotification({
         intent: Intent.DANGER,

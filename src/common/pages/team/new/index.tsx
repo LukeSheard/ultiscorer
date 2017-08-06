@@ -3,10 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
 import Input from "../../../components/form/input";
-import {
-  createTeamAction,
-  TEAM_ACTION_TYPES
-} from "../../../reducers/team";
+import { createTeamAction, TEAM_ACTION_TYPES } from "../../../reducers/team";
 import saga from "./saga";
 
 export class NewTeamPage extends React.Component<any, any> {
@@ -15,7 +12,7 @@ export class NewTeamPage extends React.Component<any, any> {
 
     return (
       <form onSubmit={handleSubmit}>
-        <Input name="name" label="Team Name" />
+        <Input name="name" label="Team Name" required />
         <Input name="location" label="Location" />
         <Button
           className={Classes.FILL}
@@ -28,9 +25,7 @@ export class NewTeamPage extends React.Component<any, any> {
   }
 }
 
-const NewTeamPageForm = reduxForm({ form: "new-team" })(
-  NewTeamPage
-);
+const NewTeamPageForm = reduxForm({ form: "new-team" })(NewTeamPage);
 
 export function mapStateToProps() {
   return {};
@@ -39,12 +34,7 @@ export function mapStateToProps() {
 export function mapDispatchToProps(dispatch) {
   return {
     onSubmit: payload =>
-      dispatch(
-        createTeamAction(
-          TEAM_ACTION_TYPES.TEAM_CREATE_REQUEST,
-          payload
-        )
-      )
+      dispatch(createTeamAction(TEAM_ACTION_TYPES.TEAM_CREATE_REQUEST, payload))
   };
 }
 

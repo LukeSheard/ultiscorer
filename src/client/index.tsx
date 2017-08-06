@@ -9,7 +9,6 @@ import createStore from "../common/store";
 import App from "./app";
 
 import * as raven from "raven-js";
-console.log(process.env.SENTRY_DSN);
 raven.config(process.env.SENTRY_DSN as string).install();
 
 const middlewares: any[] = [];

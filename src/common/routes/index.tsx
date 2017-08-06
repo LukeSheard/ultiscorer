@@ -94,6 +94,11 @@ export default function(store: IAppStore) {
         </Route>
       </Route>
       <Route path="teams" component={Wrap}>
+        <IndexRoute
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "/team" */ "../pages/team/view-all")
+          )}
+        />
         <Route
           path="new"
           onEnter={connect(userIsAuthenticated)}

@@ -15,8 +15,8 @@ export class NewTournamentPage extends React.Component<any, any> {
 
     return (
       <form onSubmit={handleSubmit}>
-        <Input name="name" label="Tournament Name" />
-        <Input name="location" label="Location" />
+        <Input name="name" label="Tournament Name" required />
+        <Input name="location" label="Location" required />
         <Button
           className={Classes.FILL}
           text="Submit"
