@@ -15,44 +15,47 @@ export class TeamsView extends React.Component<any, any> {
     }
 
     return (
-      <div
-        style={{
-          alignContent: "space-between",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly"
-        }}
-      >
-        {loading}
-        {teams.map(id => {
-          const team: Team = teamInfo[id].attributes;
-          return (
-            <div
-              className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
-              key={id}
-              style={{
-                display: "flex",
-                flexBasis: "40%",
-                flexDirection: "row",
-                flexShrink: 0,
-                justifyContent: "space-between",
-                margin: "10px 5%"
-              }}
-            >
-              <div>
-                <Link to={`teams/${id}`}>
-                  <h3>
-                    {team.name}
-                  </h3>
-                </Link>
-                <h5>
-                  {team.location}
-                </h5>
-              </div>
-            </div>
-          );
-        })}
+      <div>
+        <h1>Teams</h1>
+          <div
+            style={{
+              alignContent: "space-between",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly"
+            }}
+          >
+            {loading}
+            {teams.map(id => {
+              const team: Team = teamInfo[id].attributes;
+              return (
+                <div
+                  className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
+                  key={id}
+                  style={{
+                    display: "flex",
+                    flexBasis: "40%",
+                    flexDirection: "row",
+                    flexShrink: 0,
+                    justifyContent: "space-between",
+                    margin: "10px 5%"
+                  }}
+                >
+                  <div>
+                    <Link to={`teams/${id}`}>
+                      <h3>
+                        {team.name}
+                      </h3>
+                    </Link>
+                    <h5>
+                      {team.location}
+                    </h5>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
       </div>
     );
   }

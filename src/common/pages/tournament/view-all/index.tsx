@@ -15,54 +15,57 @@ export class TournamentsView extends React.Component<any, any> {
     }
 
     return (
-      <div
-        style={{
-          alignContent: "space-between",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly"
-        }}
-      >
-        {loading}
-        {tournaments.map(id => {
-          const tournament: Tournament = tournamentInfo[id].attributes;
-          return (
-            <div
-              className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
-              key={id}
-              style={{
-                display: "flex",
-                flexBasis: "40%",
-                flexDirection: "row",
-                flexShrink: 0,
-                justifyContent: "space-between",
-                margin: "10px 5%"
-              }}
-            >
-              <div>
-                <Link to={`tournaments/${id}`}>
-                  <h3>
-                    {tournament.name}
-                  </h3>
-                </Link>
-                <h5>
-                  {tournament.location}
-                </h5>
-              </div>
-              {(tournament.divisions || []).map(division => {
-                return (
-                  <Link
-                    key={division._id}
-                    to={`/tournaments/${id}/divisions/${division._id}`}
-                  >
-                    {division.name}
-                  </Link>
-                );
-              })}
-            </div>
-          );
-        })}
+        <div>
+          <h1>Tournaments</h1>
+          <div
+            style={{
+              alignContent: "space-between",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly"
+            }}
+          >
+            {loading}
+            {tournaments.map(id => {
+              const tournament: Tournament = tournamentInfo[id].attributes;
+              return (
+                <div
+                  className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
+                  key={id}
+                  style={{
+                    display: "flex",
+                    flexBasis: "40%",
+                    flexDirection: "row",
+                    flexShrink: 0,
+                    justifyContent: "space-between",
+                    margin: "10px 5%"
+                  }}
+                >
+                  <div>
+                    <Link to={`tournaments/${id}`}>
+                      <h3>
+                        {tournament.name}
+                      </h3>
+                    </Link>
+                    <h5>
+                      {tournament.location}
+                    </h5>
+                  </div>
+                  {(tournament.divisions || []).map(division => {
+                    return (
+                      <Link
+                        key={division._id}
+                        to={`/tournaments/${id}/divisions/${division._id}`}
+                      >
+                        {division.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
       </div>
     );
   }

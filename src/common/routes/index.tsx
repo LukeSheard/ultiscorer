@@ -96,7 +96,7 @@ export default function(store: IAppStore) {
       <Route path="teams" component={Wrap}>
         <IndexRoute
           getComponent={loadModule(() =>
-          import(/* webpackChunkName: "/team" */ "../pages/team/view-all")
+            import(/* webpackChunkName: "/team" */ "../pages/team/view-all")
           )}
         />
         <Route
