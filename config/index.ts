@@ -12,6 +12,8 @@ export interface IAppConfig {
   MONGODB_URI: string;
   NODE_ENV: NODE_ENV;
   PORT: number;
+  SENTRY_DSN: string;
+  SENTRY_PUBLIC_DSN: string;
   WEBPACK_PUBLIC_PATH: string;
 }
 
@@ -38,6 +40,12 @@ const config: IAppConfig = envalid.cleanEnv(
     PORT: envalid.num({
       desc: "The port the app should listen on",
       devDefault: 8080
+    }),
+    SENTRY_DSN: envalid.str({
+      desc: "Sentry DSN Connection"
+    }),
+    SENTRY_PUBLIC_DSN: envalid.str({
+      desc: "Sentry Front End DSN Connection"
     }),
     WEBPACK_PUBLIC_PATH: envalid.str({
       default: "/",

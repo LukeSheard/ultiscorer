@@ -1,9 +1,6 @@
 import { put } from "redux-saga/effects";
 import request from "../../../api";
-import {
-  ITeamAction,
-  TEAM_ACTION_TYPES
-} from "../../../reducers/team";
+import { ITeamAction, TEAM_ACTION_TYPES } from "../../../reducers/team";
 
 export default function*() {
   try {

@@ -2,6 +2,9 @@ import * as cookieParser from "cookie-parser";
 import "css-modules-require-hook/preset";
 import debug from "debug";
 import * as Express from "express";
+import * as querystring from "querystring";
+import * as raven from "raven";
+
 import config, { __DEV__ } from "../../config";
 import mongoose from "./models/db";
 
@@ -15,6 +18,12 @@ import webpack from "./middleware/webpack";
 const log = debug("app:server");
 
 const app: Express.Express = Express();
+
+/*
+  Config
+*/
+raven.config(config.SENTRY_DSN).install();
+app.use(raven.requestHandler());
 
 /*
   Static Files including hot middleware in development
@@ -38,6 +47,27 @@ app.use(cookieParser(config.COOKIE_SECRET));
 app.use(initStore);
 app.use(identifyUser);
 app.get("*", render);
+
+/**
+ * Error Handlers
+ */
+app.use(raven.errorHandler());
+app.use(
+  (
+    error: Error,
+    _: Express.Request,
+    res: Express.Response,
+    __: Express.NextFunction
+  ) => {
+    log("Error occurred: %s", error.message);
+    res.status(500);
+    return res.redirect(
+      `/error${querystring.stringify({
+        sentry: (res as any).sentry
+      })}`
+    );
+  }
+);
 
 interface IMongooseOptions extends mongoose.ConnectionOptions {
   useMongoClient: boolean;

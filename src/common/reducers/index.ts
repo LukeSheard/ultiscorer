@@ -1,25 +1,25 @@
-import { routerReducer } from "react-router-redux";
+import { routerReducer, RouterState } from "react-router-redux";
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
+import { FormReducer, reducer as formReducer } from "redux-form";
 import notifications, { INotificationState } from "./notification";
+import team, { ITeamState } from "./team";
 import tournament, { ITournamentState } from "./tournament";
 import user, { IUserState } from "./user";
-import team, { ITeamState } from "./team";
 
 export interface IAppState {
-  form?: typeof formReducer;
-  notifications?: INotificationState;
-  routing?: typeof routerReducer;
-  tournament?: ITournamentState;
-  user?: IUserState;
+  form: FormReducer;
+  notifications: INotificationState;
+  routing: RouterState;
+  tournament: ITournamentState;
   team?: ITeamState;
+  user: IUserState;
 }
 
 export default combineReducers<IAppState>({
   form: formReducer,
   notifications,
   routing: routerReducer,
+  team,
   tournament,
-  user,
-  team
+  user
 });

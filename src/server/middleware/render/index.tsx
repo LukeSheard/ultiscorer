@@ -60,6 +60,6 @@ export default function render(
       return res.end();
     }
 
-    return res.status(500).send("internal error");
+    return next("Unknown Error Occurred");
   });
 }

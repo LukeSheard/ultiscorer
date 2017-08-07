@@ -8,7 +8,11 @@ export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
       <NavLink to="/tournaments/new" iconName="add" text="New Tournament" />
-      <NavLink to="/teams/new" iconName="pt-icon-add-to-artifact" text="New Team" />
+      <NavLink
+        to="/teams/new"
+        iconName="pt-icon-add-to-artifact"
+        text="New Team"
+      />
       <NavLink to="/game/new" iconName="plus" text="New Game" />
       <NavLink to="/teams" iconName="people" text="Teams" />
       <span className="pt-navbar-divider" />

@@ -9,6 +9,3 @@ deploy:
     repo: LukeSheard/ultiscorer
     branch: master
 
-
-install: echo "install"
-script: echo "test"
