@@ -30,9 +30,14 @@
       "command": "npm start"
     }
   },
+  "lint-staged": {
+    "*.ts": ["npm run test:format", "npm run test:lint", "git add"],
+    "*.tsx": ["npm run test:format", "npm run test:lint", "git add"]
+  },
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "webpack -p --env=production",
+    "precommit": "lint-staged",
     "start": "ts-node --disableWarnings --fast src/server",
     "start:dev": "better-npm-run start:dev",
     "start:prod": "better-npm-run start:prod",
@@ -119,7 +124,9 @@
     "@types/webpack": "^3.0.1",
     "@types/webpack-dev-middleware": "^1.9.1",
     "babel-jest": "^20.0.3",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.3",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3",
     "ts-jest": "^20.0.7",
