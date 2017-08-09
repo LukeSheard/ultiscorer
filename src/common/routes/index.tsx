@@ -35,8 +35,6 @@ export default function(store: IAppStore) {
   const connect = createConnect(store);
   const loadModule = createLoadModule(store);
 
-  const getBlank = loadModule(() => import("./blank"));
-
   return (
     <Route
       path="/"
@@ -44,8 +42,12 @@ export default function(store: IAppStore) {
         import(/* webpackChunkName: "/-container" */ "../pages/app")
       )}
     >
+      <IndexRoute
+        getComponent={loadModule(() =>
+          import(/* webpackChunkName: "/" */ "../pages/home")
+        )}
+      />
       <Route onEnter={connect(userIsNotAuthenticated)}>
-        <IndexRoute getComponent={getBlank} />
         <Route
           path="sign-in"
           getComponent={loadModule(() =>

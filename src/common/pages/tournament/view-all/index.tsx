@@ -1,10 +1,11 @@
-import { Button, Classes, Intent } from "@blueprintjs/core";
+import { Button, Classes, Intent, Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 import Tournament from "../../../../server/models/tournament";
 import { IAppState } from "../../../reducers";
 import saga from "./saga";
+const style = require("./style.css");
 
 export class TournamentsView extends React.Component<any, any> {
   public render() {
@@ -16,62 +17,50 @@ export class TournamentsView extends React.Component<any, any> {
 
     return (
       <div>
-        <Link to="tournaments/new">
-          <Button
-            style={{
-              float: "right"
-            }}
-            intent={Intent.PRIMARY}
-            text="Create Tournament"
-          />
-        </Link>
-        <h1>Tournaments</h1>
-        <div
-          style={{
-            alignContent: "space-between",
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-evenly"
-          }}
-        >
+        <div className={style.row}>
+          <h1 className={style.title}>Tournaments</h1>
+          <Link to="tournaments/new">
+            <Button
+              className={Classes.FILL}
+              intent={Intent.PRIMARY}
+              text="Create Tournament"
+            />
+          </Link>
+        </div>
+        <div className={style.tournamentView}>
           {loading}
           {tournaments.map(id => {
             const tournament: Tournament = tournamentInfo[id].attributes;
             return (
-              <div
-                className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
+              <Link
                 key={id}
-                style={{
-                  display: "flex",
-                  flexBasis: "40%",
-                  flexDirection: "row",
-                  flexShrink: 0,
-                  justifyContent: "space-between",
-                  margin: "10px 5%"
-                }}
+                className={style.tournament}
+                to={`tournaments/${id}`}
               >
-                <div>
-                  <Link to={`tournaments/${id}`}>
+                <div
+                  className={`${style.card} ${Classes.CARD} ${Classes.INTERACTIVE}`}
+                  key={id}
+                >
+                  <div>
                     <h3>
                       {tournament.name}
                     </h3>
-                  </Link>
-                  <h5>
-                    {tournament.location}
-                  </h5>
+
+                    <h5>
+                      {tournament.location}
+                    </h5>
+                  </div>
+                  {tournament.divisions.length
+                    ? <div className={style.divisions}>
+                        {(tournament.divisions || []).map((division, index) =>
+                          <Tag key={index}>
+                            {division.name}
+                          </Tag>
+                        )}
+                      </div>
+                    : null}
                 </div>
-                {(tournament.divisions || []).map(division => {
-                  return (
-                    <Link
-                      key={division._id}
-                      to={`/tournaments/${id}/divisions/${division._id}`}
-                    >
-                      {division.name}
-                    </Link>
-                  );
-                })}
-              </div>
+              </Link>
             );
           })}
         </div>
