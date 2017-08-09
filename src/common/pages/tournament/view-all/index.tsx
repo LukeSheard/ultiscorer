@@ -46,11 +46,15 @@ export class TournamentsView extends React.Component<any, any> {
                       {tournament.location}
                     </h5>
                   </div>
-                  {(tournament.divisions || []).map(division =>
-                    <Tag>
-                      {division.name}
-                    </Tag>
-                  )}
+                  {tournament.divisions.length
+                    ? <div className={style.divisions}>
+                        {(tournament.divisions || []).map((division, index) =>
+                          <Tag key={index}>
+                            {division.name}
+                          </Tag>
+                        )}
+                      </div>
+                    : null}
                 </div>
               </Link>
             );

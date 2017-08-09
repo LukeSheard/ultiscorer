@@ -36,3 +36,7 @@
     margin: 10px 3%;
   }
 }
+
+.divisions > * {
+  margin-right: 5px;
+}

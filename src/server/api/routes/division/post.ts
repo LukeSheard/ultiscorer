@@ -3,9 +3,10 @@ import Division from "../../../models/division";
 import Tournament from "../../../models/tournament";
 
 export default function(req: Request, res: Response) {
-  const { name, tournament: tournamentId, teams } = req.body;
+  const { gender, name, tournament: tournamentId, teams } = req.body;
 
   const division = new Division({
+    gender,
     name,
     teams
   });
@@ -18,11 +19,15 @@ export default function(req: Request, res: Response) {
       return tournament;
     })
     .then(tournament => {
-      tournament.divisions.push(division);
+      tournament.divisions.push(division._id);
 
-      return [tournament.save(), division.save()];
+      return tournament.save();
     })
     .then(() => {
+      return division.save();
+    })
+    .then(args => {
+      console.log(args);
       return res.json({
         data: {
           attributes: division,
