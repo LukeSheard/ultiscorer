@@ -1,4 +1,4 @@
-import { Classes } from "@blueprintjs/core";
+import { Classes, Button, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -16,6 +16,15 @@ export class TeamsView extends React.Component<any, any> {
 
     return (
       <div>
+      <Link to="teams/new">
+          <Button
+          style={{
+            float: "right"
+          }}
+            intent={Intent.PRIMARY}
+            text="Create Team"
+          />
+      </Link>
         <h1>Teams</h1>
           <div
             style={{
