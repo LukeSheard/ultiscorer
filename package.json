@@ -31,8 +31,16 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["npm run test:format", "npm run test:lint", "git add"],
-    "*.tsx": ["npm run test:format", "npm run test:lint", "git add"]
+    "*.ts": [
+      "npm run test:format",
+      "npm run test:lint",
+      "git add"
+    ],
+    "*.tsx": [
+      "npm run test:format",
+      "npm run test:lint",
+      "git add"
+    ]
   },
   "scripts": {
     "prebuild": "rm -rf build",

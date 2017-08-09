@@ -32,7 +32,11 @@ export class TournamentsView extends React.Component<any, any> {
           {tournaments.map(id => {
             const tournament: Tournament = tournamentInfo[id].attributes;
             return (
-              <Link className={style.tournament} to={`tournaments/${id}`}>
+              <Link
+                key={id}
+                className={style.tournament}
+                to={`tournaments/${id}`}
+              >
                 <div
                   className={`${style.card} ${Classes.CARD} ${Classes.INTERACTIVE}`}
                   key={id}
