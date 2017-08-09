@@ -1,4 +1,4 @@
-import { Classes, Button, Intent } from "@blueprintjs/core";
+import { Button, Classes, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -16,55 +16,55 @@ export class TeamsView extends React.Component<any, any> {
 
     return (
       <div>
-      <Link to="teams/new">
+        <Link to="teams/new">
           <Button
-          style={{
-            float: "right"
-          }}
+            style={{
+              float: "right"
+            }}
             intent={Intent.PRIMARY}
             text="Create Team"
           />
-      </Link>
+        </Link>
         <h1>Teams</h1>
-          <div
-            style={{
-              alignContent: "space-between",
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly"
-            }}
-          >
-            {loading}
-            {teams.map(id => {
-              const team: Team = teamInfo[id].attributes;
-              return (
-                <div
-                  className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
-                  key={id}
-                  style={{
-                    display: "flex",
-                    flexBasis: "40%",
-                    flexDirection: "row",
-                    flexShrink: 0,
-                    justifyContent: "space-between",
-                    margin: "10px 5%"
-                  }}
-                >
-                  <div>
-                    <Link to={`teams/${id}`}>
-                      <h3>
-                        {team.name}
-                      </h3>
-                    </Link>
-                    <h5>
-                      {team.location}
-                    </h5>
-                  </div>
+        <div
+          style={{
+            alignContent: "space-between",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-evenly"
+          }}
+        >
+          {loading}
+          {teams.map(id => {
+            const team: Team = teamInfo[id].attributes;
+            return (
+              <div
+                className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
+                key={id}
+                style={{
+                  display: "flex",
+                  flexBasis: "40%",
+                  flexDirection: "row",
+                  flexShrink: 0,
+                  justifyContent: "space-between",
+                  margin: "10px 5%"
+                }}
+              >
+                <div>
+                  <Link to={`teams/${id}`}>
+                    <h3>
+                      {team.name}
+                    </h3>
+                  </Link>
+                  <h5>
+                    {team.location}
+                  </h5>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { Classes, Button, Intent } from "@blueprintjs/core";
+import { Button, Classes, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -15,66 +15,66 @@ export class TournamentsView extends React.Component<any, any> {
     }
 
     return (
-        <div>
-          <Link to="tournaments/new">
-              <Button
-              style={{
-                float: "right"
-              }}
-                intent={Intent.PRIMARY}
-                text="Create Tournament"
-              />
-          </Link>
-          <h1>Tournaments</h1>
-          <div
+      <div>
+        <Link to="tournaments/new">
+          <Button
             style={{
-              alignContent: "space-between",
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly"
+              float: "right"
             }}
-          >
-            {loading}
-            {tournaments.map(id => {
-              const tournament: Tournament = tournamentInfo[id].attributes;
-              return (
-                <div
-                  className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
-                  key={id}
-                  style={{
-                    display: "flex",
-                    flexBasis: "40%",
-                    flexDirection: "row",
-                    flexShrink: 0,
-                    justifyContent: "space-between",
-                    margin: "10px 5%"
-                  }}
-                >
-                  <div>
-                    <Link to={`tournaments/${id}`}>
-                      <h3>
-                        {tournament.name}
-                      </h3>
-                    </Link>
-                    <h5>
-                      {tournament.location}
-                    </h5>
-                  </div>
-                  {(tournament.divisions || []).map(division => {
-                    return (
-                      <Link
-                        key={division._id}
-                        to={`/tournaments/${id}/divisions/${division._id}`}
-                      >
-                        {division.name}
-                      </Link>
-                    );
-                  })}
+            intent={Intent.PRIMARY}
+            text="Create Tournament"
+          />
+        </Link>
+        <h1>Tournaments</h1>
+        <div
+          style={{
+            alignContent: "space-between",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-evenly"
+          }}
+        >
+          {loading}
+          {tournaments.map(id => {
+            const tournament: Tournament = tournamentInfo[id].attributes;
+            return (
+              <div
+                className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
+                key={id}
+                style={{
+                  display: "flex",
+                  flexBasis: "40%",
+                  flexDirection: "row",
+                  flexShrink: 0,
+                  justifyContent: "space-between",
+                  margin: "10px 5%"
+                }}
+              >
+                <div>
+                  <Link to={`tournaments/${id}`}>
+                    <h3>
+                      {tournament.name}
+                    </h3>
+                  </Link>
+                  <h5>
+                    {tournament.location}
+                  </h5>
                 </div>
-              );
-            })}
-          </div>
+                {(tournament.divisions || []).map(division => {
+                  return (
+                    <Link
+                      key={division._id}
+                      to={`/tournaments/${id}/divisions/${division._id}`}
+                    >
+                      {division.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
