@@ -6,9 +6,21 @@ export interface DivisionSchema {
   teams: Team[];
 }
 
+export enum Genders {
+  Mens = "Mens",
+  Womens = "Womens",
+  Open = "Open",
+  Mixed = "Mixed"
+}
+
 export default interface Division extends DivisionSchema, Document {};
 
 export const DivisionSchema = new Schema({
+  gender: {
+    enum: Object.values(Genders),
+    required: true,
+    type: String
+  },
   name: {
     required: true,
     type: String

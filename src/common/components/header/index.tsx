@@ -3,16 +3,16 @@ import { connect } from "react-redux";
 import { Link } from "react-router";
 import { IAppState } from "../../reducers";
 import NavLink from "./link";
+import UserMenu from "./user";
 
 export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
       <NavLink to="/game/new" iconName="plus" text="New Game" />
-        <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
+      <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
       <NavLink to="/teams" iconName="people" text="Teams" />
       <span className="pt-navbar-divider" />
-      <NavLink to="/dashboard/account" iconName="user" text="Account" />
-      <NavLink to="/sign-out" iconName="log-out" text="Log Out" />
+      <UserMenu />
     </div>
   );
 }

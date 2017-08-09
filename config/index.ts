@@ -33,7 +33,7 @@ const config: IAppConfig = envalid.cleanEnv(
       devDefault: "mongodb://localhost/ultiscorer"
     }),
     NODE_ENV: envalid.str({
-      choices: [NODE_ENV.DEVELOPMENT, NODE_ENV.PRODUCTION],
+      choices: Object.values(NODE_ENV),
       default: NODE_ENV.DEVELOPMENT,
       desc: "App enviroment"
     }),

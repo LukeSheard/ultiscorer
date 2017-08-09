@@ -73,29 +73,31 @@ interface IMongooseOptions extends mongoose.ConnectionOptions {
   useMongoClient: boolean;
 }
 
-webpack.waitUntilValid(() => {
-  /*
-    Webpack Middleware
-    NOTE: In Production we close the middleware to stop looking for updates.
-  */
-  if (!__DEV__) {
-    webpack.close();
-  }
-  mongoose
-    .connect(
-      config.MONGODB_URI,
-      {
-        useMongoClient: true
-      } as IMongooseOptions
-    )
-    .then(() => {
-      log("Connected to database");
-      app.listen(config.PORT, () => {
-        log("Server started");
+mongoose
+  .connect(
+    config.MONGODB_URI,
+    {
+      useMongoClient: true
+    } as IMongooseOptions
+  )
+  .then(() => {
+    log("Connected to database");
+    app.listen(config.PORT, () => {
+      log("Server started");
+
+      return webpack.waitUntilValid(() => {
+        /*
+            Webpack Middleware
+            NOTE: In Production we close the middleware to stop looking for updates.
+          */
+        if (!__DEV__) {
+          log("Closing webpack listener");
+          webpack.close();
+        }
       });
-    })
-    .catch(mongooseErr => {
-      log(mongooseErr);
-      process.exit(1);
     });
-});
+  })
+  .catch(mongooseErr => {
+    log(mongooseErr);
+    process.exit(1);
+  });
