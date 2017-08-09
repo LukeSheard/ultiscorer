@@ -26,8 +26,7 @@ export default function(req: Request, res: Response) {
     .then(() => {
       return division.save();
     })
-    .then(args => {
-      console.log(args);
+    .then(() => {
       return res.json({
         data: {
           attributes: division,
