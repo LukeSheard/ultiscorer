@@ -12,6 +12,10 @@ export interface TournamentSchema {
 export default interface Tournament extends TournamentSchema, Document {};
 
 export const TournamentSchema = new Schema({
+  description: {
+    default: "",
+    type: String
+  },
   divisions: [
     {
       ref: "Division",

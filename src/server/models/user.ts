@@ -28,6 +28,10 @@ export const UserSchema = new Schema({
     required: true,
     select: false,
     type: String
+  },
+  ukuusername: {
+    default: "",
+    type: String
   }
 });
 
