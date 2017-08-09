@@ -12,6 +12,7 @@ export class NewTeamPage extends React.Component<any, any> {
 
     return (
       <form onSubmit={handleSubmit}>
+        <h1>Create Team</h1>
         <Input name="name" label="Team Name" required />
         <Input name="location" label="Location" />
         <Button
