@@ -6,7 +6,7 @@ import request from "../../../api";
 import { createNotification } from "../../../reducers/notification";
 import { ITeamAction, TEAM_ACTION_TYPES } from "../../../reducers/team";
 
-const log = debug("app:team:new:saga");
+const log = debug("app:pages:team:new:saga");
 
 export function* createTeam(action) {
   try {

@@ -3,21 +3,14 @@ import { connect } from "react-redux";
 import { Link } from "react-router";
 import { IAppState } from "../../reducers";
 import NavLink from "./link";
+import UserMenu from "./user";
 
 export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
-      <NavLink to="/tournaments/new" iconName="add" text="New Tournament" />
-      <NavLink
-        to="/teams/new"
-        iconName="pt-icon-add-to-artifact"
-        text="New Team"
-      />
       <NavLink to="/game/new" iconName="plus" text="New Game" />
-      <NavLink to="/teams" iconName="people" text="Teams" />
       <span className="pt-navbar-divider" />
-      <NavLink to="/dashboard/account" iconName="user" text="Account" />
-      <NavLink to="/sign-out" iconName="log-out" text="Log Out" />
+      <UserMenu />
     </div>
   );
 }
@@ -44,6 +37,7 @@ export class Header extends React.Component<any, any> {
         {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
         <div className="pt-navbar-group pt-align-right">
           <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
+          <NavLink to="/teams" iconName="people" text="Teams" />
         </div>
       </nav>
     );

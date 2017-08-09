@@ -1,9 +1,12 @@
 import { Intent } from "@blueprintjs/core";
+import debug from "debug";
 import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../api";
 import { NOTIFICATION_ACTION_TYPES } from "../../reducers/notification";
 import { USER_ACTION_TYPES } from "../../reducers/user";
+
+const log = debug("app:pages:app:saga");
 
 export function* logoutUser() {
   try {
@@ -16,6 +19,7 @@ export function* logoutUser() {
       type: NOTIFICATION_ACTION_TYPES.CREATE
     });
   } catch (e) {
+    log("Error %s", e);
     yield put({
       payload: {
         intent: Intent.DANGER,

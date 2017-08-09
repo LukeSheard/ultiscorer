@@ -7,7 +7,7 @@ import request from "../../api";
 import { createNotification } from "../../reducers/notification";
 import { USER_ACTION_TYPES } from "../../reducers/user";
 
-const log = debug("app:login:saga");
+const log = debug("app:pages:login:saga");
 
 export function* loginUser(action) {
   try {
@@ -36,7 +36,7 @@ export function* loginUser(action) {
 
     return yield put(push(redirect));
   } catch (e) {
-    log(e);
+    log("Error %s", e);
     yield put(
       createNotification({
         intent: Intent.DANGER,

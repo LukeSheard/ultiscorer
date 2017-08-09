@@ -1,10 +1,13 @@
 import { Intent } from "@blueprintjs/core";
+import debug from "debug";
 import * as get from "lodash.get";
 import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, select, take, takeLatest } from "redux-saga/effects";
 import request from "../../api";
 import { createNotification } from "../../reducers/notification";
 import { USER_ACTION_TYPES } from "../../reducers/user";
+
+const log = debug("app:pages:sign-up:saga");
 
 export function* loginUser(action) {
   try {
@@ -26,6 +29,7 @@ export function* loginUser(action) {
 
     return yield put(push(redirect));
   } catch (e) {
+    log("Error %s", e);
     yield put(
       createNotification({
         intent: Intent.DANGER,

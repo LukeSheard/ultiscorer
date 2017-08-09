@@ -1,4 +1,5 @@
 import { Intent } from "@blueprintjs/core";
+import debug from "debug";
 import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../../api";
@@ -7,6 +8,8 @@ import {
   ITournamentAction,
   TOURNAMENT_ACTION_TYPES
 } from "../../../reducers/tournament";
+
+const log = debug("app:pages:tournament:new:saga");
 
 export function* createTournament(action) {
   try {
@@ -26,6 +29,7 @@ export function* createTournament(action) {
     );
     yield put(push(`/tournaments/${response.data.id}`));
   } catch (e) {
+    log("Error %s", e);
     yield put(
       createNotification({
         intent: Intent.DANGER,
