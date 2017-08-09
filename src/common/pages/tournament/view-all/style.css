@@ -1,0 +1,38 @@
+.tournamentView {
+  align-items: stretch;
+  align-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tournament {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.card {
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .tournament {
+    width: 47.5%;
+  }
+  .tournament:nth-child(odd) {
+    margin-right: 2.5%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .tournament {
+    width: 30%;
+  }
+  .tournament:nth-child(3n + 2) {
+    margin: 10px 3%;
+  }
+}

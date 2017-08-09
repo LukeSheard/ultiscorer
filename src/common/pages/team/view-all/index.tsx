@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import Team from "../../../../server/models/team";
 import { IAppState } from "../../../reducers";
 import saga from "./saga";
+const style = require("./style.css");
 
 export class TeamsView extends React.Component<any, any> {
   public render() {
@@ -16,52 +17,37 @@ export class TeamsView extends React.Component<any, any> {
 
     return (
       <div>
-        <Link to="teams/new">
-          <Button
-            style={{
-              float: "right"
-            }}
-            intent={Intent.PRIMARY}
-            text="Create Team"
-          />
-        </Link>
-        <h1>Teams</h1>
-        <div
-          style={{
-            alignContent: "space-between",
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-evenly"
-          }}
-        >
+        <div className={style.row}>
+          <h1 className={style.title}>Tournaments</h1>
+          <Link to="teams/new">
+            <Button
+              className={Classes.FILL}
+              intent={Intent.PRIMARY}
+              text="Create Team"
+            />
+          </Link>
+        </div>
+        <div className={style.teamView}>
           {loading}
           {teams.map(id => {
             const team: Team = teamInfo[id].attributes;
             return (
-              <div
-                className={`${Classes.CARD} ${Classes.INTERACTIVE}`}
-                key={id}
-                style={{
-                  display: "flex",
-                  flexBasis: "40%",
-                  flexDirection: "row",
-                  flexShrink: 0,
-                  justifyContent: "space-between",
-                  margin: "10px 5%"
-                }}
-              >
-                <div>
-                  <Link to={`teams/${id}`}>
+              <Link className={style.team} to={`teams/${id}`}>
+                <div
+                  className={`${style.card} ${Classes.CARD} ${Classes.INTERACTIVE}`}
+                  key={id}
+                >
+                  <div>
                     <h3>
                       {team.name}
                     </h3>
-                  </Link>
-                  <h5>
-                    {team.location}
-                  </h5>
+
+                    <h5>
+                      {team.location}
+                    </h5>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
