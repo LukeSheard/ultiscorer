@@ -11,6 +11,7 @@ import division from "./routes/division";
 import game from "./routes/game";
 import team from "./routes/team";
 import tournament from "./routes/tournament";
+import user from "./routes/user";
 
 const app = Express();
 
@@ -24,6 +25,7 @@ app.use("/division", division);
 app.use("/game", game);
 app.use("/team", team);
 app.use("/tournament", tournament);
+app.use("/user", user);
 
 app.use(error);
 

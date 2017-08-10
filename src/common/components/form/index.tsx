@@ -1,4 +1,4 @@
-import { Button, Intent } from "@blueprintjs/core";
+import { Button, Classes, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
@@ -7,17 +7,45 @@ import { IAppState } from "../../reducers";
 const style = require("./form.css");
 
 interface RawFormProps extends React.Props<RawForm> {
+  errors: object;
   handleSubmit: (values) => any;
   loading: boolean;
   label: string;
+  valid: boolean;
+}
+
+export function Errors(errors) {
+  return (
+    <div
+      className={`${Classes.CALLOUT} ${Classes.INTENT_DANGER} ${style.error}`}
+    >
+      <h5>Error</h5>
+      {Object.values(errors).map((error, index) => {
+        return (
+          <p key={index}>
+            {error}
+          </p>
+        );
+      })}
+    </div>
+  );
 }
 
 export class RawForm extends React.Component<RawFormProps, {}> {
   public render() {
-    const { children, handleSubmit, loading, label } = this.props;
+    const {
+      children,
+      errors,
+      handleSubmit,
+      loading,
+      label,
+      valid
+    } = this.props;
+
     return (
       <form className={style.form} onSubmit={handleSubmit}>
         {children}
+        {valid ? null : <Errors {...errors} />}
         <Button
           className="pt-fill"
           type="submit"
@@ -47,7 +75,12 @@ export function createWrappedForm<FormData>(name, action) {
     form: name
   })(RawForm);
 
-  return connect(() => ({}), createMapDispatchToProps(action))(form as any);
+  return connect(
+    (state: IAppState) => ({
+      errors: (state.form[name] && state.form[name].syncErrors) || void 0
+    }),
+    createMapDispatchToProps(action)
+  )(form as any);
 }
 
 interface FormWrappedProps<FormData>
@@ -56,6 +89,7 @@ interface FormWrappedProps<FormData>
   submit?: string;
   action: any;
   name: string;
+  initialValues?: Partial<FormData>;
 }
 
 export default class FormWrapper<FormData> extends React.Component<

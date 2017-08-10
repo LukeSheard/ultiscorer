@@ -2,10 +2,10 @@ import * as bcrypt from "bcrypt";
 import { Document, model, Schema } from "mongoose";
 
 export interface UserSchema {
-  confirmed: boolean;
   email: string;
   name: string;
   password: string;
+  ukuusername: string;
 }
 
 export default interface User extends UserSchema, Document {
@@ -27,33 +27,16 @@ export const UserSchema = new Schema({
   password: {
     required: true,
     select: false,
-    type: String
+    type: String,
+    set(value) {
+      const salt = bcrypt.genSaltSync(10);
+      return bcrypt.hashSync(value, salt);
+    }
   },
   ukuusername: {
     default: "",
     type: String
   }
-});
-
-UserSchema.pre("save", function(next) {
-  if (!this.isModified("password")) {
-    return next();
-  }
-
-  bcrypt.genSalt(10, (saltErr, salt) => {
-    if (saltErr) {
-      return next(saltErr);
-    }
-
-    bcrypt.hash(this.password, salt, (hashErr, hash) => {
-      if (hashErr) {
-        return next(hashErr);
-      }
-
-      this.password = hash;
-      next();
-    });
-  });
 });
 
 UserSchema.methods.comparePassword = function(password) {
