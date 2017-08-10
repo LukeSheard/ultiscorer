@@ -26,16 +26,12 @@ export class AccountPage extends React.Component<any, any> {
         <Input name="name" type="text" label="Name" required />
         <Input name="email" type="email" label="Email" required />
         <Input name="ukuusername" type="text" label="UKU Username" />
+        <Input name="password" type="password" label="Password" />
         <Input
-          name="password"
-          type="password"
-          label="Password"
-          validate={this.validatePassword}
-        />
-        <Input
-          name="confirm_password"
+          name="password_confirm"
           type="password"
           label="Password (Confirm)"
+          validate={this.validatePassword}
         />
       </Form>
     );
@@ -43,9 +39,9 @@ export class AccountPage extends React.Component<any, any> {
 
   private validatePassword(_, values) {
     if (
-      (values.password && values.confirm_password === void 0) ||
-      (values.password === void 0 && values.confirm_password) ||
-      values.password !== values.confirm_password
+      (values.password && values.password_confirm === void 0) ||
+      (values.password === void 0 && values.password_confirm) ||
+      values.password !== values.password_confirm
     ) {
       return "Passwords do not match";
     }

@@ -23,11 +23,24 @@ export class LoginForm extends React.Component<any, any> {
         <Input
           name="password_confirm"
           type="password"
-          label="Confirm Password"
+          label="Password (Confirm)"
+          validate={this.validatePassword}
           required
         />
       </Form>
     );
+  }
+
+  private validatePassword(_, values) {
+    if (
+      (values.password && values.confirm_password === void 0) ||
+      (values.password === void 0 && values.confirm_password) ||
+      values.password !== values.confirm_password
+    ) {
+      return "Passwords do not match";
+    }
+
+    return void 0;
   }
 }
 

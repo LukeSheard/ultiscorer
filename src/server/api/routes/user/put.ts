@@ -8,7 +8,7 @@ export default function(req: Request, res: Response) {
         throw Error("User doesnt exist");
       }
 
-      const { name, confirm_password, password, ukuusername } = req.body;
+      const { name, password_confirm, password, ukuusername } = req.body;
 
       if (name) {
         user.name = name;
@@ -18,7 +18,7 @@ export default function(req: Request, res: Response) {
         user.ukuusername = ukuusername;
       }
 
-      if (password && password === confirm_password) {
+      if (password && password === password_confirm) {
         user.password = password;
       }
 
