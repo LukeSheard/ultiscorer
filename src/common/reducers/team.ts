@@ -31,7 +31,7 @@ export function createTeamAction(
 }
 
 export const INITIAL_STATE = {
-  loading: true,
+  loading: false,
   teams: {}
 };
 

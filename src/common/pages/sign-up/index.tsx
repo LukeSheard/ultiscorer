@@ -1,16 +1,40 @@
+export { default as saga } from "./saga";
+
 import * as React from "react";
-import SignUpForm from "../../components/forms/sign-up";
-import saga from "./saga";
-const style = require("./style.css");
+import { connect } from "react-redux";
+import Form from "../../components/form";
+import Input from "../../components/form/input";
+import { IAppState } from "../../reducers";
+import { USER_ACTION_TYPES } from "../../reducers/user";
 
-export default class SignUpPage extends React.Component<any, any> {
-  public static saga = saga;
-
+export class LoginForm extends React.Component<any, any> {
   public render() {
+    const { loading } = this.props;
     return (
-      <div className={style.login_page}>
-        <SignUpForm />
-      </div>
+      <Form
+        name="sign-up"
+        loading={loading}
+        action={USER_ACTION_TYPES.SIGNUP_REQUEST}
+      >
+        <h2>Sign Up</h2>
+        <Input name="name" type="text" label="Name" required />
+        <Input name="email" type="email" label="Email" required />
+        <Input name="password" type="password" label="Password" required />
+        <Input
+          name="password_confirm"
+          type="password"
+          label="Confirm Password"
+          required
+        />
+      </Form>
     );
   }
 }
+
+export function mapStateToProps(state: IAppState) {
+  return {
+    loading: state.user && state.user.loading
+  };
+}
+
+export default connect(mapStateToProps)(LoginForm);

@@ -4,9 +4,9 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { IAppState } from "../../../reducers";
 
-export class TournamentsView extends React.Component<any, any> {
+export class TeamsView extends React.Component<any, any> {
   public render() {
-    const { children, loading, tournament } = this.props;
+    const { children, loading, team } = this.props;
 
     if (loading) {
       return <div>Loading</div>;
@@ -14,10 +14,10 @@ export class TournamentsView extends React.Component<any, any> {
     return (
       <div>
         <h1>
-          {tournament && tournament.name}
+          {team && team.name}
         </h1>
         <h3>
-          {tournament && tournament.location}
+          {team && team.location}
         </h3>
         <div>
           {children}
@@ -29,14 +29,13 @@ export class TournamentsView extends React.Component<any, any> {
 
 export default connect((state: IAppState) => {
   const props: any = {
-    loading: state.tournament && state.tournament.loading
+    loading: state.team && state.team.loading
   };
 
-  const current = state.tournament && state.tournament.selected;
+  const current = state.team && state.team.selected;
   if (current) {
-    props.tournament =
-      state.tournament && state.tournament.tournaments[current].attributes;
+    props.team = state.team && state.team.teams[current].attributes;
   }
 
   return props;
-})(TournamentsView);
+})(TeamsView);

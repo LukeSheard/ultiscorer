@@ -11,7 +11,7 @@ export interface IAppState {
   notifications: INotificationState;
   routing: RouterState;
   tournament: ITournamentState;
-  team?: ITeamState;
+  team: ITeamState;
   user: IUserState;
 }
 

@@ -3,10 +3,20 @@ import { IAppStore } from "../store";
 
 const log = debug("app:routing");
 
+type Saga = () => Iterator<any>;
+
 export function createInjectors(store: IAppStore) {
   return {
-    injectSaga: (saga: () => Iterator<any>, state?: any) =>
-      store.runSaga(saga, state)
+    injectSaga: (saga: Saga | undefined, state?: any) => {
+      if (saga !== undefined) {
+        log("Injecting saga for route");
+        try {
+          store.runSaga(saga as Saga, state);
+        } catch (e) {
+          log("Component Saga error", e);
+        }
+      }
+    }
   };
 }
 
@@ -19,15 +29,9 @@ export function createLoadModule(store: IAppStore) {
           log(error);
           cb("Error fetching rescource");
         })
-        .then(({ default: mod }) => {
-          if (mod.saga) {
-            log("Injecting saga for route");
-            try {
-              injectSaga(mod.saga, state);
-            } catch (e) {
-              log("Saga error", e);
-            }
-          }
+        .then(({ default: mod, saga }) => {
+          injectSaga(mod.saga, state);
+          injectSaga(saga, state);
 
           return cb(null, mod);
         })

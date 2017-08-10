@@ -1,63 +1,33 @@
-import { Button, Classes, Intent } from "@blueprintjs/core";
+export { default as saga } from "./saga";
+
 import * as React from "react";
 import { connect } from "react-redux";
-import { reduxForm } from "redux-form";
+import Form from "../../../components/form";
 import Input from "../../../components/form/input";
-import {
-  createTournamentAction,
-  TOURNAMENT_ACTION_TYPES
-} from "../../../reducers/tournament";
-import saga from "./saga";
+import { IAppState } from "../../../reducers";
+import { TOURNAMENT_ACTION_TYPES } from "../../../reducers/tournament";
 
 export class NewTournamentPage extends React.Component<any, any> {
   public render() {
-    const { handleSubmit } = this.props;
-
+    const { loading } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
+      <Form
+        name="new-tournament"
+        loading={loading}
+        action={TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_REQUEST}
+      >
         <h1>Create Tournament</h1>
         <Input name="name" label="Tournament Name" required />
         <Input name="location" label="Location" required />
-        <Button
-          className={Classes.FILL}
-          text="Submit"
-          type="submit"
-          intent={Intent.PRIMARY}
-        />
-      </form>
+      </Form>
     );
   }
 }
 
-const NewTournamentPageForm = reduxForm({ form: "new-tournament" })(
-  NewTournamentPage
-);
-
-export function mapStateToProps() {
-  return {};
-}
-
-export function mapDispatchToProps(dispatch) {
+export function mapStateToProps(state: IAppState) {
   return {
-    onSubmit: payload =>
-      dispatch(
-        createTournamentAction(
-          TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_REQUEST,
-          payload
-        )
-      )
+    loading: state.user && state.user.loading
   };
 }
 
-export const NewTournamentPageFormConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NewTournamentPageForm);
-
-export default class extends React.Component<any, any> {
-  public static saga = saga;
-
-  public render() {
-    return <NewTournamentPageFormConnect />;
-  }
-}
+export default connect(mapStateToProps)(NewTournamentPage);
