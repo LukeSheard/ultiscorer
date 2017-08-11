@@ -7,25 +7,31 @@ import Input from "../../components/form/input";
 import { IAppState } from "../../reducers";
 import { USER_ACTION_TYPES } from "../../reducers/user";
 
-export class LoginForm extends React.Component<any, any> {
+export class AccountPage extends React.Component<any, any> {
+  constructor(props, ctx) {
+    super(props, ctx);
+    this.validatePassword = this.validatePassword.bind(this);
+  }
+
   public render() {
-    const { loading } = this.props;
+    const { initialValues, loading } = this.props;
     return (
       <Form
-        name="sign-up"
+        initialValues={initialValues}
+        name="new-tournament"
         loading={loading}
-        action={USER_ACTION_TYPES.SIGNUP_REQUEST}
+        action={USER_ACTION_TYPES.UPDATE_REQUEST}
       >
-        <h2>Sign Up</h2>
+        <h1>Create Tournament</h1>
         <Input name="name" type="text" label="Name" required />
         <Input name="email" type="email" label="Email" required />
-        <Input name="password" type="password" label="Password" required />
+        <Input name="ukuusername" type="text" label="UKU Username" />
+        <Input name="password" type="password" label="Password" />
         <Input
           name="password_confirm"
           type="password"
           label="Password (Confirm)"
           validate={this.validatePassword}
-          required
         />
       </Form>
     );
@@ -33,9 +39,9 @@ export class LoginForm extends React.Component<any, any> {
 
   private validatePassword(_, values) {
     if (
-      (values.password && values.confirm_password === void 0) ||
-      (values.password === void 0 && values.confirm_password) ||
-      values.password !== values.confirm_password
+      (values.password && values.password_confirm === void 0) ||
+      (values.password === void 0 && values.password_confirm) ||
+      values.password !== values.password_confirm
     ) {
       return "Passwords do not match";
     }
@@ -46,8 +52,9 @@ export class LoginForm extends React.Component<any, any> {
 
 export function mapStateToProps(state: IAppState) {
   return {
-    loading: state.user && state.user.loading
+    initialValues: state.user.user,
+    loading: state.user.loading
   };
 }
 
-export default connect(mapStateToProps)(LoginForm);
+export default connect(mapStateToProps)(AccountPage);

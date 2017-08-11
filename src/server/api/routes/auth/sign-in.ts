@@ -18,12 +18,11 @@ export default function(req: Request, res: Response) {
       return user.comparePassword(password);
     })
     .then(user => {
+      const userPayload = user.toObject();
+      delete (userPayload as User).password;
+
       const payload = {
-        user: {
-          _id: user._id,
-          email: user.email,
-          name: user.name
-        }
+        user: userPayload
       };
       const token = jwt.sign(payload, config.COOKIE_SECRET, {
         expiresIn: "12h"
@@ -35,7 +34,8 @@ export default function(req: Request, res: Response) {
       });
 
       return res.json({
-        token
+        token,
+        user: userPayload
       });
     })
     .catch((error: Error) => {

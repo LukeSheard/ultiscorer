@@ -1,53 +1,33 @@
-import { Button, Classes, Intent } from "@blueprintjs/core";
+export { default as saga } from "./saga";
+
 import * as React from "react";
 import { connect } from "react-redux";
-import { reduxForm } from "redux-form";
+import Form from "../../../components/form";
 import Input from "../../../components/form/input";
-import { createTeamAction, TEAM_ACTION_TYPES } from "../../../reducers/team";
-import saga from "./saga";
+import { IAppState } from "../../../reducers";
+import { TEAM_ACTION_TYPES } from "../../../reducers/team";
 
 export class NewTeamPage extends React.Component<any, any> {
   public render() {
-    const { handleSubmit } = this.props;
-
+    const { loading } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
+      <Form
+        name="new-tournament"
+        loading={loading}
+        action={TEAM_ACTION_TYPES.TEAM_CREATE_REQUEST}
+      >
         <h1>Create Team</h1>
         <Input name="name" label="Team Name" required />
         <Input name="location" label="Location" />
-        <Button
-          className={Classes.FILL}
-          text="Submit"
-          type="submit"
-          intent={Intent.PRIMARY}
-        />
-      </form>
+      </Form>
     );
   }
 }
 
-const NewTeamPageForm = reduxForm({ form: "new-team" })(NewTeamPage);
-
-export function mapStateToProps() {
-  return {};
-}
-
-export function mapDispatchToProps(dispatch) {
+export function mapStateToProps(state: IAppState) {
   return {
-    onSubmit: payload =>
-      dispatch(createTeamAction(TEAM_ACTION_TYPES.TEAM_CREATE_REQUEST, payload))
+    loading: state.team.loading
   };
 }
 
-export const NewTeamPageFormConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NewTeamPageForm);
-
-export default class extends React.Component<any, any> {
-  public static saga = saga;
-
-  public render() {
-    return <NewTeamPageFormConnect />;
-  }
-}
+export default connect(mapStateToProps)(NewTeamPage);

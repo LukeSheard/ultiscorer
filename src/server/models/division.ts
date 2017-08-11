@@ -7,6 +7,8 @@ export interface DivisionSchema {
 }
 
 export enum Genders {
+  Boys = "Boys",
+  Girls = "Girls",
   Mens = "Mens",
   Womens = "Womens",
   Open = "Open",

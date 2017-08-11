@@ -3,10 +3,11 @@ import Tournament from "../../../models/tournament";
 import User from "../../../models/user";
 
 export default function(req: Request, res: Response) {
-  const { name, location } = req.body;
+  const { name, location, description } = req.body;
   const { user } = res.locals;
 
   const document = new Tournament({
+    description,
     location,
     name,
     owner: (user as User).id

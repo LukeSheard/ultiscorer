@@ -1,6 +1,6 @@
 import { Intent } from "@blueprintjs/core";
 import debug from "debug";
-import { LOCATION_CHANGE } from "react-router-redux";
+import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../../api";
 import { createNotification } from "../../../reducers/notification";
@@ -24,6 +24,7 @@ export function* createTeam(action) {
         message: "Team Created"
       })
     );
+    yield put(push(`/teams/${response.data.id}`));
   } catch (e) {
     log(e);
     yield put(

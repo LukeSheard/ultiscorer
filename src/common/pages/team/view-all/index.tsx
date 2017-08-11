@@ -18,7 +18,7 @@ export class TeamsView extends React.Component<any, any> {
     return (
       <div>
         <div className={style.row}>
-          <h1 className={style.title}>Tournaments</h1>
+          <h1 className={style.title}>Teams</h1>
           <Link to="teams/new">
             <Button
               className={Classes.FILL}

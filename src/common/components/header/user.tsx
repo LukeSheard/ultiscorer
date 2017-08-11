@@ -2,28 +2,11 @@ import {
   Button,
   Menu,
   MenuDivider,
-  MenuItem,
   Popover,
   Position
 } from "@blueprintjs/core";
 import * as React from "react";
-import { Link } from "react-router";
-
-export function MenuLink({
-  to,
-  iconName,
-  text
-}: {
-  to: string;
-  iconName: string;
-  text: string;
-}) {
-  return (
-    <Link to={to}>
-      <MenuItem iconName={iconName} text={text} />
-    </Link>
-  );
-}
+import MenuLink from "./menu-link";
 
 export default class UserMenu extends React.Component<{}, {}> {
   public render() {

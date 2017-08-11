@@ -29,9 +29,11 @@ export default function(req: Request, res: Response) {
       }).save();
     })
     .then(user => {
+      const userPayload = user.toObject();
+      delete (userPayload as User).password;
+
       const payload = {
-        _id: user._id,
-        email: user.email
+        user: userPayload
       };
       const token = jwt.sign(payload, config.COOKIE_SECRET, {
         expiresIn: "12h"
@@ -43,7 +45,8 @@ export default function(req: Request, res: Response) {
       });
 
       return res.json({
-        token
+        token,
+        user: userPayload
       });
     })
     .catch((error: Error) => {

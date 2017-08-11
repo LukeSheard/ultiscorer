@@ -1,27 +1,30 @@
 import * as React from "react";
-import { Field, WrappedFieldInputProps } from "redux-form";
+import { Field, WrappedFieldProps } from "redux-form";
 
-interface IFormInputProps {
+interface IFormInputProps extends React.Props<Field> {
   disabled?: boolean;
   label: string;
   name: string;
   required?: boolean;
   type?: string;
+  validate?: any;
 }
 
-interface WrappedInputProps extends IFormInputProps {
-  input: WrappedFieldInputProps;
+interface WrappedInputProps<S> extends WrappedFieldProps<S> {
+  disabled: boolean;
+  label: string;
+  name: string;
+  type: string;
+  required: boolean;
 }
 
 export default class WrappedInput extends React.Component<IFormInputProps, {}> {
   public render() {
-    return (
-      <Field component={Input} props={this.props} name={this.props.name} />
-    );
+    return <Field {...this.props} component={Input} props={this.props} />;
   }
 }
 
-export class Input extends React.Component<WrappedInputProps, {}> {
+export class Input<S> extends React.Component<WrappedInputProps<S>, {}> {
   public static defaultProps = {
     disabled: false,
     name: "",
