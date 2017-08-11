@@ -33,9 +33,9 @@ export class LoginForm extends React.Component<any, any> {
 
   private validatePassword(_, values) {
     if (
-      (values.password && values.confirm_password === void 0) ||
-      (values.password === void 0 && values.confirm_password) ||
-      values.password !== values.confirm_password
+      (values.password && values.password_confirm === void 0) ||
+      (values.password === void 0 && values.password_confirm) ||
+      values.password !== values.password_confirm
     ) {
       return "Passwords do not match";
     }

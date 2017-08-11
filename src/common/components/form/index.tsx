@@ -12,6 +12,7 @@ interface RawFormProps extends React.Props<RawForm> {
   loading: boolean;
   label: string;
   valid: boolean;
+  invalid: boolean;
 }
 
 export function Errors(errors) {
@@ -37,6 +38,7 @@ export class RawForm extends React.Component<RawFormProps, {}> {
       children,
       errors,
       handleSubmit,
+      invalid,
       loading,
       label,
       valid
@@ -52,6 +54,7 @@ export class RawForm extends React.Component<RawFormProps, {}> {
           text={label}
           loading={loading}
           intent={Intent.PRIMARY}
+          disabled={invalid}
         />
       </form>
     );
