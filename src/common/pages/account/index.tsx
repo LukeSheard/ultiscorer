@@ -22,7 +22,7 @@ export class AccountPage extends React.Component<any, any> {
         loading={loading}
         action={USER_ACTION_TYPES.UPDATE_REQUEST}
       >
-        <h1>Create Tournament</h1>
+        <h1>Edit Account</h1>
         <Input name="name" type="text" label="Name" required />
         <Input name="email" type="email" label="Email" required />
         <Input name="ukuusername" type="text" label="UKU Username" />
