@@ -24,11 +24,16 @@ export const TournamentSchema = new Schema({
       type: Schema.Types.ObjectId
     }
   ],
+  endDate: {
+    index: true,
+    type: Date
+  },
   location: {
     required: true,
     type: String
   },
   name: {
+    index: true,
     required: true,
     type: String
   },
@@ -36,6 +41,10 @@ export const TournamentSchema = new Schema({
     ref: "User",
     required: true,
     type: Schema.Types.ObjectId
+  },
+  startDate: {
+    index: true,
+    type: Date
   }
 });
 

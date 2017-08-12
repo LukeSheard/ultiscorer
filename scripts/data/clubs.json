@@ -1,0 +1,515 @@
+[
+  {
+    "_id": {
+      "$oid": "598f59b9f027f669767b6a25"
+    },
+    "name": "Bad Skid",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "name": "Brighton",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b9174e48fbae29f6ff"
+    },
+    "name": "Chevron Action Flash",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b96081bab2d6d7409b"
+    },
+    "name": "Clapham",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "name": "Devon",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b9e622f5908df7da1c"
+    },
+    "name": "EDI",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b98b237e620ade6e1a"
+    },
+    "name": "EMO",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b97ef330aee0105791"
+    },
+    "name": "Fire of London",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b940e101c378b3b795"
+    },
+    "name": "Flump",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b99f9f02b9077fbd3a"
+    },
+    "name": "Glasgow",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b97ea89ff25c54be80"
+    },
+    "name": "Ka-Pow!",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b9a102a38169c6715d"
+    },
+    "name": "Manchester",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b9e5073c71b233abae"
+    },
+    "name": "Reading",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f59b9921fed479776e19f"
+    },
+    "name": "Smog",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1be2f27578e7b9294"
+    },
+    "name": "GB U24",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d11b0274d33aa48483"
+    },
+    "name": "LLLeeds",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d17b658ca95d6bf57b"
+    },
+    "name": "Cambridge",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1a4ac0a5b476409cf"
+    },
+    "name": "JR",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "name": "Bristol",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d17474e05d2f3912e2"
+    },
+    "name": "Birmingham",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d158da21f8ee922c0e"
+    },
+    "name": "Gravity",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1b576f52f614e6816"
+    },
+    "name": "Vision",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d11b1ff2d2cae77028"
+    },
+    "name": "Ireland U24",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d106a45ad0f50a587f"
+    },
+    "name": "BAF",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "name": "Cloud City",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d14b27fda31d681be5"
+    },
+    "name": "Helix",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f65d1ca6ca04bf0c6d59f"
+    },
+    "name": "Camden",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bd6ff27be8917f62e"
+    },
+    "name": "Flyght Club",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b71a1355e82f0ccc0"
+    },
+    "name": "Leamington Lemmings",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b0210a90b44821c6b"
+    },
+    "name": "Ballincollig",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b3053b8fb148f2795"
+    },
+    "name": "Reading 2",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b962ac905fb0826cb"
+    },
+    "name": "Glasgow 2",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "name": "Black Sheep",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698ba2b70324ef454f19"
+    },
+    "name": "Fluid",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bf607ad7ae1068821"
+    },
+    "name": "The Brown",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698be999086d0c1a6178"
+    },
+    "name": "Brixton",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698ba48dc597930d03f8"
+    },
+    "name": "Mythago",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b6f1ccdd63d498db7"
+    },
+    "name": "Red",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bcba85aa6b02f9957"
+    },
+    "name": "Concrete",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b3eabe9782f5b7877"
+    },
+    "name": "Double Helix",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b552f114569c446cf"
+    },
+    "name": "Purple Cobras",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bc1ef17b878258a06"
+    },
+    "name": "Plymouth Ultimate",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b716d4928bca44a68"
+    },
+    "name": "YOpen",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698bf5982b2b85fe5c8b"
+    },
+    "name": "Horsham",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f698b8312ff8b07c2194a"
+    },
+    "name": "Kent",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a3be3d5abcbdd51427"
+    },
+    "name": "Iceni",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a35a42572ba84d8d23"
+    },
+    "name": "SYC",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a39900249091c04b3a"
+    },
+    "name": "Nice Bristols",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a3b52aadeb1011f0ba"
+    },
+    "name": "Swift",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a3fd85f41a3add28c8"
+    },
+    "name": "Hydra",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a332dce0cea4c315c5"
+    },
+    "name": "GBU24",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a30a816ef5af63d58c"
+    },
+    "name": "Chaos",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a3e4b751817d9f7d3e"
+    },
+    "name": "Crown Jewels",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a3ca22097d8bc6576f"
+    },
+    "name": "Uprising",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a332b40bd2c46cfc90"
+    },
+    "name": "Vurve",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a333adf4d862d2ec91"
+    },
+    "name": "Liverpool",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "598f70a33c85fa11e24e0496"
+    },
+    "name": "Discie Chicks",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  }
+]

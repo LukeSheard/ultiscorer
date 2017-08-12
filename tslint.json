@@ -11,7 +11,8 @@
     "no-empty": false,
     "jsx-boolean-value": false,
     "interface-name": [false],
-    "max-classes-per-file": false
+    "max-classes-per-file": [false],
+    "no-bitwise": false
   },
   "rulesDirectory": []
 }

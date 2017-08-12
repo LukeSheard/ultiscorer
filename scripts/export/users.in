@@ -1,0 +1,20 @@
+[
+  {
+    "_id": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "created": {
+      "$date": "2017-08-12T13:49:27.744Z"
+    },
+    "updated": {
+      "$date": "2017-08-12T13:49:27.744Z"
+    },
+    "email": "me@lukesheard.com",
+    "name": "Luke Sheard",
+    "password": "$2a$10$fBE2.kSKp7wI5lhMVO94t.RdfhEssJdJm6XooPBw4NZPicjn0ALb.",
+    "ukuusername": "",
+    "__v": 0,
+    "__collection": "users",
+    "__label": "Luke Sheard"
+  }
+]

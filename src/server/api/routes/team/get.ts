@@ -5,7 +5,6 @@ export default function(req: Request, res: Response) {
   const { expand = [], ...query } = req.query;
 
   return Team.find(query)
-    .populate(expand.join(" "))
     .then(teams => {
       return res.json({
         data: teams.map(team => ({

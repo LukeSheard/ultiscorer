@@ -35,10 +35,11 @@ export const UserSchema = new Schema({
     }
   },
   ukuusername: {
-    default: "",
-    index: true,
-    type: String,
-    unique: true
+    index: {
+      sparse: true,
+      unique: true
+    },
+    type: String
   }
 });
 

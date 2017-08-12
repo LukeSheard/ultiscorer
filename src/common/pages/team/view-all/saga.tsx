@@ -7,7 +7,7 @@ const log = debug("app:pages:team:view-all:saga");
 
 export default function*() {
   try {
-    const response = yield request("/team?expand[]=divisions");
+    const response = yield request("/team");
     yield put<ITeamAction>({
       payload: {
         teams: response.data // TODO: Change API API

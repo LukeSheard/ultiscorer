@@ -1,5 +1,6 @@
 import { Document, Schema } from "mongoose";
 import { model } from "./db";
+import { Genders } from "./division";
 import User from "./user";
 
 interface NumberList {
@@ -7,26 +8,17 @@ interface NumberList {
 }
 
 interface TeamSchema {
-  captains: User[];
-  location: string;
   name: string;
   numbers: NumberList;
-  owner: User;
   players: User[];
 }
 
 export default interface Team extends TeamSchema, Document {};
 
 export const TeamSchema = new Schema({
-  captains: [
-    {
-      index: true,
-      ref: "User",
-      type: Schema.Types.ObjectId
-    }
-  ],
-  location: {
-    default: "",
+  gender: {
+    enum: Object.values(Genders),
+    required: true,
     type: String
   },
   name: {
@@ -36,12 +28,6 @@ export const TeamSchema = new Schema({
   numbers: {
     default: {},
     type: Object
-  },
-  owner: {
-    index: true,
-    ref: "User",
-    required: true,
-    type: Schema.Types.ObjectId
   },
   players: [
     {

@@ -1,11 +1,7 @@
 import { Document, Schema } from "mongoose";
 import { model } from "./db";
 import Team from "./team";
-
-export interface DivisionSchema {
-  name: string;
-  teams: Team[];
-}
+import Tournament from "./tournament";
 
 export enum Genders {
   Boys = "Boys",
@@ -14,6 +10,13 @@ export enum Genders {
   Womens = "Womens",
   Open = "Open",
   Mixed = "Mixed"
+}
+
+export interface DivisionSchema {
+  gender: Genders;
+  name: string;
+  teams: Team[];
+  tournament: Tournament;
 }
 
 export default interface Division extends DivisionSchema, Document {};
@@ -33,7 +36,11 @@ export const DivisionSchema = new Schema({
       ref: "Team",
       type: Schema.Types.ObjectId
     }
-  ]
+  ],
+  tournament: {
+    ref: "Tournament",
+    type: Schema.Types.ObjectId
+  }
 });
 
 export default model<Division>("Division", DivisionSchema);
