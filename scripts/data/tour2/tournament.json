@@ -15,7 +15,12 @@
     "endDate": {
       "$date": "2017-08-01T22:59:59.999Z"
     },
-    "divisions": []
+    "divisions": [
+      { "$oid": "598f7b8bcb1433da20a38c84" },
+      { "$oid": "598f7b8bcba57489148c1c70" },
+      { "$oid": "598f7b8b87f0a74abec6d769" },
+      { "$oid": "598f7b8bb4121ac6a4bf4bcb" }
+    ]
   },
   {
     "name": "UKU Open & Womens Tour 2 North 2017",
@@ -33,6 +38,6 @@
     "endDate": {
       "$date": "2017-08-01T22:59:59.999Z"
     },
-    "divisions": []
+    "divisions": [{ "$oid": "598f7bac175a9062c5075a70" }]
   }
 ]

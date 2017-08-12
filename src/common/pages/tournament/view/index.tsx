@@ -2,7 +2,13 @@ export { default as saga } from "./saga";
 
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router";
+import Tournament from "../../../../server/models/tournament";
 import { IAppState } from "../../../reducers";
+
+export interface ITournamentViewProps {
+  tournament?: Tournament;
+}
 
 export class TournamentsView extends React.Component<any, any> {
   public render() {
@@ -19,6 +25,19 @@ export class TournamentsView extends React.Component<any, any> {
         <h3>
           {tournament && tournament.location}
         </h3>
+        {tournament &&
+          tournament.divisions.map(division => {
+            return (
+              <Link
+                to={`/tournament/${tournament._id}/${division._id}`}
+                key={division._id}
+              >
+                <h4>
+                  {division.name}
+                </h4>
+              </Link>
+            );
+          })}
         <div>
           {children}
         </div>

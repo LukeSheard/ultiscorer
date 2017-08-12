@@ -80,16 +80,16 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/new")
           )}
         />
-        <Route
-          path=":id"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
-          )}
-        >
-          <Route
-            path="divisions/:division"
+        <Route path=":id" component={Wrap}>
+          <IndexRoute
             getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/divisions")
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
+            )}
+          />
+          <Route
+            path=":division"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/divisions")
             )}
           />
         </Route>

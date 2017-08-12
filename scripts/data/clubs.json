@@ -127,15 +127,6 @@
   },
   {
     "_id": {
-      "$oid": "598f65d1be2f27578e7b9294"
-    },
-    "name": "GB U24",
-    "owner": {
-      "$oid": "598f07679a5d6fdee4ae8bcd"
-    }
-  },
-  {
-    "_id": {
       "$oid": "598f65d11b0274d33aa48483"
     },
     "name": "LLLeeds",
@@ -508,42 +499,6 @@
       "$oid": "598f70a33c85fa11e24e0496"
     },
     "name": "Discie Chicks",
-    "owner": {
-      "$oid": "598f07679a5d6fdee4ae8bcd"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "598f7d3e35b61604a6fbf5a6"
-    },
-    "name": "JRX",
-    "owner": {
-      "$oid": "598f07679a5d6fdee4ae8bcd"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "598f7d3eccb6894bac4babd7"
-    },
-    "name": "Red Leicester",
-    "owner": {
-      "$oid": "598f07679a5d6fdee4ae8bcd"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "598f7d3e6742de9ba15274cc"
-    },
-    "name": "GB U20",
-    "owner": {
-      "$oid": "598f07679a5d6fdee4ae8bcd"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "598f7d3e9535467162e83fd9"
-    },
-    "name": "Irish Junior",
     "owner": {
       "$oid": "598f07679a5d6fdee4ae8bcd"
     }

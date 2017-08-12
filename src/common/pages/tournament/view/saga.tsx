@@ -7,7 +7,9 @@ import {
 
 export default function*({ params }) {
   try {
-    const response = yield request(`/tournament?_id=${params.id}`);
+    const response = yield request(
+      `/tournament?_id=${params.id}&expand[]=divisions`
+    );
     yield put<ITournamentAction>({
       payload: {
         selected: params.id,

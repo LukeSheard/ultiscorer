@@ -5,7 +5,7 @@
     },
     "name": "GB U24 Men 1",
     "club": {
-      "$oid": "598f65d1be2f27578e7b9294"
+      "$oid": "598f70a332dce0cea4c315c5"
     },
     "gender": "Mens"
   },
@@ -15,7 +15,7 @@
     },
     "name": "GB U24 Men 2",
     "club": {
-      "$oid": "598f65d1be2f27578e7b9294"
+      "$oid": "598f70a332dce0cea4c315c5"
     },
     "gender": "Mens"
   },

@@ -8,6 +8,7 @@ interface NumberList {
 }
 
 interface TeamSchema {
+  gender: string;
   name: string;
   numbers: NumberList;
   players: User[];

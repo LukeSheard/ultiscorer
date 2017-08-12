@@ -47,9 +47,8 @@ export class TeamsView extends React.Component<any, any> {
                     <h3>
                       {team.name}
                     </h3>
-
                     <h5>
-                      {team.location}
+                      {team.gender}
                     </h5>
                   </div>
                 </div>

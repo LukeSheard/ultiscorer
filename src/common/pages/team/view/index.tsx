@@ -2,7 +2,13 @@ export { default as saga } from "./saga";
 
 import * as React from "react";
 import { connect } from "react-redux";
+import Team from "../../../../server/models/team";
 import { IAppState } from "../../../reducers";
+
+export interface ITeamViewProps extends React.Props<TeamsView> {
+  team?: Team;
+  loading: boolean;
+}
 
 export class TeamsView extends React.Component<any, any> {
   public render() {
@@ -17,7 +23,7 @@ export class TeamsView extends React.Component<any, any> {
           {team && team.name}
         </h1>
         <h3>
-          {team && team.location}
+          {team && team.gender}
         </h3>
         <div>
           {children}
@@ -28,13 +34,13 @@ export class TeamsView extends React.Component<any, any> {
 }
 
 export default connect((state: IAppState) => {
-  const props: any = {
+  const props: ITeamViewProps = {
     loading: state.team && state.team.loading
   };
 
-  const current = state.team && state.team.selected;
+  const current = state.team.selected;
   if (current) {
-    props.team = state.team && state.team.teams[current].attributes;
+    props.team = state.team.teams[current].attributes;
   }
 
   return props;

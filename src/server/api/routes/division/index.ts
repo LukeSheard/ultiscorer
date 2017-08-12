@@ -8,6 +8,7 @@ import post from "./post";
 const router = Router();
 
 router.get("/", get);
+router.get("/:division/relationships/team", get);
 
 router.use(auth);
 router.post("/", post);
