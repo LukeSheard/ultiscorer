@@ -1,9 +1,11 @@
 import * as path from "path";
+import { Genders } from "../../src/server/models/division";
 
 /**
  * PUT THE NEW FILE NAME HERE
  */
-const FILE_NAME = "tour1/teams-a-men";
+const FILE_NAME = "tour2/teams-a-s-men";
+export const GENDER = Genders.Mens;
 
 const BASE_PATH = path.join(__dirname, "../");
 export const FILE_PATH = path.join(BASE_PATH, FILE_NAME + ".json");

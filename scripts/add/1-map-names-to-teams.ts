@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import { FILE_PATH, ObjectId } from "./0-settings";
+import { FILE_PATH, GENDER, ObjectId } from "./0-settings";
 
 const list = String(fs.readdirSync(FILE_PATH)).split("\n");
 
@@ -10,6 +10,7 @@ const teams = list.map(team => {
       $oid: ObjectId()
     },
     club: team,
+    gender: GENDER,
     name: team
   };
 });
