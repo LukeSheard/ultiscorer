@@ -31,5 +31,45 @@
     ],
     "__collection": "tournaments",
     "__label": "UKU Nottingham WindFarm 2017"
+  },
+  {
+    "_id": {
+      "$oid": "598f7b50fed4fbdc501ba57d"
+    },
+    "name": "UKU Open & Womens Tour 2 South 2017",
+    "location": "Cardiff",
+    "description": "UKU Tour 2 South will be held at Cardiff.",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "startDate": {
+      "$date": "2017-07-31T23:00:00.000Z"
+    },
+    "endDate": {
+      "$date": "2017-08-01T22:59:59.999Z"
+    },
+    "divisions": [],
+    "__collection": "tournaments",
+    "__label": "UKU Open & Womens Tour 2 South 2017"
+  },
+  {
+    "_id": {
+      "$oid": "598f7b2daeffd32ff8bc4d98"
+    },
+    "name": "UKU Open & Womens Tour 2 North 2017",
+    "location": "Cardiff",
+    "description": "UKU Tour 2 B-Tour North will be held at Salford Sports Village in the North-West of England.",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "startDate": {
+      "$date": "2017-07-31T23:00:00.000Z"
+    },
+    "endDate": {
+      "$date": "2017-08-01T22:59:59.999Z"
+    },
+    "divisions": [],
+    "__collection": "tournaments",
+    "__label": "UKU Open & Womens Tour 2 North 2017"
   }
 ]

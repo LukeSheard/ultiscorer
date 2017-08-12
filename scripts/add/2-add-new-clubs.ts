@@ -1,6 +1,5 @@
 import * as fs from "fs";
-import * as path from "path";
-import { CLUB_PATH, FILE_PATH, ObjectId } from "./0-settings";
+import { CLUB_PATH, FILE_PATH, ObjectId } from "./settings";
 
 const teams = require(FILE_PATH);
 const clubs = require(CLUB_PATH);

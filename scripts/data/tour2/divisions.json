@@ -1,0 +1,88 @@
+[
+  {
+    "gender": "Mens",
+    "name": "A Tour",
+    "tournament": {
+      "$oid": "598f7b50fed4fbdc501ba57d"
+    },
+    "_id": {
+      "$oid": "598f7b8bcb1433da20a38c84"
+    },
+    "teams": [
+      { "$oid": "598f7743b3d5ac61de0d2714" },
+      { "$oid": "598f77431537ac48d5694c2e" },
+      { "$oid": "598f7743bd56e76c582bd27e" },
+      { "$oid": "598f7743e0740cf93c040014" },
+      { "$oid": "598f7743831e5b364a04daed" },
+      { "$oid": "598f7743b2f5f0fadc5cc217" },
+      { "$oid": "598f77436ac7d3dc44caba03" },
+      { "$oid": "598f7743c535bfbd6810c4b5" },
+      { "$oid": "598f77438373bcd9036c5703" },
+      { "$oid": "598f77436042f07573cf38b7" },
+      { "$oid": "598f7743ce82f8b8578565ed" },
+      { "$oid": "598f7743b092566d1e0d759f" },
+      { "$oid": "598f7743101e384bb8e2e8ab" },
+      { "$oid": "598f7743d2aefb770be385e4" },
+      { "$oid": "598f77434b27b358a8a888d0" },
+      { "$oid": "598f7743a2933d31d9e7bac6" }
+    ]
+  },
+  {
+    "gender": "Mens",
+    "name": "B Tour",
+    "tournament": {
+      "$oid": "598f7b50fed4fbdc501ba57d"
+    },
+    "_id": {
+      "$oid": "598f7b8bcba57489148c1c70"
+    },
+    "teams": [
+      { "$oid": "598f7d1f7438572447c9c13e" },
+      { "$oid": "598f7d1fa39e9867670dceb5" },
+      { "$oid": "598f7d1f81fc7b6a893e6a96" },
+      { "$oid": "598f7d1f4d822e9ce04479cb" },
+      { "$oid": "598f7d1f715eb970d46551a3" },
+      { "$oid": "598f7d1f2489ead13423c4ab" },
+      { "$oid": "598f7d1f25491cd95f3451a2" },
+      { "$oid": "598f7d1f05bdd86eb4342eb5" },
+      { "$oid": "598f7d1f5176dcc0cb70ac16" },
+      { "$oid": "598f7d1f76fa2d509bf1c8d0" },
+      { "$oid": "598f7d3ece69c08753b3c9f4" },
+      { "$oid": "598f7d1f698a56ef8f9556ab" },
+      { "$oid": "598f7d1f9c2a6602eab7ea0c" },
+      { "$oid": "598f7d1f44c982bfa5f32976" },
+      { "$oid": "598f7d1fe2e6dd22d35eb8b6" },
+      { "$oid": "598f7d1fdf8c3e99a7db5bf2" }
+    ]
+  },
+  {
+    "gender": "Mens",
+    "name": "C Tour",
+    "tournament": {
+      "$oid": "598f7b50fed4fbdc501ba57d"
+    },
+    "_id": {
+      "$oid": "598f7b8b87f0a74abec6d769"
+    }
+  },
+  {
+    "gender": "Womens",
+    "name": "Womens",
+    "tournament": {
+      "$oid": "598f7b50fed4fbdc501ba57d"
+    },
+    "_id": {
+      "$oid": "598f7b8bb4121ac6a4bf4bcb"
+    }
+  },
+  {
+    "gender": "Mens",
+    "name": "A Tour",
+    "tournament": {
+      "$oid": "598f7b2daeffd32ff8bc4d98"
+    },
+    "_id": {
+      "$oid": "598f7bac175a9062c5075a70"
+    }
+  }
+]

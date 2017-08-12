@@ -994,5 +994,389 @@
     "gender": "Womens",
     "__collection": "teams",
     "__label": "Reading 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743b3d5ac61de0d2714"
+    },
+    "club": {
+      "$oid": "598f59b96081bab2d6d7409b"
+    },
+    "gender": "Mens",
+    "name": "Clapham A",
+    "__collection": "teams",
+    "__label": "Clapham A"
+  },
+  {
+    "_id": {
+      "$oid": "598f77431537ac48d5694c2e"
+    },
+    "club": {
+      "$oid": "598f59b98b237e620ade6e1a"
+    },
+    "gender": "Mens",
+    "name": "EMO 1",
+    "__collection": "teams",
+    "__label": "EMO 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743bd56e76c582bd27e"
+    },
+    "club": {
+      "$oid": "598f59b9e5073c71b233abae"
+    },
+    "gender": "Mens",
+    "name": "Reading 1",
+    "__collection": "teams",
+    "__label": "Reading 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743e0740cf93c040014"
+    },
+    "club": {
+      "$oid": "598f59b96081bab2d6d7409b"
+    },
+    "gender": "Mens",
+    "name": "Clapham 1",
+    "__collection": "teams",
+    "__label": "Clapham 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743831e5b364a04daed"
+    },
+    "club": {
+      "$oid": "598f59b99f9f02b9077fbd3a"
+    },
+    "gender": "Mens",
+    "name": "Glasgow",
+    "__collection": "teams",
+    "__label": "Glasgow"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743b2f5f0fadc5cc217"
+    },
+    "club": {
+      "$oid": "598f59b9174e48fbae29f6ff"
+    },
+    "gender": "Mens",
+    "name": "Chevron Action Flash",
+    "__collection": "teams",
+    "__label": "Chevron Action Flash"
+  },
+  {
+    "_id": {
+      "$oid": "598f77436ac7d3dc44caba03"
+    },
+    "club": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "gender": "Mens",
+    "name": "Devon 1",
+    "__collection": "teams",
+    "__label": "Devon 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743c535bfbd6810c4b5"
+    },
+    "club": {
+      "$oid": "598f65d11b1ff2d2cae77028"
+    },
+    "gender": "Mens",
+    "name": "Ireland Under-24 Men",
+    "__collection": "teams",
+    "__label": "Ireland Under-24 Men"
+  },
+  {
+    "_id": {
+      "$oid": "598f77438373bcd9036c5703"
+    },
+    "club": {
+      "$oid": "598f59b97ef330aee0105791"
+    },
+    "gender": "Mens",
+    "name": "Fire of London 1",
+    "__collection": "teams",
+    "__label": "Fire of London 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f77436042f07573cf38b7"
+    },
+    "club": {
+      "$oid": "598f59b9a102a38169c6715d"
+    },
+    "gender": "Mens",
+    "name": "Manchester 1",
+    "__collection": "teams",
+    "__label": "Manchester 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743ce82f8b8578565ed"
+    },
+    "club": {
+      "$oid": "598f65d1be2f27578e7b9294"
+    },
+    "gender": "Mens",
+    "name": "GB U24 Darwin",
+    "__collection": "teams",
+    "__label": "GB U24 Darwin"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743b092566d1e0d759f"
+    },
+    "club": {
+      "$oid": "598f65d1be2f27578e7b9294"
+    },
+    "gender": "Mens",
+    "name": "GB U24 Brisbane",
+    "__collection": "teams",
+    "__label": "GB U24 Brisbane"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743101e384bb8e2e8ab"
+    },
+    "club": {
+      "$oid": "598f59b9921fed479776e19f"
+    },
+    "gender": "Mens",
+    "name": "SMOG",
+    "__collection": "teams",
+    "__label": "SMOG"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743d2aefb770be385e4"
+    },
+    "club": {
+      "$oid": "598f59b940e101c378b3b795"
+    },
+    "gender": "Mens",
+    "name": "Flump",
+    "__collection": "teams",
+    "__label": "Flump"
+  },
+  {
+    "_id": {
+      "$oid": "598f77434b27b358a8a888d0"
+    },
+    "club": {
+      "$oid": "598f59b97ea89ff25c54be80"
+    },
+    "gender": "Mens",
+    "name": "Ka-Pow!",
+    "__collection": "teams",
+    "__label": "Ka-Pow!"
+  },
+  {
+    "_id": {
+      "$oid": "598f7743a2933d31d9e7bac6"
+    },
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Mens",
+    "name": "Brighton City",
+    "__collection": "teams",
+    "__label": "Brighton City"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f7438572447c9c13e"
+    },
+    "club": {
+      "$oid": "598f65d106a45ad0f50a587f"
+    },
+    "gender": "Mens",
+    "name": "BAF",
+    "__collection": "teams",
+    "__label": "BAF"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1fa39e9867670dceb5"
+    },
+    "club": {
+      "$oid": "598f65d17474e05d2f3912e2"
+    },
+    "gender": "Mens",
+    "name": "Birmingham",
+    "__collection": "teams",
+    "__label": "Birmingham"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f81fc7b6a893e6a96"
+    },
+    "club": {
+      "$oid": "598f59b97ef330aee0105791"
+    },
+    "gender": "Mens",
+    "name": "Fire of London 2",
+    "__collection": "teams",
+    "__label": "Fire of London 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f4d822e9ce04479cb"
+    },
+    "club": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "gender": "Mens",
+    "name": "Cloud City 1",
+    "__collection": "teams",
+    "__label": "Cloud City 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f715eb970d46551a3"
+    },
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Mens",
+    "name": "Brighton Legends",
+    "__collection": "teams",
+    "__label": "Brighton Legends"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f2489ead13423c4ab"
+    },
+    "club": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "gender": "Mens",
+    "name": "Devon 2",
+    "__collection": "teams",
+    "__label": "Devon 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f25491cd95f3451a2"
+    },
+    "club": {
+      "$oid": "598f698b552f114569c446cf"
+    },
+    "gender": "Mens",
+    "name": "Purple Cobras",
+    "__collection": "teams",
+    "__label": "Purple Cobras"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f05bdd86eb4342eb5"
+    },
+    "club": {
+      "$oid": "598f7d3e35b61604a6fbf5a6"
+    },
+    "gender": "Mens",
+    "name": "JRX",
+    "__collection": "teams",
+    "__label": "JRX"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f5176dcc0cb70ac16"
+    },
+    "club": {
+      "$oid": "598f65d14b27fda31d681be5"
+    },
+    "gender": "Mens",
+    "name": "Helix",
+    "__collection": "teams",
+    "__label": "Helix"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f76fa2d509bf1c8d0"
+    },
+    "club": {
+      "$oid": "598f7d3eccb6894bac4babd7"
+    },
+    "gender": "Mens",
+    "name": "Red Leicester",
+    "__collection": "teams",
+    "__label": "Red Leicester"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d3ece69c08753b3c9f4"
+    },
+    "club": {
+      "$oid": "598f65d1ca6ca04bf0c6d59f"
+    },
+    "gender": "Mens",
+    "name": "Camden Ultimate 1",
+    "__collection": "teams",
+    "__label": "Camden Ultimate 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f698a56ef8f9556ab"
+    },
+    "club": {
+      "$oid": "598f7d3e6742de9ba15274cc"
+    },
+    "gender": "Mens",
+    "name": "GB U20s",
+    "__collection": "teams",
+    "__label": "GB U20s"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f9c2a6602eab7ea0c"
+    },
+    "club": {
+      "$oid": "598f7d3e9535467162e83fd9"
+    },
+    "gender": "Mens",
+    "name": "Irish Junior Open",
+    "__collection": "teams",
+    "__label": "Irish Junior Open"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1f44c982bfa5f32976"
+    },
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "gender": "Mens",
+    "name": "Bristol 2",
+    "__collection": "teams",
+    "__label": "Bristol 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1fe2e6dd22d35eb8b6"
+    },
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "gender": "Mens",
+    "name": "Bristol 1",
+    "__collection": "teams",
+    "__label": "Bristol 1"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d1fdf8c3e99a7db5bf2"
+    },
+    "club": {
+      "$oid": "598f59b98b237e620ade6e1a"
+    },
+    "gender": "Mens",
+    "name": "EMO 2",
+    "__collection": "teams",
+    "__label": "EMO 2"
   }
 ]

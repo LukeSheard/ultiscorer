@@ -625,5 +625,49 @@
     },
     "__collection": "clubs",
     "__label": "Discie Chicks"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d3e35b61604a6fbf5a6"
+    },
+    "name": "JRX",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "__collection": "clubs",
+    "__label": "JRX"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d3eccb6894bac4babd7"
+    },
+    "name": "Red Leicester",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "__collection": "clubs",
+    "__label": "Red Leicester"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d3e6742de9ba15274cc"
+    },
+    "name": "GB U20",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "__collection": "clubs",
+    "__label": "GB U20"
+  },
+  {
+    "_id": {
+      "$oid": "598f7d3e9535467162e83fd9"
+    },
+    "name": "Irish Junior",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "__collection": "clubs",
+    "__label": "Irish Junior"
   }
 ]
