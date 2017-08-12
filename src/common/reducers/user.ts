@@ -70,11 +70,8 @@ export default function(
     case USER_ACTION_TYPES.UPDATE_SUCCESS: {
       return {
         ...state,
-        jwt: {
-          ...state.jwt,
-          user: action.payload
-        },
-        loading: false
+        loading: false,
+        user: action.payload
       };
     }
     case USER_ACTION_TYPES.UPDATE_FAILURE: {

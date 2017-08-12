@@ -31,8 +31,16 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["npx prettier", "npx tslint", "git add"],
-    "*.tsx": ["npx prettier", "npx tslint", "git add"]
+    "*.ts": [
+      "npx prettier",
+      "npx tslint",
+      "git add"
+    ],
+    "*.tsx": [
+      "npx prettier",
+      "npx tslint",
+      "git add"
+    ]
   },
   "scripts": {
     "prebuild": "rm -rf build",
@@ -82,6 +90,8 @@
     "lodash.get": "^4.4.2",
     "mailgun-js": "^0.12.0",
     "mongoose": "^4.11.3",
+    "mongoose-plugin-timestamp": "^1.0.0",
+    "mongoose-unique-validator": "^1.0.5",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
     "pretty-error": "^2.1.1",

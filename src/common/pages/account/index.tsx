@@ -18,11 +18,11 @@ export class AccountPage extends React.Component<any, any> {
     return (
       <Form
         initialValues={initialValues}
-        name="new-tournament"
+        name="account"
         loading={loading}
         action={USER_ACTION_TYPES.UPDATE_REQUEST}
       >
-        <h1>Edit Account</h1>
+        <h1>Account Details</h1>
         <Input name="name" type="text" label="Name" required />
         <Input name="email" type="email" label="Email" required />
         <Input name="ukuusername" type="text" label="UKU Username" />

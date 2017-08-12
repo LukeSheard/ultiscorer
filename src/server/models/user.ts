@@ -1,5 +1,6 @@
 import * as bcrypt from "bcrypt";
-import { Document, model, Schema } from "mongoose";
+import { Document, Schema } from "mongoose";
+import { model } from "./db";
 
 export interface UserSchema {
   email: string;
@@ -35,7 +36,9 @@ export const UserSchema = new Schema({
   },
   ukuusername: {
     default: "",
-    type: String
+    index: true,
+    type: String,
+    unique: true
   }
 });
 

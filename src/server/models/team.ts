@@ -1,4 +1,5 @@
-import { Document, model, Schema } from "mongoose";
+import { Document, Schema } from "mongoose";
+import { model } from "./db";
 import User from "./user";
 
 interface NumberList {

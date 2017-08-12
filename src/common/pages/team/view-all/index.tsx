@@ -1,4 +1,4 @@
-import { Button, Classes, Intent } from "@blueprintjs/core";
+import { Button, Classes, Intent, NonIdealState } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -28,7 +28,13 @@ export class TeamsView extends React.Component<any, any> {
           </Link>
         </div>
         <div className={style.teamView}>
-          {loading}
+          {teams.length
+            ? null
+            : <NonIdealState
+                className={style.error}
+                title="No Teams Created"
+                visual="error"
+              />}
           {teams.map(id => {
             const team: Team = teamInfo[id].attributes;
             return (

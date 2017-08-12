@@ -10,7 +10,11 @@ export function LoggedinNavbar() {
     <div className="pt-navbar-group pt-align-right">
       <NavLink to="/games/new" iconName="plus" text="New Game" />
       <NavLink to="/games" iconName="list" text="View Games" />
-      <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
+      <NavLink
+        to="/tournaments"
+        iconName="timeline-events"
+        text="Tournaments"
+      />
       <NavLink to="/teams" iconName="people" text="Teams" />
       <span className="pt-navbar-divider" />
       <UserMenu />

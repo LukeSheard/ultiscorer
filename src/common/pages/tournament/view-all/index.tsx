@@ -1,4 +1,4 @@
-import { Button, Classes, Intent, Tag } from "@blueprintjs/core";
+import { Button, Classes, Intent, NonIdealState, Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -28,7 +28,13 @@ export class TournamentsView extends React.Component<any, any> {
           </Link>
         </div>
         <div className={style.tournamentView}>
-          {loading}
+          {tournaments.length
+            ? null
+            : <NonIdealState
+                className={style.error}
+                title="No Tournaments Created"
+                visual="error"
+              />}
           {tournaments.map(id => {
             const tournament: Tournament = tournamentInfo[id].attributes;
             return (

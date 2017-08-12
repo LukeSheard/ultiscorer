@@ -23,7 +23,7 @@ export function* updateUser(action) {
     yield put(
       createNotification({
         intent: Intent.SUCCESS,
-        message: "Tournament Created"
+        message: "Account updated"
       })
     );
   } catch (e) {
@@ -31,7 +31,7 @@ export function* updateUser(action) {
     yield put(
       createNotification({
         intent: Intent.DANGER,
-        message: "Incorrect login details"
+        message: "There was an error processing your request"
       })
     );
   }
