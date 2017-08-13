@@ -5,7 +5,7 @@ export default function(req: Request, res: Response) {
   return User.findById(req.params.id)
     .then(user => {
       if (!user) {
-        throw Error("User doesnt exist");
+        throw Error("User does not exist");
       }
 
       const { name, password_confirm, password, ukuusername } = req.body;
