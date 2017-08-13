@@ -31,16 +31,8 @@
     }
   },
   "lint-staged": {
-    "*.ts": [
-      "npx prettier",
-      "npx tslint",
-      "git add"
-    ],
-    "*.tsx": [
-      "npx prettier",
-      "npx tslint",
-      "git add"
-    ]
+    "*.ts": ["npx prettier", "npx tslint", "git add"],
+    "*.tsx": ["npx prettier", "npx tslint", "git add"]
   },
   "scripts": {
     "prebuild": "rm -rf build",
@@ -104,7 +96,6 @@
     "react-redux": "^5.0.5",
     "react-router": "^3.0.5",
     "react-router-redux": "^4.0.8",
-    "react-router-to-array": "^0.1.2",
     "redux": "^3.7.1",
     "redux-auth-wrapper": "^2.0.1",
     "redux-form": "^7.0.0",

@@ -32,10 +32,10 @@ const TEAM_FILES = [
   "tour2/teams-c-s-men.json",
   "tour2/teams-women.json",
   "tour3/teams-a-s-men.json",
-  // "tour3/teams-b-n-men.json",
-  "tour3/teams-b-s-men.json"
-  // "tour3/teams-c-s-men.json",
-  // "tour3/teams-women.json"
+  "tour3/teams-b-n-men.json",
+  "tour3/teams-b-s-men.json",
+  "tour3/teams-c-s-men.json",
+  "tour3/teams-women.json"
 ];
 
 export const TEAMS = TEAM_FILES.reduce((acc, file) => {
