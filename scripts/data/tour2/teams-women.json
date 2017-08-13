@@ -37,7 +37,7 @@
     "_id": {
       "$oid": "598f628b5c7f31db6debd68a"
     },
-    "gender": "Mens"
+    "gender": "Womens"
   },
   {
     "_id": {
@@ -107,7 +107,7 @@
     "_id": {
       "$oid": "598f628b9d51f10945fb6638"
     },
-    "gender": "Mens"
+    "gender": "Womens"
   },
   {
     "_id": {
@@ -127,7 +127,7 @@
       "$oid": "598f698b3053b8fb148f2795"
     },
     "name": "Reading 2",
-    "gender": "Mens"
+    "gender": "Womens"
   },
   {
     "_id": {
@@ -137,7 +137,7 @@
       "$oid": "598f698b6f1ccdd63d498db7"
     },
     "name": "Red",
-    "gender": "Mens"
+    "gender": "Womens"
   },
   {
     "_id": {
@@ -187,7 +187,7 @@
       "$oid": "598f698be999086d0c1a6178"
     },
     "name": "Brixton",
-    "gender": "Mens"
+    "gender": "Womens"
   },
   {
     "_id": {

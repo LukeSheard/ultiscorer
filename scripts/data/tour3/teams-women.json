@@ -1,0 +1,222 @@
+[
+  {
+    "_id": {
+      "$oid": "599033a7b73a337f658a7f01"
+    },
+    "club": {
+      "$oid": "598f70a35a42572ba84d8d23"
+    },
+    "gender": "Womens",
+    "name": "SYC"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7642be18168e4345c"
+    },
+    "club": {
+      "$oid": "598f70a332dce0cea4c315c5"
+    },
+    "gender": "Womens",
+    "name": "GB U24"
+  },
+  {
+    "club": {
+      "$oid": "598f59b9921fed479776e19f"
+    },
+    "name": "Smog",
+    "_id": {
+      "$oid": "598f628b5c7f31db6debd68a"
+    },
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7486aa464eca12c6c"
+    },
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Womens",
+    "name": "Brighton"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7830ff7e3ebe87cb8"
+    },
+    "club": {
+      "$oid": "598f70a3fd85f41a3add28c8"
+    },
+    "gender": "Womens",
+    "name": "Hydra"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7e5b6013de3e597f4"
+    },
+    "club": {
+      "$oid": "598f70a3b52aadeb1011f0ba"
+    },
+    "gender": "Womens",
+    "name": "Swift 1"
+  },
+  {
+    "_id": {
+      "$oid": "599033a75efb7580942ceb5b"
+    },
+    "club": {
+      "$oid": "598f65d11b0274d33aa48483"
+    },
+    "gender": "Womens",
+    "name": "LLLeeds"
+  },
+  {
+    "_id": {
+      "$oid": "599033a78b642b530c0587d8"
+    },
+    "club": {
+      "$oid": "598f70a39900249091c04b3a"
+    },
+    "gender": "Womens",
+    "name": "Nice Bristols"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7fa898a925ac59264"
+    },
+    "club": {
+      "$oid": "598f70a30a816ef5af63d58c"
+    },
+    "gender": "Womens",
+    "name": "Chaos"
+  },
+  {
+    "club": {
+      "$oid": "598f59b9e5073c71b233abae"
+    },
+    "name": "Reading 1",
+    "_id": {
+      "$oid": "598f628b9d51f10945fb6638"
+    },
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07bae2677a986e8d4"
+    },
+    "club": {
+      "$oid": "598f698b3053b8fb148f2795"
+    },
+    "name": "Reading 2",
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "599033a70b827855b55fc987"
+    },
+    "club": {
+      "$oid": "598f70a3fd85f41a3add28c8"
+    },
+    "gender": "Womens",
+    "name": "Hydra 2"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7f90b7907f4aed73c"
+    },
+    "club": {
+      "$oid": "598f70a332b40bd2c46cfc90"
+    },
+    "gender": "Womens",
+    "name": "Vurve"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e034b660a781c2f314"
+    },
+    "club": {
+      "$oid": "598f698b6f1ccdd63d498db7"
+    },
+    "name": "Red",
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7f6bd8ccf6f8ab355"
+    },
+    "club": {
+      "$oid": "598f70a333adf4d862d2ec91"
+    },
+    "gender": "Womens",
+    "name": "Liverpool"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7010303ad43b138db"
+    },
+    "club": {
+      "$oid": "598f70a3b52aadeb1011f0ba"
+    },
+    "gender": "Womens",
+    "name": "Swift 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f8253ee8327ed724"
+    },
+    "club": {
+      "$oid": "598f698be999086d0c1a6178"
+    },
+    "name": "Brixton",
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e06793c616c29f4021"
+    },
+    "club": {
+      "$oid": "598f698bf607ad7ae1068821"
+    },
+    "name": "The Brown",
+    "gender": "Womens"
+  },
+  {
+    "_id": {
+      "$oid": "599033a748869efae91d5944"
+    },
+    "club": {
+      "$oid": "5990293b43f95d0335800cc3"
+    },
+    "gender": "Womens",
+    "name": "Irish Junior Women"
+  },
+  {
+    "_id": {
+      "$oid": "599033a79dd4f83e6ffd969b"
+    },
+    "club": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "gender": "Womens",
+    "name": "Black Sheep"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7490771d9f8101625"
+    },
+    "club": {
+      "$oid": "598f70a3e4b751817d9f7d3e"
+    },
+    "gender": "Womens",
+    "name": "Crown Jewels"
+  },
+  {
+    "_id": {
+      "$oid": "599033a7142a4399b014c926"
+    },
+    "club": {
+      "$oid": "598f70a33c85fa11e24e0496"
+    },
+    "gender": "Womens",
+    "name": "Discie Chicks"
+  }
+]
