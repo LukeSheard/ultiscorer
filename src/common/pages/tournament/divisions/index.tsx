@@ -4,14 +4,40 @@ import { IAppState } from "../../../reducers";
 
 export class TournamentsView extends React.Component<any, any> {
   public render() {
-    return <div>Hello</div>;
+    const { division } = this.props;
+    return (
+      <div>
+        {division &&
+          <div>
+            <h4>
+              {division.name}
+            </h4>
+            {division.teams.map(team => {
+              return (
+                <p key={team}>
+                  {team}
+                </p>
+              );
+            })}
+          </div>}
+      </div>
+    );
   }
 }
 
-export function mapStateToProps(state: IAppState) {
+export function mapStateToProps(state: IAppState, ownProps) {
   const props: any = {
     loading: state.tournament && state.tournament.loading
   };
+
+  const current = state.tournament && state.tournament.selected;
+  if (current) {
+    props.division =
+      state.tournament &&
+      state.tournament.tournaments[current].attributes.divisions.filter(
+        d => d._id === ownProps.params.division
+      )[0];
+  }
 
   return props;
 }

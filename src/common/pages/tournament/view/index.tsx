@@ -1,10 +1,12 @@
 export { default as saga } from "./saga";
 
+import { Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 import Tournament from "../../../../server/models/tournament";
 import { IAppState } from "../../../reducers";
+const style = require("../view-all/style.css");
 
 export interface ITournamentViewProps {
   tournament?: Tournament;
@@ -26,18 +28,20 @@ export class TournamentsView extends React.Component<any, any> {
           {tournament && tournament.location}
         </h3>
         {tournament &&
-          tournament.divisions.map(division => {
-            return (
-              <Link
-                to={`/tournament/${tournament._id}/${division._id}`}
-                key={division._id}
-              >
-                <h4>
-                  {division.name}
-                </h4>
-              </Link>
-            );
-          })}
+          <div className={style.divisions}>
+            {tournament.divisions.map((division, index) => {
+              return (
+                <Link
+                  to={`/tournaments/${tournament._id}/${division._id}`}
+                  key={division._id}
+                >
+                  <Tag key={index}>
+                    {division.name}
+                  </Tag>
+                </Link>
+              );
+            })}
+          </div>}
         <div>
           {children}
         </div>
