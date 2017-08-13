@@ -4,8 +4,8 @@ import { Genders } from "../../src/server/models/division";
 /**
  * PUT THE NEW FILE NAME HERE
  */
-const FILE_NAME = "tour2/teams-b-n-men";
-export const GENDER = Genders.Womens;
+const FILE_NAME = "tour3/teams-a-s-men";
+export const GENDER = Genders.Mens;
 
 const BASE_PATH = path.join(__dirname, "../data");
 export const FILE_PATH = path.join(BASE_PATH, FILE_NAME + ".json");
@@ -27,9 +27,15 @@ const TEAM_FILES = [
   "tour1/teams-c-men.json",
   "tour1/teams-women.json",
   "tour2/teams-a-s-men.json",
+  "tour2/teams-b-n-men.json",
   "tour2/teams-b-s-men.json",
   "tour2/teams-c-s-men.json",
   "tour2/teams-women.json"
+  // "tour3/teams-a-s-men.json"
+  // "tour3/teams-b-n-men.json",
+  // "tour3/teams-b-s-men.json",
+  // "tour3/teams-c-s-men.json",
+  // "tour3/teams-women.json"
 ];
 
 export const TEAMS = TEAM_FILES.reduce((acc, file) => {

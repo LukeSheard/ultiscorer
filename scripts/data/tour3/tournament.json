@@ -1,0 +1,43 @@
+[
+  {
+    "name": "UKU Open & Womens Tour 3 2017",
+    "location": "Birmingham",
+    "description": "UKU Tour 3 South will be held at Birmingham.",
+    "_id": {
+      "$oid": "59903111fa6580d02379ca61"
+    },
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "startDate": {
+      "$date": "2017-08-14T23:00:00.000Z"
+    },
+    "endDate": {
+      "$date": "2017-08-15T22:59:59.999Z"
+    },
+    "divisions": [
+      { "$oid": "59903111228ac3ac03f67952" },
+      { "$oid": "59903111216f1e62556725cc" },
+      { "$oid": "59903111b269fdc99a70e765" },
+      { "$oid": "5990311130c4cb5fb6657f39" }
+    ]
+  },
+  {
+    "name": "UKU Open & Womens B Tour 3 2017",
+    "location": "Edenbridge",
+    "description": "UKU Tour 3 B-Tour will be held at Edenbridge.",
+    "_id": {
+      "$oid": "59903111419e0dd569b470f2"
+    },
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    },
+    "startDate": {
+      "$date": "2017-08-14T23:00:00.000Z"
+    },
+    "endDate": {
+      "$date": "2017-08-15T22:59:59.999Z"
+    },
+    "divisions": [{ "$oid": "599031118249e592e17d17ff" }]
+  }
+]

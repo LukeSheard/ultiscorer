@@ -1,0 +1,70 @@
+[
+  {
+    "gender": "Mens",
+    "name": "A Tour",
+    "tournament": {
+      "$oid": "59903111fa6580d02379ca61"
+    },
+    "_id": {
+      "$oid": "59903111228ac3ac03f67952"
+    },
+    "teams": [
+      { "$oid": "598f628bba3ddf8f9692c9d4" },
+      { "$oid": "598f628b23b5b06037ecd524" },
+      { "$oid": "598f628bd9c6f9ed00717782" },
+      { "$oid": "598f628b9d51f10945fb6638" },
+      { "$oid": "598f628bb2e520b5ff272e42" },
+      { "$oid": "598f628b60148f3a8424bff9" },
+      { "$oid": "598f628b346417e2466d64de" },
+      { "$oid": "598f628b2c1769c31cd95ece" },
+      { "$oid": "599031ba6337528414c48ecd" },
+      { "$oid": "599031ba81ba5992822eb5c5" },
+      { "$oid": "598f628b6504df3e310dfa4f" },
+      { "$oid": "599031ba1b3423453cdce7d7" },
+      { "$oid": "598f628b44381ccd0c41aa83" },
+      { "$oid": "599031bafda859bcc736c8d7" },
+      { "$oid": "59902647e1b0b603a42eef3f" },
+      { "$oid": "59902cfb422425221b8f7a10" }
+    ]
+  },
+  {
+    "gender": "Mens",
+    "name": "B Tour",
+    "tournament": {
+      "$oid": "59903111fa6580d02379ca61"
+    },
+    "_id": {
+      "$oid": "59903111216f1e62556725cc"
+    }
+  },
+  {
+    "gender": "Mens",
+    "name": "C Tour",
+    "tournament": {
+      "$oid": "59903111fa6580d02379ca61"
+    },
+    "_id": {
+      "$oid": "59903111b269fdc99a70e765"
+    }
+  },
+  {
+    "gender": "Womens",
+    "name": "Womens",
+    "tournament": {
+      "$oid": "59903111fa6580d02379ca61"
+    },
+    "_id": {
+      "$oid": "5990311130c4cb5fb6657f39"
+    }
+  },
+  {
+    "gender": "Mens",
+    "name": "B Tour",
+    "tournament": {
+      "$oid": "59903111419e0dd569b470f2"
+    },
+    "_id": {
+      "$oid": "599031118249e592e17d17ff"
+    }
+  }
+]
