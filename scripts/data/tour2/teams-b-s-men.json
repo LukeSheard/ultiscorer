@@ -1,0 +1,162 @@
+[
+  {
+    "_id": {
+      "$oid": "598f6399fa9c398fec808b68"
+    },
+    "name": "BAF",
+    "club": {
+      "$oid": "598f65d106a45ad0f50a587f"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599028c11c36cf7229be2ed1"
+    },
+    "club": {
+      "$oid": "598f65d17474e05d2f3912e2"
+    },
+    "gender": "Mens",
+    "name": "Birmingham"
+  },
+  {
+    "club": {
+      "$oid": "598f59b97ef330aee0105791"
+    },
+    "name": "Fire of London 2",
+    "_id": {
+      "$oid": "598f628bd12b845cc2559cdd"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63992243e15d2e3b2213"
+    },
+    "name": "Cloud City 1",
+    "club": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63998d691ec2dec8a89c"
+    },
+    "name": "Brighton Legends",
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e00a73acf86e19749e"
+    },
+    "club": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "name": "Devon 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e09ffc1062ad47d67e"
+    },
+    "club": {
+      "$oid": "598f698b552f114569c446cf"
+    },
+    "name": "Purple Cobras",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599028c1d0dd56459d62989f"
+    },
+    "club": {
+      "$oid": "598f65d1a4ac0a5b476409cf"
+    },
+    "gender": "Mens",
+    "name": "JRX"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399d23f179ba45454f5"
+    },
+    "name": "Helix",
+    "club": {
+      "$oid": "598f65d14b27fda31d681be5"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599028c1c6495fddffe9760c"
+    },
+    "club": {
+      "$oid": "5990293b0968316e98406d2d"
+    },
+    "gender": "Mens",
+    "name": "Red Leicester"
+  },
+  {
+    "_id": {
+      "$oid": "599028c1c3803442cc2f8be5"
+    },
+    "club": {
+      "$oid": "598f65d1ca6ca04bf0c6d59f"
+    },
+    "gender": "Mens",
+    "name": "Camden Ultimate 1"
+  },
+  {
+    "_id": {
+      "$oid": "599028c124623d71e60067d3"
+    },
+    "club": {
+      "$oid": "5990293badb3ad2860154fe0"
+    },
+    "gender": "Mens",
+    "name": "GB U20s"
+  },
+  {
+    "_id": {
+      "$oid": "599028c19be72f154637cd79"
+    },
+    "club": {
+      "$oid": "5990293b43f95d0335800cc3"
+    },
+    "gender": "Mens",
+    "name": "Irish Junior Open"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e04143dc0fb0645cdb"
+    },
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "name": "Bristol 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399a2b66dbd143bc992"
+    },
+    "name": "Bristol 1",
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f9c9026b731bcca2"
+    },
+    "club": {
+      "$oid": "598f59b98b237e620ade6e1a"
+    },
+    "name": "EMO 2",
+    "gender": "Mens"
+  }
+]

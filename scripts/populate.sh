@@ -39,5 +39,5 @@ mongoimport --db $DBNAME --verbose --collection tournaments --jsonArray --file .
 mongoimport --db $DBNAME --verbose --collection divisions --jsonArray --file ./data/tour2/divisions.json
 
 mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour2/teams-a-s-men.json
-# mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour2/teams-b-s-men.json
+mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour2/teams-b-s-men.json
 
