@@ -1,4 +1,4 @@
-import { FILE_PATH } from "./settings";
+import { FILE_PATH } from "../settings";
 
 const teams = require(FILE_PATH);
 

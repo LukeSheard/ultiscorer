@@ -33,10 +33,10 @@ mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/
 mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour1/teams-women.json
 
 # Tour 2
-# echo "Tour 2"
-# mongoimport --db $DBNAME --verbose --collection tournaments --jsonArray --file ./data/tour2/tournament.json
+echo "Tour 2"
+mongoimport --db $DBNAME --verbose --collection tournaments --jsonArray --file ./data/tour2/tournament.json
 
-# mongoimport --db $DBNAME --verbose --collection divisions --jsonArray --file ./data/tour2/divisions.json
+mongoimport --db $DBNAME --verbose --collection divisions --jsonArray --file ./data/tour2/divisions.json
 
 # mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour2/teams-a-s-men.json
 # mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour2/teams-b-s-men.json

@@ -4,7 +4,7 @@ import { Genders } from "../../src/server/models/division";
 /**
  * PUT THE NEW FILE NAME HERE
  */
-const FILE_NAME = "tour2/teams-b-s-men";
+const FILE_NAME = "tour2/teams-a-s-men";
 export const GENDER = Genders.Mens;
 
 const BASE_PATH = path.join(__dirname, "../data");
@@ -20,3 +20,20 @@ export function ObjectId() {
       .toLowerCase()
   );
 }
+
+const TEAM_FILES = [
+  "tour1/teams-a-men.json",
+  "tour1/teams-b-men.json",
+  "tour1/teams-c-men.json",
+  "tour1/teams-women.json"
+];
+
+export const TEAMS = TEAM_FILES.reduce((acc, file) => {
+  const teams = require(path.join(BASE_PATH, file)).filter(
+    team => team.gender === "Mens"
+  );
+  return teams.reduce((accTeams, team) => {
+    accTeams[team.name] = team;
+    return accTeams;
+  }, acc);
+}, {});
