@@ -610,5 +610,14 @@
     "owner": {
       "$oid": "598f07679a5d6fdee4ae8bcd"
     }
+  },
+  {
+    "_id": {
+      "$oid": "5990335f85d798c8f685db9d"
+    },
+    "name": "LED",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
   }
 ]

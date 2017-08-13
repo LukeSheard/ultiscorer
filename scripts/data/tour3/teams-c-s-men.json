@@ -1,0 +1,82 @@
+[
+  {
+    "_id": {
+      "$oid": "599033501f09b35d0f625ae1"
+    },
+    "club": {
+      "$oid": "599031ccb69bc96c2f94e3b7"
+    },
+    "gender": "Mens",
+    "name": "Ranelagh 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f60e823e3a03bde5"
+    },
+    "club": {
+      "$oid": "598f698b71a1355e82f0ccc0"
+    },
+    "name": "Leamington Lemmings",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f72a23bd41011129"
+    },
+    "club": {
+      "$oid": "598f698bd6ff27be8917f62e"
+    },
+    "name": "Flyght Club 1",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e065f5c3f1b727e42c"
+    },
+    "club": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "name": "Black Sheep 1",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0cc9a79684ca2cb68"
+    },
+    "club": {
+      "$oid": "598f698b962ac905fb0826cb"
+    },
+    "name": "Glasgow 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599033502307511f8e104487"
+    },
+    "club": {
+      "$oid": "5990335f85d798c8f685db9d"
+    },
+    "gender": "Mens",
+    "name": "LED"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07b77d0126edb4c23"
+    },
+    "club": {
+      "$oid": "598f59b9a102a38169c6715d"
+    },
+    "name": "Manchester 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e08c0cd462837fad79"
+    },
+    "club": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "name": "Black Sheep 2",
+    "gender": "Mens"
+  }
+]
