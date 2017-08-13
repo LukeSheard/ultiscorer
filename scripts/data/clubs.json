@@ -529,5 +529,59 @@
     "owner": {
       "$oid": "598f07679a5d6fdee4ae8bcd"
     }
+  },
+  {
+    "_id": {
+      "$oid": "59902aec10073a78cb523c76"
+    },
+    "name": "Guildford",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "59902aecb016e88a774febdc"
+    },
+    "name": "Plymouth",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "59902aec2963cc6fe6b25ba1"
+    },
+    "name": "South Wales Storm",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "59902aec176cd814b22ffde1"
+    },
+    "name": "Logic Exile Destruction",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "59902aecb060abce07ca3928"
+    },
+    "name": "Sharkbear!",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "59902aecc57326524be89334"
+    },
+    "name": "Wild Boars",
+    "owner": {
+      "$oid": "598f07679a5d6fdee4ae8bcd"
+    }
   }
 ]
