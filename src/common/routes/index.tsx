@@ -87,6 +87,12 @@ export default function(store: IAppStore) {
           )}
         >
           <Route
+            path="edit"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/edit")
+            )}
+          />
+          <Route
             path="divisions/:division"
             getComponent={loadModule(() =>
               import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/divisions")
