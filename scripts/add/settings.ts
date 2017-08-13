@@ -4,7 +4,7 @@ import { Genders } from "../../src/server/models/division";
 /**
  * PUT THE NEW FILE NAME HERE
  */
-const FILE_NAME = "tour3/teams-a-s-men";
+const FILE_NAME = "tour3/teams-b-s-men";
 export const GENDER = Genders.Mens;
 
 const BASE_PATH = path.join(__dirname, "../data");
@@ -30,8 +30,8 @@ const TEAM_FILES = [
   "tour2/teams-b-n-men.json",
   "tour2/teams-b-s-men.json",
   "tour2/teams-c-s-men.json",
-  "tour2/teams-women.json"
-  // "tour3/teams-a-s-men.json"
+  "tour2/teams-women.json",
+  "tour3/teams-a-s-men.json"
   // "tour3/teams-b-n-men.json",
   // "tour3/teams-b-s-men.json",
   // "tour3/teams-c-s-men.json",
