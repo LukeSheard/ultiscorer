@@ -8,7 +8,24 @@
     "_id": {
       "$oid": "598f7b8bcb1433da20a38c84"
     },
-    "teams": []
+    "teams": [
+      { "$oid": "598f628bba3ddf8f9692c9d4" },
+      { "$oid": "598f628b23b5b06037ecd524" },
+      { "$oid": "598f628b9d51f10945fb6638" },
+      { "$oid": "598f628b3e70c85b7aabab95" },
+      { "$oid": "59902647fc02a2cbfcb3a298" },
+      { "$oid": "598f628bd9c6f9ed00717782" },
+      { "$oid": "598f628b2c1769c31cd95ece" },
+      { "$oid": "59902647a049e2fea5be8ae3" },
+      { "$oid": "598f628b6504df3e310dfa4f" },
+      { "$oid": "598f628b346417e2466d64de" },
+      { "$oid": "5990264741bb823bac1f4b7e" },
+      { "$oid": "59902647b83cf2af7b34658e" },
+      { "$oid": "59902647e1b0b603a42eef3f" },
+      { "$oid": "598f628b44381ccd0c41aa83" },
+      { "$oid": "598f628bb2e520b5ff272e42" },
+      { "$oid": "598f628b009bd3c7841f1432" }
+    ]
   },
   {
     "gender": "Mens",
