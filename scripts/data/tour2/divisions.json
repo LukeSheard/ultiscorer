@@ -119,12 +119,26 @@
   },
   {
     "gender": "Mens",
-    "name": "A Tour",
+    "name": "B Tour",
     "tournament": {
       "$oid": "598f7b2daeffd32ff8bc4d98"
     },
     "_id": {
       "$oid": "598f7bac175a9062c5075a70"
-    }
+    },
+    "teams": [
+      { "$oid": "598f628bc713a93b6a2ccff7" },
+      { "$oid": "598f63994fa75e8f057262dd" },
+      { "$oid": "598f63997a20e47043c2cf83" },
+      { "$oid": "59902cfb422425221b8f7a10" },
+      { "$oid": "598f639999180d8962b077d5" },
+      { "$oid": "598f67e06793c616c29f4021" },
+      { "$oid": "59902cfbab38d8a6c74a51fd" },
+      { "$oid": "598f67e065f5c3f1b727e42c" },
+      { "$oid": "598f67e08d4dcc6c087ddfb2" },
+      { "$oid": "598f67e0fbacc92c8310103e" },
+      { "$oid": "598f67e07b77d0126edb4c23" },
+      { "$oid": "598f67e08c0cd462837fad79" }
+    ]
   }
 ]
