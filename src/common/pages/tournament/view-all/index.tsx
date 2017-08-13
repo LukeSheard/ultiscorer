@@ -9,7 +9,7 @@ const style = require("./style.css");
 
 export class TournamentsView extends React.Component<any, any> {
   public render() {
-    const { loading, tournamentInfo, tournaments } = this.props;
+    const { loading, loggedin, tournamentInfo, tournaments } = this.props;
 
     if (loading) {
       return <div>Loading</div>;
@@ -19,13 +19,15 @@ export class TournamentsView extends React.Component<any, any> {
       <div>
         <div className={style.row}>
           <h1 className={style.title}>Tournaments</h1>
-          <Link to="tournaments/new">
-            <Button
-              className={Classes.FILL}
-              intent={Intent.PRIMARY}
-              text="Create Tournament"
-            />
-          </Link>
+          {loggedin
+            ? <Link to="tournaments/new">
+              <Button
+                className={Classes.FILL}
+                intent={Intent.PRIMARY}
+                text="Create Tournament"
+              />
+            </Link>
+          : null}
         </div>
         <div className={style.tournamentView}>
           {tournaments.length
@@ -77,6 +79,7 @@ export class TournamentsView extends React.Component<any, any> {
 
 export const ConnectedTournamentsView = connect((state: IAppState) => ({
   loading: state.tournament && state.tournament.loading,
+  loggedin: state.user && state.user.token,
   tournamentInfo: state.tournament && state.tournament.tournaments,
   tournaments: state.tournament && Object.keys(state.tournament.tournaments)
 }))(TournamentsView);
