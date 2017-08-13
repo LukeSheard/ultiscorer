@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Game from "../../../models/tournament";
-import User from "../../../models/user";
+import Game from "../../../../models/tournament";
+import User from "../../../../models/user";
 
 export default function(req: Request, res: Response) {
   const { away, division, firstPull, gameto, home, tournament } = req.body;

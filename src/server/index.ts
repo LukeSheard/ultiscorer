@@ -6,7 +6,7 @@ import * as querystring from "querystring";
 import * as raven from "raven";
 
 import config, { __DEV__ } from "../../config";
-import mongoose from "./models/db";
+import mongoose from "../models/db";
 
 import api from "./api";
 

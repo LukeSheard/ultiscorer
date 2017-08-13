@@ -1,7 +1,7 @@
 import debug from "debug";
 import { NextFunction, Request, Response } from "express";
 import config from "../../../../config";
-import User from "../../models/user";
+import User from "../../../models/user";
 import { decode, JWTTokenPayload } from "../../util/jwt";
 
 const log = debug("app:api:authorization");

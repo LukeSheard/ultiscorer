@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Division from "../../../models/division";
-import Tournament from "../../../models/tournament";
+import Division from "../../../../models/division";
+import Tournament from "../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
   const { gender, name, tournament, teams } = req.body;

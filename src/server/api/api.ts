@@ -1,7 +1,7 @@
 import debug from "debug";
 import * as Express from "express";
 import config from "../../../config";
-import mongoose from "../models/db";
+import mongoose from "../../models/db";
 import api from "./";
 
 const app = Express();

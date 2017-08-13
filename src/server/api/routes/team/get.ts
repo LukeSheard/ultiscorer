@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Team from "../../../models/team";
+import Team from "../../../../models/team";
 
 export default function(req: Request, res: Response) {
   const { expand = [], ...query } = req.query;

@@ -1,5 +1,5 @@
 import * as path from "path";
-import { Genders } from "../../src/server/models/division";
+import { Genders } from "../../src//models/division";
 
 /**
  * PUT THE NEW FILE NAME HERE

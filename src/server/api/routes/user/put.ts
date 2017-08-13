@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User from "../../../models/user";
+import User from "../../../../models/user";
 
 export default function(req: Request, res: Response) {
   return User.findById(req.params.id)

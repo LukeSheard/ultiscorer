@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Tournament from "../../../models/tournament";
+import Tournament from "../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
   const { expand = [], ...query } = req.query;

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Division from "../../../../models/division";
+import Division from "../../../../../models/division";
 
 export default function(req: Request, res: Response) {
   return Division.find({

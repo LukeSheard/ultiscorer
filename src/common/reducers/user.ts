@@ -1,6 +1,6 @@
 import * as jwt from "jwt-decode";
 import { Action } from "redux";
-import User from "../../server/models/user";
+import User from "../..//models/user";
 
 export enum USER_ACTION_TYPES {
   // LOGIN

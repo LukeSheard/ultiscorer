@@ -2,7 +2,7 @@ import { Button, Classes, Intent, NonIdealState } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
-import Team from "../../../../server/models/team";
+import Team from "../../../..//models/team";
 import { IAppState } from "../../../reducers";
 import saga from "./saga";
 const style = require("./style.css");

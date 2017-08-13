@@ -2,7 +2,7 @@ export { default as saga } from "./saga";
 
 import * as React from "react";
 import { connect } from "react-redux";
-import Team from "../../../../server/models/team";
+import Team from "../../../..//models/team";
 import { IAppState } from "../../../reducers";
 
 export interface ITeamViewProps extends React.Props<TeamsView> {
