@@ -31,8 +31,16 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["npx prettier", "npx tslint", "git add"],
-    "*.tsx": ["npx prettier", "npx tslint", "git add"]
+    "*.ts": [
+      "npx prettier",
+      "npx tslint",
+      "git add"
+    ],
+    "*.tsx": [
+      "npx prettier",
+      "npx tslint",
+      "git add"
+    ]
   },
   "scripts": {
     "prebuild": "rm -rf build",
@@ -56,6 +64,7 @@
     "@types/body-parser": "^1.16.4",
     "@types/cookie-parser": "^1.3.30",
     "@types/mongoose": "^4.7.18",
+    "@types/mongoose-deep-populate": "^2.0.30",
     "@types/react-router-redux": "^4.0.48",
     "@types/uuid": "^3.4.0",
     "bcrypt": "^1.0.2",
@@ -76,12 +85,14 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "isomorphic-fetch": "^2.2.1",
+    "jsonapi-serializer": "^3.5.5",
     "jsonwebtoken": "^7.4.1",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.4",
     "lodash.get": "^4.4.2",
     "mailgun-js": "^0.12.0",
     "mongoose": "^4.11.3",
+    "mongoose-deep-populate": "^3.0.0",
     "mongoose-plugin-timestamp": "^1.0.0",
     "mongoose-unique-validator": "^1.0.5",
     "nodemon": "^1.11.0",
@@ -98,6 +109,7 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.1",
     "redux-auth-wrapper": "^2.0.1",
+    "redux-devtools-extension": "^2.13.2",
     "redux-form": "^7.0.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.4",

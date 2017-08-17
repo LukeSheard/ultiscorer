@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
-import TeamSerializer from "../../../../models/serialize/team";
-import Team from "../../../../models/team";
+import Club from "../../../../models/club";
+import ClubSerializer from "../../../../models/serialize/club";
 
 export default function(req: Request, res: Response) {
-  const { name, gender } = req.body;
+  const { name, location } = req.body;
   const { user } = res.locals;
 
-  return new Team({
-    gender,
+  return new Club({
+    location,
     name,
     owner: user
   })
     .save()
-    .then(team => {
-      return res.json(TeamSerializer.serialize(team));
+    .then(club => {
+      return res.json(ClubSerializer.serialize(club));
     })
     .catch(error => {
       res.status(500);

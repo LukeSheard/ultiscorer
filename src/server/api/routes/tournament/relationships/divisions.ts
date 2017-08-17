@@ -1,22 +1,15 @@
 import { Request, Response } from "express";
-import Division from "../../../../../models/division";
+import DivisionSerializer from "../../../../../models/serialize/division";
+import Tournament from "../../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
-  return Division.find({
-    tournament: req.params.tournament
-  })
-    .then(divisions => {
-      if (!divisions) {
+  return Tournament.findOne({ _id: req.params.id })
+    .populate("divisions")
+    .then(tournament => {
+      if (!tournament) {
         throw Error("Not Found");
       }
-
-      return res.json({
-        data: divisions.map(division => ({
-          attributes: division,
-          id: division._id,
-          type: "Division"
-        }))
-      });
+      return res.json(DivisionSerializer.serialize(tournament.divisions));
     })
     .catch(error => {
       res.status(500);

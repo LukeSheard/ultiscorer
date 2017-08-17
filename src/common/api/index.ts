@@ -1,4 +1,5 @@
 import debug from "debug";
+import { Deserializer } from "jsonapi-serializer";
 import { call, select } from "redux-saga/effects";
 import { IAppState } from "../reducers";
 import installPolyfills from "./polyfill";
@@ -6,6 +7,9 @@ import installPolyfills from "./polyfill";
 installPolyfills();
 
 const log = debug("app:api");
+const { deserialize } = new Deserializer({
+  keyForAttribute: "camelCase"
+});
 
 export interface Headers {
   Accept: string;
@@ -51,5 +55,10 @@ export default function* get(endpoint: string, options?: RequestInit) {
     throw new Error(body.error || "Unknown Error");
   }
 
-  return body;
+  try {
+    return yield deserialize(body);
+  } catch (e) {
+    log(e);
+    return body;
+  }
 }

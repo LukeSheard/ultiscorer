@@ -26,6 +26,7 @@ export const TournamentSchema = new Schema({
   ],
   endDate: {
     index: true,
+    required: true,
     type: Date
   },
   location: {
@@ -44,6 +45,7 @@ export const TournamentSchema = new Schema({
   },
   startDate: {
     index: true,
+    required: true,
     type: Date
   }
 });

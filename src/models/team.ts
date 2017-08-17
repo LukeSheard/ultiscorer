@@ -17,6 +17,10 @@ interface TeamSchema {
 export default interface Team extends TeamSchema, Document {};
 
 export const TeamSchema = new Schema({
+  club: {
+    ref: "Club",
+    type: Schema.Types.ObjectId
+  },
   gender: {
     enum: Object.values(Genders),
     required: true,
@@ -29,6 +33,12 @@ export const TeamSchema = new Schema({
   numbers: {
     default: {},
     type: Object
+  },
+  owner: {
+    index: true,
+    ref: "User",
+    required: true,
+    type: Schema.Types.ObjectId
   },
   players: [
     {

@@ -3,17 +3,12 @@ import TeamSerializer from "../../../../models/serialize/team";
 import Team from "../../../../models/team";
 
 export default function(req: Request, res: Response) {
-  const { name, gender } = req.body;
-  const { user } = res.locals;
+  const { filter = {} } = req.query;
 
-  return new Team({
-    gender,
-    name,
-    owner: user
-  })
-    .save()
-    .then(team => {
-      return res.json(TeamSerializer.serialize(team));
+  return Team.find(filter)
+    .populate("players")
+    .then(teams => {
+      return res.json(TeamSerializer.serialize(teams));
     })
     .catch(error => {
       res.status(500);

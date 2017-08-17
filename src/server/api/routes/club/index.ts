@@ -4,7 +4,6 @@ import get from "./get";
 import getall from "./get-all";
 import post from "./post";
 
-import divisions from "./relationships/divisions";
 import teams from "./relationships/teams";
 
 const router = Router();
@@ -16,7 +15,6 @@ router.post("/", post);
 router.get("/", getall);
 
 router.get("/:id", get);
-router.get("/:id/relationships/divisions", divisions);
 router.get("/:id/relationships/teams", teams);
 
 export default router;

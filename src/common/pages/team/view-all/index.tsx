@@ -36,7 +36,7 @@ export class TeamsView extends React.Component<any, any> {
                 visual="error"
               />}
           {teams.map(id => {
-            const team: Team = teamInfo[id].attributes;
+            const team: Team = teamInfo[id];
             return (
               <Link key={id} className={style.team} to={`teams/${id}`}>
                 <div

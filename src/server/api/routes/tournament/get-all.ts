@@ -3,13 +3,12 @@ import TournamentSerializer from "../../../../models/serialize/tournament";
 import Tournament from "../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
-  return Tournament.findOne({ _id: req.params.id })
+  const { filter = {} } = req.query;
+
+  return Tournament.find(filter)
     .populate("divisions")
-    .then(tournament => {
-      if (!tournament) {
-        throw Error("Not Found");
-      }
-      return res.json(TournamentSerializer.serialize(tournament));
+    .then(tournaments => {
+      return res.json(TournamentSerializer.serialize(tournaments));
     })
     .catch(error => {
       res.status(500);

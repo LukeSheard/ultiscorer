@@ -20,8 +20,13 @@ const log = debug("app:server");
 const app: Express.Express = Express();
 
 /*
-  Config
+  API
 */
+app.use("/api", api);
+
+/**
+ * Error Handlers
+ */
 raven.config(config.SENTRY_DSN).install();
 app.use(raven.requestHandler());
 
@@ -34,11 +39,6 @@ if (__DEV__) {
   const hotWebpack = require("./middleware/webpack/hot").default;
   app.use(hotWebpack);
 }
-
-/*
-  API
-*/
-app.use("/api", api);
 
 /*
   Render Page
@@ -59,7 +59,7 @@ app.use(
     res: Express.Response,
     __: Express.NextFunction
   ) => {
-    log("Error occurred: %s", error.message);
+    log("Error occurred: %s", error);
     res.status(500);
     return res.redirect(
       `/error${querystring.stringify({

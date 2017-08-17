@@ -36,7 +36,7 @@ export class TournamentsView extends React.Component<any, any> {
                 visual="error"
               />}
           {tournaments.map(id => {
-            const tournament: Tournament = tournamentInfo[id].attributes;
+            const tournament: Tournament = tournamentInfo[id];
             return (
               <Link
                 key={id}
@@ -56,7 +56,7 @@ export class TournamentsView extends React.Component<any, any> {
                       {tournament.location}
                     </h5>
                   </div>
-                  {tournament.divisions.length
+                  {tournament.divisions && tournament.divisions.length
                     ? <div className={style.divisions}>
                         {(tournament.divisions || []).map((division, index) =>
                           <Tag key={index}>

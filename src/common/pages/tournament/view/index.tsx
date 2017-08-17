@@ -32,8 +32,8 @@ export class TournamentsView extends React.Component<any, any> {
             {tournament.divisions.map((division, index) => {
               return (
                 <Link
-                  to={`/tournaments/${tournament._id}/${division._id}`}
-                  key={division._id}
+                  to={`/tournaments/${tournament.id}/${division.id}`}
+                  key={division.id}
                 >
                   <Tag key={index}>
                     {division.name}
@@ -58,7 +58,7 @@ export default connect((state: IAppState) => {
   const current = state.tournament && state.tournament.selected;
   if (current) {
     props.tournament =
-      state.tournament && state.tournament.tournaments[current].attributes;
+      state.tournament && state.tournament.tournaments[current];
   }
 
   return props;

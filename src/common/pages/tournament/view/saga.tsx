@@ -7,13 +7,11 @@ import {
 
 export default function*({ params }) {
   try {
-    const response = yield request(
-      `/tournament?_id=${params.id}&expand[]=divisions`
-    );
+    const tournament = yield request(`/tournament/${params.id}`);
     yield put<ITournamentAction>({
       payload: {
         selected: params.id,
-        tournaments: response.data // TODO: Change API API
+        tournaments: [tournament] // TODO: Change API API
       },
       type: TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_SUCCESS
     });

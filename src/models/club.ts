@@ -17,6 +17,12 @@ export const ClubSchema = new Schema({
     default: "",
     type: String
   },
+  members: [
+    {
+      ref: "User",
+      type: Schema.Types.ObjectId
+    }
+  ],
   name: {
     required: true,
     type: String
@@ -25,13 +31,7 @@ export const ClubSchema = new Schema({
     ref: "User",
     required: true,
     type: Schema.Types.ObjectId
-  },
-  teams: [
-    {
-      ref: "Team",
-      type: Schema.Types.ObjectId
-    }
-  ]
+  }
 });
 
 export default model<Club>("Club", ClubSchema);

@@ -12,13 +12,14 @@ export class TournamentsView extends React.Component<any, any> {
             <h4>
               {division.name}
             </h4>
-            {division.teams.map(team => {
-              return (
-                <p key={team}>
-                  {team}
-                </p>
-              );
-            })}
+            {division.teams &&
+              division.teams.map(team => {
+                return (
+                  <p key={team}>
+                    {team}
+                  </p>
+                );
+              })}
           </div>}
       </div>
     );
@@ -34,8 +35,8 @@ export function mapStateToProps(state: IAppState, ownProps) {
   if (current) {
     props.division =
       state.tournament &&
-      state.tournament.tournaments[current].attributes.divisions.filter(
-        d => d._id === ownProps.params.division
+      state.tournament.tournaments[current].divisions.filter(
+        d => d.id === ownProps.params.division
       )[0];
   }
 

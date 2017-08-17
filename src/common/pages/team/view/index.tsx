@@ -40,7 +40,7 @@ export default connect((state: IAppState) => {
 
   const current = state.team.selected;
   if (current) {
-    props.team = state.team.teams[current].attributes;
+    props.team = state.team.teams[current];
   }
 
   return props;
