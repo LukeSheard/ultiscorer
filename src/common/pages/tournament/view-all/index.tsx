@@ -43,7 +43,7 @@ export function mapTournamentToCard(tourmanent: Tournament): CardProps {
     link: `/tournaments/${tourmanent.id}`,
     message: `${moment(tourmanent.startDate).format("Do MMM YYYY")} - ${moment(
       tourmanent.endDate
-    ).format("Do MMM YYYY")}`,
+    ).format("DD MMM YYYY")}`,
     subtitle: tourmanent.location,
     tags: tourmanent.divisions.map(division => division.name),
     title: tourmanent.name

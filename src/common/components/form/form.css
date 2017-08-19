@@ -1,8 +1,17 @@
 .form {
-    max-width: 650px;
-    width: 100%;
+  max-width: 650px;
+  width: 100%;
 }
 
 .error {
-    margin: 10px 0;
+  margin: 10px 0;
+}
+
+.datepicker,
+.popover {
+  width: 100%;
+}
+
+.input {
+  width: 50%;
 }

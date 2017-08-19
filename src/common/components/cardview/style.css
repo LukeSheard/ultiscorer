@@ -16,12 +16,19 @@
   min-height: 130px;
 }
 
+.cardInner {
+  width: 100%;
+}
+
 .card:hover {
   text-decoration: none;
 }
 
 .cardTitle {
   line-height: 1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tags {

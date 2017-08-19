@@ -1,4 +1,5 @@
 import "@blueprintjs/core/dist/blueprint.css";
+import "@blueprintjs/datetime/dist/blueprint-datetime.css";
 import "normalize.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom";

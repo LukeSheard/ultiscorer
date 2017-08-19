@@ -1,5 +1,3 @@
-#! /usr/bin/bash
-
 export DBNAME=ultiscorer
 
 mongo $DBNAME --eval "db.dropDatabase()"

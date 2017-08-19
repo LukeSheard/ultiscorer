@@ -1,6 +1,6 @@
 [
   {
-    "name": "UKU Open & Womens Tour 3 2017",
+    "name": "UKU Tour 3 2017",
     "location": "Birmingham",
     "description": "UKU Tour 3 South will be held at Birmingham.",
     "_id": {
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "name": "UKU Open & Womens B Tour 3 2017",
+    "name": "UKU B Tour 3 2017",
     "location": "Edenbridge",
     "description": "UKU Tour 3 B-Tour will be held at Edenbridge.",
     "_id": {

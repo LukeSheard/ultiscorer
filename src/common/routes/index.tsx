@@ -89,7 +89,7 @@ export default function(store: IAppStore) {
           <Route
             path=":division"
             getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/divisions")
+              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division")
             )}
           />
         </Route>

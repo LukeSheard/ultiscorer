@@ -1,6 +1,6 @@
 [
   {
-    "name": "UKU Open & Womens Tour 2 South 2017",
+    "name": "UKU Tour 2 South 2017",
     "location": "Cardiff",
     "description": "UKU Tour 2 South will be held at Cardiff.",
     "_id": {
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "name": "UKU Open & Womens Tour 2 North 2017",
+    "name": "UKU Tour 2 North 2017",
     "location": "Cardiff",
     "description": "UKU Tour 2 B-Tour North will be held at Salford Sports Village in the North-West of England.",
     "_id": {

@@ -21,7 +21,7 @@ export default class Card extends React.Component<CardProps, {}> {
     const { title, subtitle, message, link, tags } = this.props;
     return (
       <Link className={style.card} to={link}>
-        <div className={cx(Classes.CARD, Classes.INTERACTIVE)}>
+        <div className={cx(Classes.CARD, Classes.INTERACTIVE, style.cardInner)}>
           <h3 className={style.cardTitle}>
             {title}
           </h3>
