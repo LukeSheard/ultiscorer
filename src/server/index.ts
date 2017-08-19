@@ -2,8 +2,10 @@ import * as cookieParser from "cookie-parser";
 import "css-modules-require-hook/preset";
 import debug from "debug";
 import * as Express from "express";
+import * as path from "path";
 import * as querystring from "querystring";
 import * as raven from "raven";
+import * as favicon from "serve-favicon";
 
 import config, { __DEV__ } from "../../config";
 import mongoose from "../models/db";
@@ -29,6 +31,7 @@ app.use("/api", api);
  */
 raven.config(config.SENTRY_DSN).install();
 app.use(raven.requestHandler());
+app.use(favicon(path.join(__dirname, "../", "static", "favicon.ico")));
 
 /*
   Static Files including hot middleware in development
@@ -62,7 +65,7 @@ app.use(
     log("Error occurred: %s", error);
     res.status(500);
     return res.redirect(
-      `/error${querystring.stringify({
+      `/error?${querystring.stringify({
         sentry: (res as any).sentry
       })}`
     );

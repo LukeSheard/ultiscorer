@@ -1,4 +1,5 @@
 import { Action } from "redux";
+import Tournament from "../../models/tournament";
 
 export enum TOURNAMENT_ACTION_TYPES {
   // Create
@@ -37,7 +38,9 @@ export const INITIAL_STATE = {
 
 export interface ITournamentState {
   loading: boolean;
-  tournaments: object;
+  tournaments: {
+    [id: string]: Tournament;
+  };
   selected?: string;
 }
 
@@ -84,6 +87,8 @@ export default function(
         tournaments: {
           ...state.tournaments,
           ...action.payload.tournaments.reduce((tournaments, tournament) => {
+            tournament.startDate = new Date(tournament.startDate);
+            tournament.endDate = new Date(tournament.endDate);
             tournaments[tournament.id] = tournament;
             return tournaments;
           }, {})

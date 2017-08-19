@@ -11,11 +11,13 @@ export function createInjectors(store: IAppStore) {
       if (saga !== undefined) {
         log("Injecting saga for route");
         try {
-          store.runSaga(saga as Saga, state);
+          return store.runSaga(saga as Saga, state).done;
         } catch (e) {
           log("Component Saga error", e);
         }
       }
+
+      return Promise.resolve();
     }
   };
 }
@@ -29,9 +31,12 @@ export function createLoadModule(store: IAppStore) {
           log(error);
           cb("Error fetching rescource");
         })
-        .then(({ default: mod, saga }) => {
-          injectSaga(mod.saga, state);
+        .then(({ default: mod, prefetch, saga }) => {
           injectSaga(saga, state);
+
+          if (prefetch) {
+            return injectSaga(prefetch, state).then(() => cb(null, mod));
+          }
 
           return cb(null, mod);
         })

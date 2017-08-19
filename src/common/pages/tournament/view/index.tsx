@@ -1,12 +1,12 @@
-export { default as saga } from "./saga";
+export { default as prefetch } from "./saga";
 
-import { Tag } from "@blueprintjs/core";
+import { Classes, Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 import Tournament from "../../../..//models/tournament";
 import { IAppState } from "../../../reducers";
-const style = require("../view-all/style.css");
+const style = require("./style.css");
 
 export interface ITournamentViewProps {
   tournament?: Tournament;
@@ -19,29 +19,33 @@ export class TournamentsView extends React.Component<any, any> {
     if (loading) {
       return <div>Loading</div>;
     }
+
     return (
       <div>
-        <h1>
-          {tournament && tournament.name}
-        </h1>
-        <h3>
-          {tournament && tournament.location}
-        </h3>
-        {tournament &&
-          <div className={style.divisions}>
-            {tournament.divisions.map((division, index) => {
-              return (
-                <Link
-                  to={`/tournaments/${tournament.id}/${division.id}`}
-                  key={division.id}
-                >
-                  <Tag key={index}>
-                    {division.name}
-                  </Tag>
-                </Link>
-              );
-            })}
-          </div>}
+        <header>
+          <h1>
+            {tournament.name}
+          </h1>
+          <h2>
+            {tournament.location}
+          </h2>
+          <p>
+            {tournament.description}
+          </p>
+        </header>
+        <section>
+          {tournament.divisions.map((division, index) =>
+            <Link
+              className={style.division}
+              to={`/tournaments/${tournament.id}/${division.id}`}
+              key={division.id}
+            >
+              <Tag key={index} className={Classes.LARGE}>
+                {division.name}
+              </Tag>
+            </Link>
+          )}
+        </section>
         <div>
           {children}
         </div>
@@ -52,13 +56,12 @@ export class TournamentsView extends React.Component<any, any> {
 
 export default connect((state: IAppState) => {
   const props: any = {
-    loading: state.tournament && state.tournament.loading
+    loading: state.tournament.loading
   };
 
-  const current = state.tournament && state.tournament.selected;
+  const current = state.tournament.selected;
   if (current) {
-    props.tournament =
-      state.tournament && state.tournament.tournaments[current];
+    props.tournament = state.tournament.tournaments[current];
   }
 
   return props;

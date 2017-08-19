@@ -7,20 +7,17 @@ export class TournamentsView extends React.Component<any, any> {
     const { division } = this.props;
     return (
       <div>
-        {division &&
-          <div>
-            <h4>
-              {division.name}
-            </h4>
-            {division.teams &&
-              division.teams.map(team => {
-                return (
-                  <p key={team}>
-                    {team}
-                  </p>
-                );
-              })}
-          </div>}
+        <h4>
+          {division.name}
+        </h4>
+        {division.teams &&
+          division.teams.map(team => {
+            return (
+              <p key={team}>
+                {team}
+              </p>
+            );
+          })}
       </div>
     );
   }

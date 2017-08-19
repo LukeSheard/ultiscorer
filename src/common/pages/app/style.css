@@ -1,18 +1,18 @@
 .app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .main_app {
-    display: flex;
-    justify-content: center;
-    align-content: stretch;
-    align-items: stretch;
-    margin: 40px auto;
-    max-width: 1200px;
-    padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
 }
 
-.main_app>* {
-    width: 100%;
+.main_app > * {
+  width: 100%;
 }

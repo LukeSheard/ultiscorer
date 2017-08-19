@@ -8,7 +8,7 @@ const options = {
   allowRedirectBack: false,
   authenticatedSelector: (state: IAppState) =>
     state.user && state.user.token === void 0,
-  redirectPath: "/dashboard",
+  redirectPath: "/tournaments",
   wrapperDisplayName: "UserIsNotAuthenticated"
 };
 

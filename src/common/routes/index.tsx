@@ -94,26 +94,6 @@ export default function(store: IAppStore) {
           />
         </Route>
       </Route>
-      <Route path="teams" component={Wrap}>
-        <IndexRoute
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/team" */ "../pages/team/view-all")
-          )}
-        />
-        <Route
-          path="new"
-          onEnter={connect(userIsAuthenticated)}
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/team/new" */ "../pages/team/new")
-          )}
-        />
-        <Route
-          path=":id"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/tournament/new" */ "../pages/team/view")
-          )}
-        />
-      </Route>
       <Route
         path="sign-out"
         getComponent={loadModule(() =>

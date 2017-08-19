@@ -22,7 +22,7 @@ export default class AppWrapper extends React.Component<any, any> {
     const { store, ...renderProps } = this.props;
     return (
       <Provider store={store}>
-        <Router {...renderProps} />
+        <Router key={new Date().toISOString()} {...renderProps} />
       </Provider>
     );
   }

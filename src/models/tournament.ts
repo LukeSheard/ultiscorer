@@ -4,11 +4,13 @@ import Division from "./division";
 import User from "./user";
 
 export interface TournamentSchema {
+  endDate: Date;
   owner: User;
   name: string;
   location: string;
   divisions: Division[];
   description: string;
+  startDate: Date;
 }
 
 export default interface Tournament extends TournamentSchema, Document {};

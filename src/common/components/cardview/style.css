@@ -1,0 +1,54 @@
+.cardView {
+  align-items: stretch;
+  align-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  min-height: 130px;
+}
+
+.card:hover {
+  text-decoration: none;
+}
+
+.cardTitle {
+  line-height: 1em;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin: 5px 0;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .card {
+    width: 47.5%;
+  }
+  .card:nth-child(odd) {
+    margin-right: 2.5%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    width: 30%;
+  }
+  .card:nth-child(3n + 2) {
+    margin: 10px 5%;
+  }
+}

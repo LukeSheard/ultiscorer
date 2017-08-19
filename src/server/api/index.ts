@@ -22,6 +22,7 @@ import auth from "./routes/auth";
 import club from "./routes/club";
 import team from "./routes/team";
 import tournament from "./routes/tournament";
+import user from "./routes/user";
 
 const app = Express();
 
@@ -34,6 +35,7 @@ app.use("/auth", auth);
 app.use("/club", club);
 app.use("/team", team);
 app.use("/tournament", tournament);
+app.use("/user", user);
 
 app.get("*", notfound);
 app.use(error);

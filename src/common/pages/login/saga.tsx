@@ -23,7 +23,7 @@ export function* loginUser(action) {
       get(
         state,
         "routing.locationBeforeTransitions.query.redirect",
-        "dashboard"
+        "tournaments"
       )
     );
 

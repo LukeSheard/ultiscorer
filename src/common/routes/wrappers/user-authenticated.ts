@@ -14,7 +14,7 @@ const options = {
       state.user.jwt.exp && new Date(state.user.jwt.exp * 1000) > new Date()
     );
   },
-  redirectPath: "/login",
+  redirectPath: "/sign-in",
   wrapperDisplayName: "UserIsAuthenticated"
 };
 

@@ -1,6 +1,6 @@
 import { Intent } from "@blueprintjs/core";
 import debug from "debug";
-import { LOCATION_CHANGE, push } from "react-router-redux";
+import { LOCATION_CHANGE } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
 import request from "../../api";
 import { NOTIFICATION_ACTION_TYPES } from "../../reducers/notification";
@@ -31,7 +31,6 @@ export function* logoutUser() {
     yield put({
       type: USER_ACTION_TYPES.SIGNOUT_SUCCESS
     });
-    yield put(push("/"));
   }
 }
 
