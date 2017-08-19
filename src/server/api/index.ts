@@ -20,6 +20,7 @@ import "../../models/user";
 
 import auth from "./routes/auth";
 import club from "./routes/club";
+import division from "./routes/division";
 import team from "./routes/team";
 import tournament from "./routes/tournament";
 import user from "./routes/user";
@@ -33,6 +34,7 @@ app.use(cookieParser(config.COOKIE_SECRET));
 
 app.use("/auth", auth);
 app.use("/club", club);
+app.use("/division", division);
 app.use("/team", team);
 app.use("/tournament", tournament);
 app.use("/user", user);

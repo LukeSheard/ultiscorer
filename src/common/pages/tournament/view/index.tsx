@@ -1,22 +1,26 @@
 export { default as prefetch } from "./saga";
 
-import { Classes, Tag } from "@blueprintjs/core";
+import { Classes, Intent, Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router";
+import { Link, RouteComponentProps } from "react-router";
 import Tournament from "../../../..//models/tournament";
 import { IAppState } from "../../../reducers";
 const style = require("./style.css");
 
-export interface ITournamentViewProps {
+export interface ITournamentViewProps extends React.Props<TournamentsView> {
+  loading: boolean;
   tournament?: Tournament;
 }
 
-export class TournamentsView extends React.Component<any, any> {
+export class TournamentsView extends React.Component<
+  ITournamentViewProps & RouteComponentProps<any, any>,
+  {}
+> {
   public render() {
-    const { children, loading, tournament } = this.props;
+    const { children, loading, params, tournament } = this.props;
 
-    if (loading) {
+    if (loading || !tournament) {
       return <div>Loading</div>;
     }
 
@@ -33,29 +37,48 @@ export class TournamentsView extends React.Component<any, any> {
             {tournament.description}
           </p>
         </header>
-        <section>
-          {tournament.divisions.map((division, index) =>
+        <section className={style.divisions}>
+          {tournament.divisions.length > 1
+            ? <Link
+                className={style.division}
+                to={`/tournaments/${tournament.id}`}
+              >
+                <Tag
+                  className={Classes.LARGE}
+                  intent={!params.division ? Intent.PRIMARY : Intent.NONE}
+                >
+                  View All
+                </Tag>
+              </Link>
+            : null}
+          {tournament.divisions.map(division =>
             <Link
               className={style.division}
               to={`/tournaments/${tournament.id}/${division.id}`}
               key={division.id}
             >
-              <Tag key={index} className={Classes.LARGE}>
+              <Tag
+                key={division.id}
+                className={Classes.LARGE}
+                intent={
+                  division.id === params.division ? Intent.PRIMARY : Intent.NONE
+                }
+              >
                 {division.name}
               </Tag>
             </Link>
           )}
         </section>
-        <div>
+        <section className={style.page}>
           {children}
-        </div>
+        </section>
       </div>
     );
   }
 }
 
 export default connect((state: IAppState) => {
-  const props: any = {
+  const props: ITournamentViewProps = {
     loading: state.tournament.loading
   };
 

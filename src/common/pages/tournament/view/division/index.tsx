@@ -1,45 +1,83 @@
+import { Tab2, Tabs2 } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { IAppState } from "../../../../reducers";
+const style = require("./style.css");
 
-export { saga } from "./saga";
+export { prefetch } from "./saga";
 
-export class TournamentsView extends React.Component<any, any> {
+export class DivisionView extends React.Component<any, any> {
+  constructor(props, ctx) {
+    super(props, ctx);
+    this.handleTabChange = this.handleTabChange.bind(this);
+    this.state = {
+      selectedTabId: 0
+    };
+  }
+
   public render() {
-    const { division } = this.props;
+    const { division, loading, teams } = this.props;
+
+    if (loading || !division) {
+      return <div>Loading</div>;
+    }
+
     return (
-      <div>
+      <section className={style.division_page}>
         <h4>
           {division.name}
         </h4>
-        {division.teams &&
-          division.teams.map(team => {
-            return (
-              <p key={team}>
-                {team}
-              </p>
-            );
-          })}
-      </div>
+        <Tabs2
+          animate={false}
+          onChange={this.handleTabChange}
+          vertical
+          id="division-teams"
+          defaultSelectedTabId="all"
+          selectedTabId={this.state.selectedTabId}
+          key={new Date().toISOString()}
+        >
+          <Tab2 id={0} key={0} title="All Teams" panel={<div>All Teams</div>} />
+          {teams.map(team =>
+            <Tab2
+              id={team.id}
+              key={team.id}
+              title={team.name}
+              panel={
+                <div>
+                  {JSON.stringify(team)}
+                </div>
+              }
+            />
+          )}
+        </Tabs2>
+      </section>
     );
+  }
+
+  private handleTabChange(newTabId: number) {
+    this.setState(() => ({
+      selectedTabId: newTabId
+    }));
   }
 }
 
-export function mapStateToProps(state: IAppState, ownProps) {
+export function mapStateToProps(state: IAppState, { params }) {
   const props: any = {
-    loading: state.tournament && state.tournament.loading
+    loading: state.team.loading
   };
 
-  const current = state.tournament && state.tournament.selected;
+  const current = state.tournament.selected;
   if (current) {
-    props.division =
-      state.tournament &&
-      state.tournament.tournaments[current].divisions.filter(
-        d => d.id === ownProps.params.division
-      )[0];
+    props.division = state.tournament.tournaments[
+      state.tournament.selected as string
+    ].divisions.filter(d => d.id === params.division)[0];
+
+    props.teams = props.division.teams.map(
+      team => state.team.teams[team as string]
+    );
   }
 
   return props;
 }
 
-export default connect(mapStateToProps)(TournamentsView);
+export default connect(mapStateToProps)(DivisionView);

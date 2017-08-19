@@ -4,9 +4,7 @@ import { ITeamAction, TEAM_ACTION_TYPES } from "../../../../reducers/team";
 
 export function* prefetch({ params }) {
   try {
-    const teams = yield request(
-      `/division/${params.division}/relationships/teams`
-    );
+    const teams = yield request(`/tournament/${params.id}/relationships/teams`);
     yield put<ITeamAction>({
       payload: {
         teams

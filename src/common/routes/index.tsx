@@ -86,6 +86,11 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
           )}
         >
+          <IndexRoute
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division-all")
+            )}
+          />
           <Route
             path=":division"
             getComponent={loadModule(() =>

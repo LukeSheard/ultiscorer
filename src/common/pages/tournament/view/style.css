@@ -1,3 +1,17 @@
+.divisions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  align-self: stretch;
+}
+
 .division {
   margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.page {
+  margin: 15px 0;
 }
