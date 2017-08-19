@@ -1,7 +1,7 @@
 [
   {
     "_id": {
-      "$oid": "59902b807c39080fbf6c870c"
+      "$oid": "5998b2769c1e5f72fdd8c625"
     },
     "club": {
       "$oid": "598f65d1b7be43b892bff1ab"
@@ -11,7 +11,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b80d612c0253e0dbfc0"
+      "$oid": "5998b381f0ff43d569cc2de2"
     },
     "club": {
       "$oid": "59902bdaf6b9bbced1e64b5f"
@@ -21,7 +21,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b809bcefa54591d23df"
+      "$oid": "5998b276369c50f79398c280"
     },
     "club": {
       "$oid": "598f70a35a42572ba84d8d23"
@@ -30,18 +30,18 @@
     "name": "SYC"
   },
   {
+    "_id": {
+      "$oid": "5998b276d2089d6ea589b33e"
+    },
     "club": {
       "$oid": "598f59b9921fed479776e19f"
     },
-    "name": "Smog",
-    "_id": {
-      "$oid": "598f628b5c7f31db6debd68a"
-    },
-    "gender": "Womens"
+    "gender": "Womens",
+    "name": "Smog"
   },
   {
     "_id": {
-      "$oid": "59902b804ebda7815c8e8752"
+      "$oid": "5998b381744de049be301d83"
     },
     "club": {
       "$oid": "598f70a332dce0cea4c315c5"
@@ -51,7 +51,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b806b883275f0ed3797"
+      "$oid": "5998b381b56f7c23e53a22bb"
     },
     "club": {
       "$oid": "598f70a332dce0cea4c315c5"
@@ -61,7 +61,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b8006e7011fea1ecfbd"
+      "$oid": "5998b276794cbb10de801db0"
     },
     "club": {
       "$oid": "598f70a3b52aadeb1011f0ba"
@@ -71,7 +71,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b80d95bd559d5284959"
+      "$oid": "5998b27629325430c9fe96ea"
     },
     "club": {
       "$oid": "598f70a3fd85f41a3add28c8"
@@ -81,7 +81,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b8041e45a74fe15bfc4"
+      "$oid": "5998b27626934070b730b6fd"
     },
     "club": {
       "$oid": "598f70a30a816ef5af63d58c"
@@ -91,7 +91,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b80860894837f64dacf"
+      "$oid": "5998b276dde36e46ea0af751"
     },
     "club": {
       "$oid": "598f65d11b0274d33aa48483"
@@ -100,18 +100,18 @@
     "name": "LLLeeds"
   },
   {
+    "_id": {
+      "$oid": "5998b2769fab63e35dac80b3"
+    },
     "club": {
       "$oid": "598f59b9e5073c71b233abae"
     },
-    "name": "Reading 1",
-    "_id": {
-      "$oid": "598f628b9d51f10945fb6638"
-    },
-    "gender": "Womens"
+    "gender": "Womens",
+    "name": "Reading 1"
   },
   {
     "_id": {
-      "$oid": "59902b80898d6b84c4638466"
+      "$oid": "5998b276f8d3173a9ffbcfa1"
     },
     "club": {
       "$oid": "598f70a39900249091c04b3a"
@@ -121,27 +121,27 @@
   },
   {
     "_id": {
-      "$oid": "598f67e07bae2677a986e8d4"
+      "$oid": "5998b2765a15a2334f34212f"
     },
     "club": {
-      "$oid": "598f698b3053b8fb148f2795"
+      "$oid": "598f59b9e5073c71b233abae"
     },
-    "name": "Reading 2",
-    "gender": "Womens"
+    "gender": "Womens",
+    "name": "Reading 2"
   },
   {
     "_id": {
-      "$oid": "598f67e034b660a781c2f314"
+      "$oid": "5998b276cd49f5325625460b"
     },
     "club": {
       "$oid": "598f698b6f1ccdd63d498db7"
     },
-    "name": "Red",
-    "gender": "Womens"
+    "gender": "Womens",
+    "name": "Red"
   },
   {
     "_id": {
-      "$oid": "59902b80c2fbaf54b2b79332"
+      "$oid": "5998b2765cc4ed66d217797e"
     },
     "club": {
       "$oid": "598f70a3ca22097d8bc6576f"
@@ -151,7 +151,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b800216fded385da829"
+      "$oid": "5998b27698ddc3017d3fa999"
     },
     "club": {
       "$oid": "598f70a3fd85f41a3add28c8"
@@ -161,7 +161,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b80bd7bdd8caaa54aa8"
+      "$oid": "5998b276a12bd051b9896b86"
     },
     "club": {
       "$oid": "598f70a3b52aadeb1011f0ba"
@@ -171,7 +171,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b80c693d63e66825449"
+      "$oid": "5998b381a86731684e03aec9"
     },
     "club": {
       "$oid": "598f59b91d629a22b04a1b6e"
@@ -181,17 +181,17 @@
   },
   {
     "_id": {
-      "$oid": "598f67e0f8253ee8327ed724"
+      "$oid": "5998b2767427d186beccb9a0"
     },
     "club": {
       "$oid": "598f698be999086d0c1a6178"
     },
-    "name": "Brixton",
-    "gender": "Womens"
+    "gender": "Womens",
+    "name": "Brixton"
   },
   {
     "_id": {
-      "$oid": "59902b803b4c5826a946cf79"
+      "$oid": "5998b2764577088d2b6e518e"
     },
     "club": {
       "$oid": "598f70a332b40bd2c46cfc90"
@@ -201,7 +201,7 @@
   },
   {
     "_id": {
-      "$oid": "59902b809881a8d26cae9eca"
+      "$oid": "5998b2760505ab01f07cc3c5"
     },
     "club": {
       "$oid": "598f70a3e4b751817d9f7d3e"
@@ -211,12 +211,22 @@
   },
   {
     "_id": {
-      "$oid": "59902b80e0592c1f88b328b1"
+      "$oid": "5998b276d76951dc373f6dfe"
     },
     "club": {
       "$oid": "598f70a33c85fa11e24e0496"
     },
     "gender": "Womens",
     "name": "Discie Chicks"
+  },
+  {
+    "_id": {
+      "$oid": "5998b381f299cc428c881406"
+    },
+    "club": {
+      "$oid": "5998b3a35e218d4b1c8d2042"
+    },
+    "gender": "Womens",
+    "name": ""
   }
 ]

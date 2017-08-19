@@ -1,232 +1,232 @@
 [
   {
+    "_id": {
+      "$oid": "5998b276764ccdf59f732ba2"
+    },
     "club": {
       "$oid": "598f70a3be3d5abcbdd51427"
     },
-    "name": "Iceni",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136d8de5fee8af532dd"
-    }
+    "name": "Iceni"
   },
   {
+    "_id": {
+      "$oid": "5998b276369c50f79398c280"
+    },
     "club": {
       "$oid": "598f70a35a42572ba84d8d23"
     },
-    "name": "SYC",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71360f750469ee6820e5"
-    }
+    "name": "SYC"
   },
   {
+    "_id": {
+      "$oid": "5998b276dde36e46ea0af751"
+    },
     "club": {
       "$oid": "598f65d11b0274d33aa48483"
     },
-    "name": "LLLeeds",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713625dfa6abba7dbb9f"
-    }
+    "name": "LLLeeds"
   },
   {
+    "_id": {
+      "$oid": "5998b2769c1e5f72fdd8c625"
+    },
     "club": {
       "$oid": "598f65d1b7be43b892bff1ab"
     },
-    "name": "Brighton",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71362d6fbef88fe93234"
-    }
+    "name": "Brighton"
   },
   {
+    "_id": {
+      "$oid": "5998b276f8d3173a9ffbcfa1"
+    },
     "club": {
       "$oid": "598f70a39900249091c04b3a"
     },
-    "name": "Nice Bristols",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136d9151b44417503d5"
-    }
+    "name": "Nice Bristols"
   },
   {
+    "_id": {
+      "$oid": "5998b276794cbb10de801db0"
+    },
     "club": {
       "$oid": "598f70a3b52aadeb1011f0ba"
     },
-    "name": "Swift 1",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136f04b3f37dcc4d768"
-    }
+    "name": "Swift 1"
   },
   {
+    "_id": {
+      "$oid": "5998b27629325430c9fe96ea"
+    },
     "club": {
       "$oid": "598f70a3fd85f41a3add28c8"
     },
-    "name": "Hydra",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71367b6148338b3210c6"
-    }
+    "name": "Hydra"
   },
   {
+    "_id": {
+      "$oid": "5998b2768b6936e408b82a6b"
+    },
     "club": {
       "$oid": "598f70a332dce0cea4c315c5"
     },
-    "name": "GBU24",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713607173a093385c390"
-    }
+    "name": "GBU24"
   },
   {
+    "_id": {
+      "$oid": "5998b276c61a19ea1bb37d5a"
+    },
     "club": {
       "$oid": "598f59b99f9f02b9077fbd3a"
     },
-    "name": "Glasgow",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71368248227249fc2940"
-    }
+    "name": "Glasgow"
   },
   {
+    "_id": {
+      "$oid": "5998b276d2089d6ea589b33e"
+    },
     "club": {
       "$oid": "598f59b9921fed479776e19f"
     },
-    "name": "Smog",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136519dd064f398bfec"
-    }
+    "name": "Smog"
   },
   {
+    "_id": {
+      "$oid": "5998b27626934070b730b6fd"
+    },
     "club": {
       "$oid": "598f70a30a816ef5af63d58c"
     },
-    "name": "Chaos",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713698b6dc7b2a8a45da"
-    }
+    "name": "Chaos"
   },
   {
+    "_id": {
+      "$oid": "5998b2769fab63e35dac80b3"
+    },
     "club": {
       "$oid": "598f59b9e5073c71b233abae"
     },
-    "name": "Reading 1",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136a17cba49fa5bbd5b"
-    }
+    "name": "Reading 1"
   },
   {
+    "_id": {
+      "$oid": "5998b2760505ab01f07cc3c5"
+    },
     "club": {
       "$oid": "598f70a3e4b751817d9f7d3e"
     },
-    "name": "Crown Jewels",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136508f6884ddc85502"
-    }
+    "name": "Crown Jewels"
   },
   {
+    "_id": {
+      "$oid": "5998b2765cc4ed66d217797e"
+    },
     "club": {
       "$oid": "598f70a3ca22097d8bc6576f"
     },
-    "name": "Uprising",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71369dae909cddf7378f"
-    }
+    "name": "Uprising"
   },
   {
+    "_id": {
+      "$oid": "5998b2764577088d2b6e518e"
+    },
     "club": {
       "$oid": "598f70a332b40bd2c46cfc90"
     },
-    "name": "Vurve",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713617bf3d4216e1de60"
-    }
+    "name": "Vurve"
   },
   {
+    "_id": {
+      "$oid": "5998b276bd7a7bd80880eb6c"
+    },
     "club": {
       "$oid": "598f698bcbe79f6085f4af1a"
     },
-    "name": "Black Sheep",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713643300b1a37f98985"
-    }
+    "name": "Black Sheep"
   },
   {
+    "_id": {
+      "$oid": "5998b27698ddc3017d3fa999"
+    },
     "club": {
       "$oid": "598f70a3fd85f41a3add28c8"
     },
-    "name": "Hydra 2",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136e6b87b42ca3e0ccb"
-    }
+    "name": "Hydra 2"
   },
   {
+    "_id": {
+      "$oid": "5998b276205049573a138b73"
+    },
     "club": {
       "$oid": "598f70a333adf4d862d2ec91"
     },
-    "name": "Liverpool",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f7136346d499fdbd7d44a"
-    }
+    "name": "Liverpool"
   },
   {
+    "_id": {
+      "$oid": "5998b276a12bd051b9896b86"
+    },
     "club": {
       "$oid": "598f70a3b52aadeb1011f0ba"
     },
-    "name": "Swift 2",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71361193dbc74798ec2a"
-    }
+    "name": "Swift 2"
   },
   {
+    "_id": {
+      "$oid": "5998b2767427d186beccb9a0"
+    },
     "club": {
       "$oid": "598f698be999086d0c1a6178"
     },
-    "name": "Brixton",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71363de5bccb4cd13473"
-    }
+    "name": "Brixton"
   },
   {
+    "_id": {
+      "$oid": "5998b276cd49f5325625460b"
+    },
     "club": {
       "$oid": "598f698b6f1ccdd63d498db7"
     },
-    "name": "Red",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71363a8f1806cc06e8c6"
-    }
+    "name": "Red"
   },
   {
+    "_id": {
+      "$oid": "5998b276d76951dc373f6dfe"
+    },
     "club": {
       "$oid": "598f70a33c85fa11e24e0496"
     },
-    "name": "Discie Chicks",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f713612a2c52826df866f"
-    }
+    "name": "Discie Chicks"
   },
   {
+    "_id": {
+      "$oid": "5998b2765a15a2334f34212f"
+    },
     "club": {
       "$oid": "598f59b9e5073c71b233abae"
     },
-    "name": "Reading 2",
     "gender": "Womens",
-    "_id": {
-      "$oid": "598f71364ccad83f2b33afae"
-    }
+    "name": "Reading 2"
   }
 ]
