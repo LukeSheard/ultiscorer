@@ -64,6 +64,12 @@ app.use(
   ) => {
     log("Error occurred: %s", error);
     res.status(500);
+    if (__DEV__) {
+      return res.json({
+        error
+      });
+    }
+
     return res.redirect(
       `/error?${querystring.stringify({
         sentry: (res as any).sentry

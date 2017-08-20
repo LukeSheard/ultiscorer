@@ -1,8 +1,14 @@
 import * as React from "react";
 import { Provider } from "react-redux";
 import { Router } from "react-router";
+import { push } from "react-router-redux";
+import { IAppStore } from "../common/store";
 
-export default class AppWrapper extends React.Component<any, any> {
+export interface AppProps extends React.Props<AppWrapper> {
+  store: IAppStore;
+}
+
+export default class AppWrapper extends React.Component<AppProps, any> {
   public constructor(props, ctx) {
     super(props, ctx);
     this.state = {
@@ -11,14 +17,10 @@ export default class AppWrapper extends React.Component<any, any> {
   }
 
   public componentDidCatch() {
-    this.setState(() => ({ error: true }));
+    this.props.store.dispatch(push("/error"));
   }
 
   public render() {
-    if (this.state.error) {
-      return <div>Unknown exception occurred</div>;
-    }
-
     const { store, ...renderProps } = this.props;
     return (
       <Provider store={store}>

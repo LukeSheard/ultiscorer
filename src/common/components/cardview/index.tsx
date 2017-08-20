@@ -8,6 +8,11 @@ interface CardViewProps extends React.Props<CardView> {
   cards: CardProps[];
 }
 
+export const NON_IDEAL_PROPS: INonIdealStateProps = {
+  title: "There is nothing here",
+  visual: "error"
+};
+
 export default class CardView extends React.Component<CardViewProps, {}> {
   public static defaultProps = {
     tags: [] as string[]
@@ -19,7 +24,7 @@ export default class CardView extends React.Component<CardViewProps, {}> {
       <div className={style.cardView}>
         {cards.length
           ? cards.map((card, index) => <Card key={index} {...card} />)
-          : <NonIdealState {...nonIdealProps} />}
+          : <NonIdealState {...NON_IDEAL_PROPS} {...nonIdealProps} />}
       </div>
     );
   }

@@ -2,9 +2,9 @@ import { Intent } from "@blueprintjs/core";
 import debug from "debug";
 import { LOCATION_CHANGE } from "react-router-redux";
 import { cancel, put, take, takeLatest } from "redux-saga/effects";
-import request from "../../api";
-import { NOTIFICATION_ACTION_TYPES } from "../../reducers/notification";
-import { USER_ACTION_TYPES } from "../../reducers/user";
+import request from "../api";
+import { NOTIFICATION_ACTION_TYPES } from "../reducers/notification";
+import { USER_ACTION_TYPES } from "../reducers/user";
 
 const log = debug("app:pages:app:saga");
 

@@ -11,11 +11,11 @@ export default function(req: Request, res: Response) {
 
       const { name, password_confirm, password, ukuusername } = req.body;
 
-      if (name) {
+      if (user.name !== name) {
         user.name = name;
       }
 
-      if (ukuusername) {
+      if (user.ukuusername !== ukuusername) {
         user.ukuusername = ukuusername;
       }
 

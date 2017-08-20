@@ -2,10 +2,10 @@ export { default as saga } from "./saga";
 
 import * as React from "react";
 import { connect } from "react-redux";
-import Form from "../../components/form";
-import Input from "../../components/form/input";
-import { IAppState } from "../../reducers";
-import { USER_ACTION_TYPES } from "../../reducers/user";
+import Form from "../../../components/form";
+import Input from "../../../components/form/input";
+import { IAppState } from "../../../reducers";
+import { USER_ACTION_TYPES } from "../../../reducers/user";
 
 export class LoginForm extends React.Component<any, any> {
   public render() {

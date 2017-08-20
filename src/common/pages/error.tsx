@@ -12,9 +12,9 @@ export class ErrorPage extends React.Component<ErrorPageProps, {}> {
     return (
       <div>
         <h1>An Error Occurred</h1>
-        <h3>
-          {sentry}
-        </h3>
+        <p>
+          Error ID: {sentry}
+        </p>
       </div>
     );
   }

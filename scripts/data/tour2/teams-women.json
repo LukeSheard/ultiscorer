@@ -218,15 +218,5 @@
     },
     "gender": "Womens",
     "name": "Discie Chicks"
-  },
-  {
-    "_id": {
-      "$oid": "5998b381f299cc428c881406"
-    },
-    "club": {
-      "$oid": "5998b3a35e218d4b1c8d2042"
-    },
-    "gender": "Womens",
-    "name": ""
   }
 ]

@@ -39,7 +39,7 @@ export default function(store: IAppStore) {
     <Route
       path="/"
       getComponent={loadModule(() =>
-        import(/* webpackChunkName: "/-container" */ "../pages/app")
+        import(/* webpackChunkName: "/-container" */ "../app")
       )}
     >
       <IndexRoute
@@ -51,20 +51,26 @@ export default function(store: IAppStore) {
         <Route
           path="sign-in"
           getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/login" */ "../pages/login")
+            import(/* webpackChunkName: "/sign-in" */ "../pages/user/sign-in")
           )}
         />
         <Route
           path="sign-up"
           getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/sign-up" */ "../pages/sign-up")
+            import(/* webpackChunkName: "/sign-up" */ "../pages/user/sign-up")
           )}
         />
       </Route>
       <Route
+        path="sign-out"
+        getComponent={loadModule(() =>
+          import(/* webpackChunkName: "/sign-out" */ "../pages/user/sign-out")
+        )}
+      />
+      <Route
         path="account"
         getComponent={loadModule(() =>
-          import(/* webpackChunkName: "/account" */ "../pages/account")
+          import(/* webpackChunkName: "/account" */ "../pages/user/account")
         )}
       />
       <Route path="tournaments" component={Wrap}>
@@ -86,6 +92,12 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
           )}
         >
+          <Route
+            path="edit"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/edit" */ "../pages/tournament/edit")
+            )}
+          />
           <IndexRoute
             getComponent={loadModule(() =>
               import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division-all")
@@ -99,12 +111,6 @@ export default function(store: IAppStore) {
           />
         </Route>
       </Route>
-      <Route
-        path="sign-out"
-        getComponent={loadModule(() =>
-          import(/* webpackChunkName: "/sign-out" */ "../pages/sign-out")
-        )}
-      />
       <Route
         path="error"
         getComponent={loadModule(() =>

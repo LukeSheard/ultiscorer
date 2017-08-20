@@ -1,6 +1,6 @@
 import * as React from "react";
-import Header from "../../components/header";
-import Notifications from "../../components/notifications";
+import Header from "../components/header";
+import Notifications from "../components/notifications";
 export { default as saga } from "./saga";
 const style = require("./style.css");
 

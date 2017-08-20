@@ -1,11 +1,11 @@
 import { Intent } from "@blueprintjs/core";
 import debug from "debug";
-import { LOCATION_CHANGE } from "react-router-redux";
+import { LOCATION_CHANGE, push } from "react-router-redux";
 import { cancel, put, select, take, takeLatest } from "redux-saga/effects";
-import request from "../../api";
-import { IAppState } from "../../reducers";
-import { createNotification } from "../../reducers/notification";
-import { IUserAction, USER_ACTION_TYPES } from "../../reducers/user";
+import request from "../../../api";
+import { IAppState } from "../../../reducers";
+import { createNotification } from "../../../reducers/notification";
+import { IUserAction, USER_ACTION_TYPES } from "../../../reducers/user";
 
 const log = debug("app:pages:account:saga");
 
@@ -17,15 +17,9 @@ export function* updateUser(action) {
       method: "PUT"
     });
     yield put<IUserAction>({
-      payload: response.data.attributes,
+      payload: response,
       type: USER_ACTION_TYPES.UPDATE_SUCCESS
     });
-    yield put(
-      createNotification({
-        intent: Intent.SUCCESS,
-        message: "Account updated"
-      })
-    );
   } catch (e) {
     log("Error %s", e);
     yield put(
@@ -35,6 +29,13 @@ export function* updateUser(action) {
       })
     );
   }
+  yield put(
+    createNotification({
+      intent: Intent.SUCCESS,
+      message: "Account updated"
+    })
+  );
+  yield put(push("/tournaments"));
 }
 
 export default function*() {

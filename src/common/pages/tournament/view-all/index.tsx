@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Tournament from "../../../../models/tournament";
 import CardView from "../../../components/cardview";
 import { CardProps } from "../../../components/cardview/card";
+import Loading from "../../../components/loading";
 import { IAppState } from "../../../reducers";
 export { default as saga } from "./saga";
 const style = require("./style.css");
@@ -26,7 +27,7 @@ export class TournamentsViewAllPage extends React.Component<
     const { loading, tournaments } = this.props;
 
     if (loading) {
-      return <div>Loading</div>;
+      return <Loading />;
     }
 
     return (
