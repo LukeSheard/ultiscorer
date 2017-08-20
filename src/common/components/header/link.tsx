@@ -1,12 +1,11 @@
-import { Button, Position, Tooltip } from "@blueprintjs/core";
+import { Button, IButtonProps, Position, Tooltip } from "@blueprintjs/core";
 import * as React from "react";
 import { Link } from "react-router";
 const style = require("./link.css");
 
-export interface NavLinkProps {
+export interface NavLinkProps extends Partial<IButtonProps> {
   to: string;
   position?: Position;
-  iconName?: string;
   text: string;
 }
 

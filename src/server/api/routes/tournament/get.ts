@@ -1,19 +1,15 @@
 import { Request, Response } from "express";
-import Tournament from "../../../models/tournament";
+import TournamentSerializer from "../../../../models/serialize/tournament";
+import Tournament from "../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
-  const { expand = [], ...query } = req.query;
-
-  return Tournament.find(query)
-    .populate(expand.join(" "))
-    .then(tournaments => {
-      return res.json({
-        data: tournaments.map(tournament => ({
-          attributes: tournament,
-          id: tournament._id,
-          type: "Tournament"
-        }))
-      });
+  return Tournament.findOne({ _id: req.params.id })
+    .populate("divisions")
+    .then(tournament => {
+      if (!tournament) {
+        throw Error("Not Found");
+      }
+      return res.json(TournamentSerializer.serialize(tournament));
     })
     .catch(error => {
       res.status(500);

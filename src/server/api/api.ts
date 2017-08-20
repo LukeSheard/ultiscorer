@@ -1,7 +1,7 @@
 import debug from "debug";
 import * as Express from "express";
 import config from "../../../config";
-import mongoose from "../models/db";
+import mongoose from "../../models/db";
 import api from "./";
 
 const app = Express();
@@ -13,6 +13,14 @@ const log = debug("api:server");
 interface IMongooseOptions extends mongoose.ConnectionOptions {
   useMongoClient: boolean;
 }
+
+import "../../models/club";
+import "../../models/division";
+import "../../models/game";
+import "../../models/point";
+import "../../models/team";
+import "../../models/tournament";
+import "../../models/user";
 
 mongoose
   .connect(

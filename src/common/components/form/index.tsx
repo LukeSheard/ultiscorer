@@ -2,7 +2,7 @@ import { Button, Classes, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { reduxForm } from "redux-form";
+import { ConfigProps, reduxForm } from "redux-form";
 import { IAppState } from "../../reducers";
 const style = require("./form.css");
 
@@ -73,10 +73,11 @@ export function createMapDispatchToProps(action) {
   };
 }
 
-export function createWrappedForm<FormData>(name, action) {
-  const form = reduxForm<FormData, RawFormProps, {}>({
+export function createWrappedForm<FormData>({ name, action, ...config }) {
+  const form = reduxForm<FormData, RawFormProps>({
+    ...config,
     form: name
-  })(RawForm);
+  })(RawForm as any);
 
   return connect(
     (state: IAppState) => ({
@@ -86,17 +87,15 @@ export function createWrappedForm<FormData>(name, action) {
   )(form as any);
 }
 
-interface FormWrappedProps<FormData>
-  extends React.Props<FormWrapper<FormData>> {
+interface FormWrappedProps extends Partial<ConfigProps<any, any>> {
   loading?: boolean;
   submit?: string;
   action: any;
   name: string;
-  initialValues?: Partial<FormData>;
 }
 
 export default class FormWrapper<FormData> extends React.Component<
-  FormWrappedProps<FormData>,
+  FormWrappedProps,
   {}
 > {
   public static defaultProps = {
@@ -106,7 +105,7 @@ export default class FormWrapper<FormData> extends React.Component<
   private form;
   constructor(props, ctx) {
     super(props, ctx);
-    this.form = createWrappedForm<FormData>(this.props.name, this.props.action);
+    this.form = createWrappedForm<FormData>(this.props);
   }
 
   public render() {

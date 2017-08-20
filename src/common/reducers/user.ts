@@ -1,6 +1,7 @@
 import * as jwt from "jwt-decode";
+import * as raven from "raven-js";
 import { Action } from "redux";
-import User from "../../server/models/user";
+import User from "../..//models/user";
 
 export enum USER_ACTION_TYPES {
   // LOGIN
@@ -70,11 +71,8 @@ export default function(
     case USER_ACTION_TYPES.UPDATE_SUCCESS: {
       return {
         ...state,
-        jwt: {
-          ...state.jwt,
-          user: action.payload
-        },
-        loading: false
+        loading: false,
+        user: action.payload
       };
     }
     case USER_ACTION_TYPES.UPDATE_FAILURE: {
@@ -86,6 +84,7 @@ export default function(
     case USER_ACTION_TYPES.SIGNUP_SUCCESS:
     case USER_ACTION_TYPES.LOGIN_SUCCESS: {
       const jwtPayload = jwt(action.payload.token);
+      raven.setUserContext(action.payload.user);
       return {
         jwt: jwtPayload,
         loading: false,

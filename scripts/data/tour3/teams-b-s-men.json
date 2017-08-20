@@ -1,0 +1,122 @@
+[
+  {
+    "_id": {
+      "$oid": "598f63999371389b36350cf6"
+    },
+    "name": "Birmingham 1",
+    "club": {
+      "$oid": "598f65d17474e05d2f3912e2"
+    },
+    "gender": "Mens"
+  },
+  {
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "name": "Brighton City",
+    "_id": {
+      "$oid": "598f628b009bd3c7841f1432"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399fa9c398fec808b68"
+    },
+    "name": "BAF",
+    "club": {
+      "$oid": "598f65d106a45ad0f50a587f"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63994fa75e8f057262dd"
+    },
+    "name": "LLLeeds 1",
+    "club": {
+      "$oid": "598f65d11b0274d33aa48483"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63997a20e47043c2cf83"
+    },
+    "name": "Vision",
+    "club": {
+      "$oid": "598f65d1b576f52f614e6816"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599032527d87f724c6c84245"
+    },
+    "club": {
+      "$oid": "598f65d1a4ac0a5b476409cf"
+    },
+    "gender": "Mens",
+    "name": "JR"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e06793c616c29f4021"
+    },
+    "club": {
+      "$oid": "598f698bf607ad7ae1068821"
+    },
+    "name": "The Brown",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f639999180d8962b077d5"
+    },
+    "name": "Gravity",
+    "club": {
+      "$oid": "598f65d158da21f8ee922c0e"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f9c9026b731bcca2"
+    },
+    "club": {
+      "$oid": "598f59b98b237e620ade6e1a"
+    },
+    "name": "EMO 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "599028c1c6495fddffe9760c"
+    },
+    "club": {
+      "$oid": "5990293b0968316e98406d2d"
+    },
+    "gender": "Mens",
+    "name": "Red Leicester"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e08d4dcc6c087ddfb2"
+    },
+    "club": {
+      "$oid": "598f698ba2b70324ef454f19"
+    },
+    "name": "Fluid",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0fbacc92c8310103e"
+    },
+    "club": {
+      "$oid": "598f698b716d4928bca44a68"
+    },
+    "name": "YOpen",
+    "gender": "Mens"
+  }
+]

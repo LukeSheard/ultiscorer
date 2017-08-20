@@ -1,27 +1,19 @@
 import { Request, Response } from "express";
-import Team from "../../../models/team";
-import User from "../../../models/user";
+import TeamSerializer from "../../../../models/serialize/team";
+import Team from "../../../../models/team";
 
 export default function(req: Request, res: Response) {
-  const { name, location } = req.body;
+  const { name, gender } = req.body;
   const { user } = res.locals;
 
-  const document = new Team({
-    location,
+  return new Team({
+    gender,
     name,
-    owner: (user as User).id
-  });
-
-  return document
+    owner: user
+  })
     .save()
     .then(team => {
-      return res.json({
-        data: {
-          attributes: team,
-          id: team._id,
-          type: "Team"
-        }
-      });
+      return res.json(TeamSerializer.serialize(team));
     })
     .catch(error => {
       res.status(500);

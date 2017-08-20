@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IndexRoute, Redirect, Route } from "react-router";
+import { IndexRoute, Route } from "react-router";
 import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
@@ -39,7 +39,7 @@ export default function(store: IAppStore) {
     <Route
       path="/"
       getComponent={loadModule(() =>
-        import(/* webpackChunkName: "/-container" */ "../pages/app")
+        import(/* webpackChunkName: "/-container" */ "../app")
       )}
     >
       <IndexRoute
@@ -51,22 +51,36 @@ export default function(store: IAppStore) {
         <Route
           path="sign-in"
           getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/login" */ "../pages/login")
+            import(/* webpackChunkName: "/sign-in" */ "../pages/user/sign-in")
           )}
         />
         <Route
           path="sign-up"
           getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/sign-up" */ "../pages/sign-up")
+            import(/* webpackChunkName: "/sign-up" */ "../pages/user/sign-up")
           )}
         />
       </Route>
       <Route
-        path="account"
+        path="sign-out"
         getComponent={loadModule(() =>
-          import(/* webpackChunkName: "/account" */ "../pages/account")
+          import(/* webpackChunkName: "/sign-out" */ "../pages/user/sign-out")
         )}
       />
+      <Route
+        path="account"
+        getComponent={loadModule(() =>
+          import(/* webpackChunkName: "/account" */ "../pages/user/account")
+        )}
+      />
+      <Route path="games" component={Wrap}>
+        <Route
+          path="new"
+          getComponent={loadModule(() =>
+            import(/* webpackChunkName: "/account" */ "../pages/game/new")
+          )}
+        />
+      </Route>
       <Route path="tournaments" component={Wrap}>
         <IndexRoute
           getComponent={loadModule(() =>
@@ -87,39 +101,24 @@ export default function(store: IAppStore) {
           )}
         >
           <Route
-            path="divisions/:division"
+            path="edit"
             getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/divisions")
+              import(/* webpackChunkName: "/tournament/edit" */ "../pages/tournament/edit")
+            )}
+          />
+          <IndexRoute
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division-all")
+            )}
+          />
+          <Route
+            path=":division"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division")
             )}
           />
         </Route>
       </Route>
-      <Route path="teams" component={Wrap}>
-        <IndexRoute
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/team" */ "../pages/team/view-all")
-          )}
-        />
-        <Route
-          path="new"
-          onEnter={connect(userIsAuthenticated)}
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/team/new" */ "../pages/team/new")
-          )}
-        />
-        <Route
-          path=":id"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/tournament/new" */ "../pages/team/view")
-          )}
-        />
-      </Route>
-      <Route
-        path="sign-out"
-        getComponent={loadModule(() =>
-          import(/* webpackChunkName: "/sign-out" */ "../pages/sign-out")
-        )}
-      />
       <Route
         path="error"
         getComponent={loadModule(() =>
@@ -132,7 +131,6 @@ export default function(store: IAppStore) {
           import(/* webpackChunkName: "/not-found" */ "../pages/not-found")
         )}
       />
-      <Redirect from="*" to="not-found" />
     </Route>
   );
 }

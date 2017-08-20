@@ -1,5 +1,6 @@
 import { routerMiddleware } from "react-router-redux";
 import { applyMiddleware, createStore, Store } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware, { END, Task } from "redux-saga";
 import reducer, { IAppState } from "../reducers";
 
@@ -22,7 +23,7 @@ export default function(
     ...createStore<IAppState>(
       reducer,
       initialState as IAppState,
-      applyMiddleware(...middleware)
+      composeWithDevTools(applyMiddleware(...middleware))
     ),
     runSaga: sagaMiddleware.run,
     close() {

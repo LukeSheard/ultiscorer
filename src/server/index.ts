@@ -2,11 +2,13 @@ import * as cookieParser from "cookie-parser";
 import "css-modules-require-hook/preset";
 import debug from "debug";
 import * as Express from "express";
+import * as path from "path";
 import * as querystring from "querystring";
 import * as raven from "raven";
+import * as favicon from "serve-favicon";
 
 import config, { __DEV__ } from "../../config";
-import mongoose from "./models/db";
+import mongoose from "../models/db";
 
 import api from "./api";
 
@@ -20,10 +22,16 @@ const log = debug("app:server");
 const app: Express.Express = Express();
 
 /*
-  Config
+  API
 */
+app.use("/api", api);
+
+/**
+ * Error Handlers
+ */
 raven.config(config.SENTRY_DSN).install();
 app.use(raven.requestHandler());
+app.use(favicon(path.join(__dirname, "../", "static", "favicon.ico")));
 
 /*
   Static Files including hot middleware in development
@@ -34,11 +42,6 @@ if (__DEV__) {
   const hotWebpack = require("./middleware/webpack/hot").default;
   app.use(hotWebpack);
 }
-
-/*
-  API
-*/
-app.use("/api", api);
 
 /*
   Render Page
@@ -59,10 +62,16 @@ app.use(
     res: Express.Response,
     __: Express.NextFunction
   ) => {
-    log("Error occurred: %s", error.message);
+    log("Error occurred: %s", error);
     res.status(500);
+    if (__DEV__) {
+      return res.json({
+        error
+      });
+    }
+
     return res.redirect(
-      `/error${querystring.stringify({
+      `/error?${querystring.stringify({
         sentry: (res as any).sentry
       })}`
     );

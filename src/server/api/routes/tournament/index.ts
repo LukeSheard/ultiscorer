@@ -3,24 +3,25 @@ import { Router } from "express";
 import auth from "../../middleware/auth";
 
 import get from "./get";
+import getall from "./get-all";
 import post from "./post";
+import put from "./put";
 
-import getdivisions from "./relationships/divisions";
-import getgames from "./relationships/games";
+import divisions from "./relationships/divisions";
+import teams from "./relationships/teams";
 
 const router = Router();
 
 /*
   Public API routes
 */
-router.get("/", get);
-router.get("/:tournament/divisions", getdivisions);
-router.get("/:tournament/games", getgames);
+router.post("/", auth, post);
+router.get("/", getall);
 
-/*
-  Private Routes
-*/
-router.use(auth);
-router.post("/", post);
+router.get("/:id", get);
+router.put("/:id", put);
+
+router.get("/:id/relationships/divisions", divisions);
+router.get("/:id/relationships/teams", teams);
 
 export default router;

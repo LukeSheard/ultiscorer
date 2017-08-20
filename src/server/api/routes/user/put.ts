@@ -1,20 +1,21 @@
 import { Request, Response } from "express";
-import User from "../../../models/user";
+import UserSerializer from "../../../../models/serialize/user";
+import User from "../../../../models/user";
 
 export default function(req: Request, res: Response) {
   return User.findById(req.params.id)
     .then(user => {
       if (!user) {
-        throw Error("User doesnt exist");
+        throw Error("User does not exist");
       }
 
       const { name, password_confirm, password, ukuusername } = req.body;
 
-      if (name) {
+      if (user.name !== name) {
         user.name = name;
       }
 
-      if (ukuusername) {
+      if (user.ukuusername !== ukuusername) {
         user.ukuusername = ukuusername;
       }
 
@@ -25,13 +26,7 @@ export default function(req: Request, res: Response) {
       return user.save();
     })
     .then(user => {
-      return res.json({
-        data: {
-          attributes: user,
-          id: user._id,
-          type: "User"
-        }
-      });
+      return res.json(UserSerializer.serialize(user));
     })
     .catch(error => {
       res.status(500);

@@ -1,4 +1,5 @@
 import { Action } from "redux";
+import Tournament from "../../models/tournament";
 
 export enum TOURNAMENT_ACTION_TYPES {
   // Create
@@ -11,8 +12,18 @@ export enum TOURNAMENT_ACTION_TYPES {
   TOURNAMENT_GET_FAILURE = "TOURNAMENT_GET_FAILURE",
   TOURNAMENT_GET_SUCCESS = "TOURNAMENT_GET_SUCCESS",
 
+  // Edit
+  TOURNAMENT_EDIT_REQUEST = "TOURNAMENT_EDIT_REQUEST",
+  TOURNAMENT_EDIT_FAILURE = "TOURNAMENT_EDIT_FAILURE",
+  TOURNAMENT_EDIT_SUCCESS = "TOURNAMENT_EDIT_SUCCESS",
+
   // Select
-  TOURNAMENT_SELECT = "TOURNAMENT_SELECT"
+  TOURNAMENT_SELECT = "TOURNAMENT_SELECT",
+
+  // UPDATE
+  TOURNAMENT_UPDATE_REQUEST = "TOURNAMENT_UPDATE_REQUEST",
+  TOURNAMENT_UPDATE_FAILURE = "TOURNAMENT_UPDATE_FAILURE",
+  TOURNAMENT_UPDATE_SUCCESS = "TOURNAMENT_UPDATE_SUCCESS"
 }
 
 export interface ITournamentAction extends Action {
@@ -37,7 +48,9 @@ export const INITIAL_STATE = {
 
 export interface ITournamentState {
   loading: boolean;
-  tournaments: object;
+  tournaments: {
+    [id: string]: Tournament;
+  };
   selected?: string;
 }
 
@@ -53,6 +66,7 @@ export default function(
       };
     }
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_REQUEST:
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_EDIT_REQUEST:
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_REQUEST: {
       return {
         ...state,
@@ -60,12 +74,14 @@ export default function(
       };
     }
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_GET_FAILURE:
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_EDIT_FAILURE:
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_FAILURE: {
       return {
         ...state,
         loading: false
       };
     }
+    case TOURNAMENT_ACTION_TYPES.TOURNAMENT_EDIT_SUCCESS:
     case TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_SUCCESS: {
       return {
         ...state,
@@ -84,6 +100,8 @@ export default function(
         tournaments: {
           ...state.tournaments,
           ...action.payload.tournaments.reduce((tournaments, tournament) => {
+            tournament.startDate = new Date(tournament.startDate);
+            tournament.endDate = new Date(tournament.endDate);
             tournaments[tournament.id] = tournament;
             return tournaments;
           }, {})

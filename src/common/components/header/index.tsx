@@ -4,14 +4,17 @@ import { Link } from "react-router";
 import { IAppState } from "../../reducers";
 import NavLink from "./link";
 import UserMenu from "./user";
+const style = require("./header.css");
 
 export function LoggedinNavbar() {
   return (
     <div className="pt-navbar-group pt-align-right">
-      <NavLink to="/games/new" iconName="plus" text="New Game" />
-      <NavLink to="/games" iconName="list" text="View Games" />
-      <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
-      <NavLink to="/teams" iconName="people" text="Teams" />
+      <NavLink
+        to="/tournaments"
+        iconName="timeline-events"
+        text="Tournaments"
+      />
+      <NavLink to="/clubs" iconName="people" text="Clubs" />
       <span className="pt-navbar-divider" />
       <UserMenu />
     </div>
@@ -34,12 +37,14 @@ export class Header extends React.Component<any, any> {
     const { loggedin } = this.props;
     return (
       <nav className="pt-navbar">
-        <div className="pt-navbar-group pt-align-left">
-          <Link to="/">
-            <div className="pt-navbar-heading">Ultiscorer</div>
-          </Link>
+        <div className={style.navbar}>
+          <div className="pt-navbar-group pt-align-left">
+            <Link to="/">
+              <div className="pt-navbar-heading">Ultiscorer</div>
+            </Link>
+          </div>
+          {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
         </div>
-        {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
       </nav>
     );
   }

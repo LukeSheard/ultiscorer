@@ -1,15 +1,13 @@
 import { Router } from "express";
 
-import auth from "../../middleware/auth";
-
-import get from "./get";
-import post from "./post";
+import teams from "./relationships/teams";
 
 const router = Router();
 
-router.get("/", get);
+/*
+  Public API routes
+*/
 
-router.use(auth);
-router.post("/", post);
+router.get("/:id/relationships/teams", teams);
 
 export default router;

@@ -1,0 +1,162 @@
+[
+  {
+    "_id": {
+      "$oid": "59902a83abb0b62f194e43f8"
+    },
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Mens",
+    "name": "Brighton Gritty"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83acd5584656c48bc9"
+    },
+    "club": {
+      "$oid": "59902aec10073a78cb523c76"
+    },
+    "gender": "Mens",
+    "name": "Guildford"
+  },
+  {
+    "_id": {
+      "$oid": "59902a8325c94c80f23e290d"
+    },
+    "club": {
+      "$oid": "598f65d17b658ca95d6bf57b"
+    },
+    "gender": "Mens",
+    "name": "Cambridge Ultimate"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f8253ee8327ed724"
+    },
+    "club": {
+      "$oid": "598f698be999086d0c1a6178"
+    },
+    "name": "Brixton",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83fde204b956462b82"
+    },
+    "club": {
+      "$oid": "598f698b8312ff8b07c2194a"
+    },
+    "gender": "Mens",
+    "name": "Kent Ultimate"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83342d3fec51f9af31"
+    },
+    "club": {
+      "$oid": "59902aecb016e88a774febdc"
+    },
+    "gender": "Mens",
+    "name": "Plymouth"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07bae2677a986e8d4"
+    },
+    "club": {
+      "$oid": "598f698b3053b8fb148f2795"
+    },
+    "name": "Reading 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e02ba87b03d4f34db5"
+    },
+    "club": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "name": "Devon 3",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a8363fde1d336efda5e"
+    },
+    "club": {
+      "$oid": "598f65d1ca6ca04bf0c6d59f"
+    },
+    "gender": "Mens",
+    "name": "Camden Ultimate 2"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0e0dded8d2015e130"
+    },
+    "club": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "name": "Cloud City 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83be8209794a4ff398"
+    },
+    "club": {
+      "$oid": "59902aec2963cc6fe6b25ba1"
+    },
+    "gender": "Mens",
+    "name": "South Wales Storm"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83c15b712831c09b6b"
+    },
+    "club": {
+      "$oid": "59902aec176cd814b22ffde1"
+    },
+    "gender": "Mens",
+    "name": "Logic Exile Destruction"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07dc0fbd74b3fd8f9"
+    },
+    "club": {
+      "$oid": "598f698bf5982b2b85fe5c8b"
+    },
+    "name": "Horsham",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a8382d53e23d24dcd96"
+    },
+    "club": {
+      "$oid": "59902aecb060abce07ca3928"
+    },
+    "gender": "Mens",
+    "name": "Sharkbear!"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83c07908a127cfa95c"
+    },
+    "club": {
+      "$oid": "598f59b9e5073c71b233abae"
+    },
+    "gender": "Mens",
+    "name": "Reading 3"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83834e415cc697866b"
+    },
+    "club": {
+      "$oid": "59902aecc57326524be89334"
+    },
+    "gender": "Mens",
+    "name": "Wild Boars"
+  }
+]
