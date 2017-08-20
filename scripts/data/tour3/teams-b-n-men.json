@@ -1,0 +1,192 @@
+[
+  {
+    "club": {
+      "$oid": "598f59b97ef330aee0105791"
+    },
+    "name": "Fire of London 2",
+    "_id": {
+      "$oid": "598f628bd12b845cc2559cdd"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63992243e15d2e3b2213"
+    },
+    "name": "Cloud City 1",
+    "club": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e00a73acf86e19749e"
+    },
+    "club": {
+      "$oid": "598f59b91d629a22b04a1b6e"
+    },
+    "name": "Devon 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e09ffc1062ad47d67e"
+    },
+    "club": {
+      "$oid": "598f698b552f114569c446cf"
+    },
+    "name": "Purple Cobras",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399a2b66dbd143bc992"
+    },
+    "name": "Bristol 1",
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63998d691ec2dec8a89c"
+    },
+    "name": "Brighton Legends",
+    "club": {
+      "$oid": "598f65d1b7be43b892bff1ab"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399d12b244dac9036e6"
+    },
+    "name": "Camden 1",
+    "club": {
+      "$oid": "598f65d1ca6ca04bf0c6d59f"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399d23f179ba45454f5"
+    },
+    "name": "Helix",
+    "club": {
+      "$oid": "598f65d14b27fda31d681be5"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e04143dc0fb0645cdb"
+    },
+    "club": {
+      "$oid": "598f65d170d0e21283133e8d"
+    },
+    "name": "Bristol 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f6399a74153fd57182902"
+    },
+    "name": "Cambridge 1",
+    "club": {
+      "$oid": "598f65d17b658ca95d6bf57b"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83342d3fec51f9af31"
+    },
+    "club": {
+      "$oid": "59902aecb016e88a774febdc"
+    },
+    "gender": "Mens",
+    "name": "Plymouth"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07bae2677a986e8d4"
+    },
+    "club": {
+      "$oid": "598f698b3053b8fb148f2795"
+    },
+    "name": "Reading 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0f8253ee8327ed724"
+    },
+    "club": {
+      "$oid": "598f698be999086d0c1a6178"
+    },
+    "name": "Brixton",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83fde204b956462b82"
+    },
+    "club": {
+      "$oid": "598f698b8312ff8b07c2194a"
+    },
+    "gender": "Mens",
+    "name": "Kent Ultimate"
+  },
+  {
+    "_id": {
+      "$oid": "5990349b1c5f3bd0d227fc3b"
+    },
+    "club": {
+      "$oid": "599034b1c1713fecb5b33eda"
+    },
+    "gender": "Mens",
+    "name": "St Albans"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0e0dded8d2015e130"
+    },
+    "club": {
+      "$oid": "598f65d1183e448af67d546f"
+    },
+    "name": "Cloud City 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0da83a32c67c640e8"
+    },
+    "club": {
+      "$oid": "598f698b3eabe9782f5b7877"
+    },
+    "name": "Double Helix",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07dc0fbd74b3fd8f9"
+    },
+    "club": {
+      "$oid": "598f698bf5982b2b85fe5c8b"
+    },
+    "name": "Horsham",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902a83c07908a127cfa95c"
+    },
+    "club": {
+      "$oid": "598f59b9e5073c71b233abae"
+    },
+    "gender": "Mens",
+    "name": "Reading 3"
+  }
+]

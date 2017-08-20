@@ -2,7 +2,7 @@ import debug from "debug";
 import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import config from "../../../../../config";
-import User from "../../../models/user";
+import User from "../../../../models/user";
 
 const log = debug("app:api:sign-in");
 

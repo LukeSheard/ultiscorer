@@ -1,46 +1,46 @@
 import { Request, Response } from "express";
-import Tournament from "../../../models/tournament";
+import TournamentSerializer from "../../../../models/serialize/tournament";
+import Tournament from "../../../../models/tournament";
 
 export default function(req: Request, res: Response) {
-    return Tournament.findById(req.params.id)
-        .then(tournament => {
-            if (!tournament){
-                throw Error("Tournament does not exist.");
-            }
+  const { name, location, description, startDate, endDate } = req.body;
 
-            const { name, location, divisions, description } = req.body;
+  return Tournament.findOne({ _id: req.params.id })
+    .populate("divisions")
+    .then(tournament => {
+      if (!tournament) {
+        throw Error("Not Found");
+      }
 
-            if (name) {
-                tournament.name = name;
-            }
+      if (name) {
+        tournament.name = name;
+      }
 
-            if (location) {
-                tournament.location = location;
-            }
+      if (location) {
+        tournament.location = location;
+      }
 
-            if (divisions) {
-                tournament.divisions = divisions;
-            }
+      if (description) {
+        tournament.description = description;
+      }
 
-            if (description) {
-                tournament.description = description;
-            }
+      if (startDate) {
+        tournament.startDate = startDate;
+      }
 
-            return tournament.save();
-        })
-        .then(tournament => {
-            return res.json({
-                data: {
-                    attributes: tournament,
-                    id: tournament._id,
-                    type: "Tournament"
-                }
-            });
-        })
-        .catch(error => {
-            res.status(500);
-            return res.json({
-                error
-            });
-        });
+      if (endDate) {
+        tournament.endDate = endDate;
+      }
+
+      return tournament.save();
+    })
+    .then(tournament => {
+      return res.json(TournamentSerializer.serialize(tournament));
+    })
+    .catch(error => {
+      res.status(500);
+      return res.json({
+        error
+      });
+    });
 }

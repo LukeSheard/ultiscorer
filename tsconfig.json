@@ -19,5 +19,5 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src", "./webpack.config.ts"]
+  "include": ["./src", "./config", "./scripts", "./webpack.config.ts"]
 }

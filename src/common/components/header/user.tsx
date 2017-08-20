@@ -22,6 +22,7 @@ export default class UserMenu extends React.Component<{}, {}> {
   private renderMenu() {
     return (
       <Menu>
+        <MenuLink to="/games/new" iconName="add" text="New Game" />
         <MenuDivider title="Tournaments" />
         <MenuLink
           to="/account/tournaments"

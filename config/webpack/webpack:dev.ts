@@ -3,18 +3,25 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const config: webpack.Configuration = {
   devtool: "inline-source-map",
-  entry: ["webpack-hot-middleware/client", "./src/client"],
+  entry: [
+    "react-hot-loader/patch",
+    "webpack-hot-middleware/client",
+    "./src/client"
+  ],
   module: {
     rules: [
       {
         exclude: /node_modules/,
         test: /.tsx?$/,
-        use: {
-          loader: "ts-loader",
-          options: {
-            silent: true
+        use: [
+          "react-hot-loader/webpack",
+          {
+            loader: "ts-loader",
+            options: {
+              silent: true
+            }
           }
-        }
+        ]
       },
       {
         exclude: /node_modules/,

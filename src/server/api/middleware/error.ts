@@ -1,5 +1,6 @@
 import debug from "debug";
 import { NextFunction, Request, Response } from "express";
+import { __DEV__ } from "../../../../config";
 
 const log = debug("app:api:error");
 
@@ -12,6 +13,6 @@ export default function(
   log(error);
   res.status(500);
   return res.json({
-    error: "Unknown Error occurred"
+    error: __DEV__ ? error : "Unknown Error occurred"
   });
 }

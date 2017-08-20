@@ -12,22 +12,17 @@ import {
 const log = debug("app:pages:tournament:new:saga");
 
 export function* createTournament(action) {
+  let response;
   try {
-    const response = yield request("/tournament", {
-      body: action.payload,
+    const payload = {
+      ...action.payload,
+      endDate: action.payload.date[1],
+      startDate: action.payload.date[0]
+    };
+    response = yield request("/tournament", {
+      body: payload,
       method: "POST"
     });
-    yield put<ITournamentAction>({
-      payload: response.data, // TODO: Change API API
-      type: TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_SUCCESS
-    });
-    yield put(
-      createNotification({
-        intent: Intent.SUCCESS,
-        message: "Tournament Created"
-      })
-    );
-    yield put(push(`/tournaments/${response.data.id}`));
   } catch (e) {
     log("Error %s", e);
     yield put(
@@ -37,6 +32,18 @@ export function* createTournament(action) {
       })
     );
   }
+
+  yield put<ITournamentAction>({
+    payload: response, // TODO: Change API API
+    type: TOURNAMENT_ACTION_TYPES.TOURNAMENT_CREATE_SUCCESS
+  });
+  yield put(
+    createNotification({
+      intent: Intent.SUCCESS,
+      message: "Tournament Created"
+    })
+  );
+  yield put(push(`/tournaments/${response.id}`));
 }
 
 export default function*() {

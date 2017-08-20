@@ -1,6 +1,6 @@
 import * as jwt from "jsonwebtoken";
 import config from "../../../config";
-import User from "../models/user";
+import User from "../../models/user";
 
 export interface JWTTokenPayload {
   user: User;

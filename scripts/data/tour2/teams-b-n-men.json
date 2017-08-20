@@ -1,0 +1,122 @@
+[
+  {
+    "club": {
+      "$oid": "598f59b9e622f5908df7da1c"
+    },
+    "name": "EDI",
+    "_id": {
+      "$oid": "598f628bc713a93b6a2ccff7"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63994fa75e8f057262dd"
+    },
+    "name": "LLLeeds 1",
+    "club": {
+      "$oid": "598f65d11b0274d33aa48483"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f63997a20e47043c2cf83"
+    },
+    "name": "Vision",
+    "club": {
+      "$oid": "598f65d1b576f52f614e6816"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902cfb422425221b8f7a10"
+    },
+    "club": {
+      "$oid": "59902bdaf6b9bbced1e64b5f"
+    },
+    "gender": "Mens",
+    "name": "Rebel Ultimate"
+  },
+  {
+    "_id": {
+      "$oid": "598f639999180d8962b077d5"
+    },
+    "name": "Gravity",
+    "club": {
+      "$oid": "598f65d158da21f8ee922c0e"
+    },
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e06793c616c29f4021"
+    },
+    "club": {
+      "$oid": "598f698bf607ad7ae1068821"
+    },
+    "name": "The Brown",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "59902cfbab38d8a6c74a51fd"
+    },
+    "club": {
+      "$oid": "598f698bd6ff27be8917f62e"
+    },
+    "gender": "Mens",
+    "name": "Flyght Club"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e065f5c3f1b727e42c"
+    },
+    "club": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "name": "Black Sheep 1",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e08d4dcc6c087ddfb2"
+    },
+    "club": {
+      "$oid": "598f698ba2b70324ef454f19"
+    },
+    "name": "Fluid",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e0fbacc92c8310103e"
+    },
+    "club": {
+      "$oid": "598f698b716d4928bca44a68"
+    },
+    "name": "YOpen",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e07b77d0126edb4c23"
+    },
+    "club": {
+      "$oid": "598f59b9a102a38169c6715d"
+    },
+    "name": "Manchester 2",
+    "gender": "Mens"
+  },
+  {
+    "_id": {
+      "$oid": "598f67e08c0cd462837fad79"
+    },
+    "club": {
+      "$oid": "598f698bcbe79f6085f4af1a"
+    },
+    "name": "Black Sheep 2",
+    "gender": "Mens"
+  }
+]

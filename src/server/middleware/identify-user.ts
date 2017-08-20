@@ -5,7 +5,7 @@ import {
   createUserAction,
   USER_ACTION_TYPES
 } from "../../common/reducers/user";
-import User from "../models/user";
+import User from "../../models/user";
 import { decode, JWTTokenPayload } from "../util/jwt";
 
 const log = debug("app:identifyuser");
