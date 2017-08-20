@@ -1,6 +1,6 @@
 import { Document, Schema } from "mongoose";
-import { model } from "./db";
 import Action from "./action";
+import { model } from "./db";
 import Division from "./division";
 import Team from "./team";
 import Tournament from "./tournament";
