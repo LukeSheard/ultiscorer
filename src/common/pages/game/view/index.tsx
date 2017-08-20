@@ -15,7 +15,7 @@ export class GameView extends React.Component<any, any> {
   public render() {
     const { children, game, loading } = this.props;
 
-    if (loading) {
+    if (loading && !game) {
       return <Loading />;
     }
 
