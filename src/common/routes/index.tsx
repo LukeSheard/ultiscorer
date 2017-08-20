@@ -80,6 +80,15 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/account" */ "../pages/game/new")
           )}
         />
+        <Route path=":id" component={Wrap}>
+          <IndexRoute
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/account" */ "../pages/game/view")
+            )}
+          />
+          <Route path="play" component={() => <div>Play the sucker</div>} />
+          <Route path="edit" component={() => <div>Edit the sucker</div>} />
+        </Route>
       </Route>
       <Route path="tournaments" component={Wrap}>
         <IndexRoute

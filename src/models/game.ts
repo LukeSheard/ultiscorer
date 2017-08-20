@@ -10,7 +10,6 @@ export default interface Game {
   away: Team;
   division: Division;
   firstPull: Team;
-  gameto: number;
   home: Team;
   owner: User;
   points: Point[];
