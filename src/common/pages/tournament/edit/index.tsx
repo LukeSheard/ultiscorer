@@ -1,4 +1,5 @@
 export { default as saga } from "./saga";
+export { prefetch } from "../view/saga";
 
 import { Button, Intent } from "@blueprintjs/core";
 import * as React from "react";

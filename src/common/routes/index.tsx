@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IndexRoute, Route } from "react-router";
+import { IndexRedirect, IndexRoute, Route } from "react-router";
 import Wrap from "../components/wrap";
 import { IAppStore } from "../store";
 import { createConnect, createLoadModule } from "./utils";
@@ -114,12 +114,7 @@ export default function(store: IAppStore) {
             import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/new")
           )}
         />
-        <Route
-          path=":id"
-          getComponent={loadModule(() =>
-            import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
-          )}
-        >
+        <Route path=":id" component={Wrap}>
           <Route
             path="edit"
             getComponent={loadModule(() =>
@@ -128,21 +123,23 @@ export default function(store: IAppStore) {
           />
           <IndexRoute
             getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division-all")
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
             )}
           />
           <Route
-            path=":division"
+            path="division"
             getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division")
+              import(/* webpackChunkName: "/tournament/new" */ "../pages/tournament/view")
             )}
-          />
-          <Route
-            path=":division/edit"
-            getComponent={loadModule(() =>
-              import(/* webpackChunkName: "/tournament/division/edit" */ "../pages/tournament/view/division/edit")
-            )}
-          />
+          >
+            <IndexRedirect to="" />
+            <Route
+              path=":division"
+              getComponent={loadModule(() =>
+                import(/* webpackChunkName: "/tournament/division/edit" */ "../pages/tournament/view/division")
+              )}
+            />
+          </Route>
         </Route>
       </Route>
       <Route

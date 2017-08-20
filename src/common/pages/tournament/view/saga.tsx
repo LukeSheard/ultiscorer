@@ -6,7 +6,7 @@ import {
   TOURNAMENT_ACTION_TYPES
 } from "../../../reducers/tournament";
 
-export default function*({ params }) {
+export function* prefetch({ params }) {
   try {
     const tournament = yield request(`/tournament/${params.id}`);
     yield put<ITournamentAction>({
