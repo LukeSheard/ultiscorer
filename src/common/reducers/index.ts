@@ -1,8 +1,8 @@
 import { routerReducer, RouterState } from "react-router-redux";
 import { combineReducers } from "redux";
 import { FormReducer, reducer as formReducer } from "redux-form";
-import notifications, { INotificationState } from "./notification";
 import club, { IClubState } from "./club";
+import notifications, { INotificationState } from "./notification";
 import team, { ITeamState } from "./team";
 import tournament, { ITournamentState } from "./tournament";
 import user, { IUserState } from "./user";
