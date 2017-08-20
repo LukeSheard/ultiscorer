@@ -1,22 +1,14 @@
 import { Request, Response } from "express";
 import Game from "../../../../models/game";
 import GameSerializer from "../../../../models/serialize/game";
-import User from "../../../../models/user";
 
 export default function(req: Request, res: Response) {
-  const { away, division, firstPull, home, tournament } = req.body;
-  const { user } = res.locals;
-
-  return new Game({
-    away,
-    division,
-    firstPull,
-    home,
-    owner: (user as User).id,
-    tournament
-  })
-    .save()
+  return Game.findOne({ _id: req.params.id })
+    .populate("home away division tournament")
     .then(game => {
+      if (!game) {
+        throw Error("Not Found");
+      }
       return res.json(GameSerializer.serialize(game));
     })
     .catch(error => {

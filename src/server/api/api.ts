@@ -14,10 +14,10 @@ interface IMongooseOptions extends mongoose.ConnectionOptions {
   useMongoClient: boolean;
 }
 
+import "../../models/action";
 import "../../models/club";
 import "../../models/division";
 import "../../models/game";
-import "../../models/point";
 import "../../models/team";
 import "../../models/tournament";
 import "../../models/user";

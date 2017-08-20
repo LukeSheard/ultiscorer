@@ -1,24 +1,28 @@
 import { Document, Schema } from "mongoose";
 import { model } from "./db";
+import Action from "./action";
 import Division from "./division";
-import Point from "./point";
 import Team from "./team";
 import Tournament from "./tournament";
 import User from "./user";
 
-export default interface Game {
+export interface Game {
+  actions: Action[];
   away: Team;
   division: Division;
   firstPull: Team;
   home: Team;
   owner: User;
-  points: Point[];
   tournament: Tournament;
-};
+}
 
-export interface IGameModel extends Game, Document {}
+export default interface IGameModel extends Game, Document {};
 
 export const GameSchema = new Schema({
+  actions: {
+    default: [],
+    type: [Action]
+  },
   away: {
     index: true,
     ref: "Team",
@@ -36,10 +40,6 @@ export const GameSchema = new Schema({
     required: true,
     type: Schema.Types.ObjectId
   },
-  gameto: {
-    default: 15,
-    type: Number
-  },
   home: {
     index: true,
     ref: "Team",
@@ -52,7 +52,6 @@ export const GameSchema = new Schema({
     required: true,
     type: Schema.Types.ObjectId
   },
-  points: [Point],
   tournament: {
     ref: "Tournament",
     required: true,

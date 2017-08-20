@@ -1,13 +1,13 @@
 import { Serializer } from "jsonapi-serializer";
 
-const options = {
+export default new Serializer("Division", {
   attributes: [
+    "actions",
     "away",
     "division",
     "firstPull",
     "home",
     "owner",
-    "points",
     "tournament"
   ],
   dataLinks: {
@@ -22,16 +22,4 @@ const options = {
     }
   },
   keyForAttribute: "camelCase"
-};
-
-["away", "home", "firstPull"].forEach(key => {
-  options[key] = {
-    included: true,
-    ref(_, team) {
-      return team._id || team;
-    },
-    typeForAttribute: "Team"
-  };
 });
-
-export default new Serializer("Division", options);
