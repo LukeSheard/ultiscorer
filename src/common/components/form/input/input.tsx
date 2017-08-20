@@ -1,27 +1,25 @@
 import { Classes } from "@blueprintjs/core";
 import * as cx from "classnames";
 import * as React from "react";
-import { Field, WrappedFieldProps } from "redux-form";
+import { BaseFieldProps, Field, WrappedFieldProps } from "redux-form";
 
-export interface IFormInputProps {
+interface InputGroupProps {
   disabled?: boolean;
   label: string;
   name: string;
+  type?: string;
   required?: boolean;
 }
 
-interface WrappedInputProps extends WrappedFieldProps {
-  disabled: boolean;
-  label: string;
-  name: string;
-  type: string;
-  required: boolean;
-}
+export interface IFormInputProps
+  extends BaseFieldProps<InputGroupProps>,
+    InputGroupProps {}
+
+interface WrappedInputProps extends WrappedFieldProps, InputGroupProps {}
 
 export class Input extends React.Component<WrappedInputProps, {}> {
-  public static defaultProps = {
+  public static defaultProps: Partial<InputGroupProps> = {
     disabled: false,
-    name: "",
     required: false,
     type: "text"
   };
