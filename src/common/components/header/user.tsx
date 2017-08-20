@@ -2,19 +2,18 @@ import {
   Button,
   Menu,
   MenuDivider,
-  PopoverInteractionKind
+  Popover,
+  Position
 } from "@blueprintjs/core";
-import { Popover2 } from "@blueprintjs/labs";
 import * as React from "react";
 import MenuLink from "./menu-link";
 
 export default class UserMenu extends React.Component<{}, {}> {
   public render() {
     return (
-      <Popover2
+      <Popover
         content={this.renderMenu()}
-        interactionKind={PopoverInteractionKind.HOVER}
-        placement="auto"
+        position={Position.BOTTOM_RIGHT}
         target={<Button iconName="person" className="pt-minimal" />}
       />
     );

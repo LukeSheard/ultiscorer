@@ -38,7 +38,7 @@ export default class Select extends React.Component<IFormInputProps, {}> {
         <div className="pt-input-group pt-fill">
           <Field
             className="pt-input"
-            component={CreateSelect(children)}
+            component={CreateSelect(children) as any}
             disabled={disabled}
             name={name}
           />

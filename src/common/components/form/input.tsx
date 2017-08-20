@@ -10,7 +10,7 @@ interface IFormInputProps extends React.Props<Field> {
   validate?: any;
 }
 
-interface WrappedInputProps<S> extends WrappedFieldProps<S> {
+interface WrappedInputProps extends WrappedFieldProps {
   disabled: boolean;
   label: string;
   name: string;
@@ -24,7 +24,7 @@ export default class WrappedInput extends React.Component<IFormInputProps, {}> {
   }
 }
 
-export class Input<S> extends React.Component<WrappedInputProps<S>, {}> {
+export class Input extends React.Component<WrappedInputProps, {}> {
   public static defaultProps = {
     disabled: false,
     name: "",

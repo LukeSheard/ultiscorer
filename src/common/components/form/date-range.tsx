@@ -5,7 +5,7 @@ import { Field, WrappedFieldInputProps, WrappedFieldProps } from "redux-form";
 const style = require("./form.css");
 
 export interface DateInputProps
-  extends WrappedFieldProps<any>,
+  extends WrappedFieldProps,
     IDateRangePickerProps {
   label: string;
   required: boolean;
@@ -66,6 +66,8 @@ export default class WrappedInput extends React.Component<
   public render() {
     const { name, ...props } = this.props;
 
-    return <Field name={name} component={DateInput} props={props} />;
+    return (
+      <Field name={name} component={DateInput as any} props={props as any} />
+    );
   }
 }

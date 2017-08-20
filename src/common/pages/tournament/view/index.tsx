@@ -4,8 +4,8 @@ import { Classes, Intent, Tag } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link, RouteComponentProps } from "react-router";
-import Loading from "../../../components/loading";
 import Tournament from "../../../..//models/tournament";
+import Loading from "../../../components/loading";
 import { IAppState } from "../../../reducers";
 const style = require("./style.css");
 
