@@ -4,12 +4,12 @@ import Team from "./team";
 import Tournament from "./tournament";
 
 export enum Genders {
-  Boys = "Boys",
-  Girls = "Girls",
   Mens = "Mens",
   Womens = "Womens",
   Open = "Open",
-  Mixed = "Mixed"
+  Mixed = "Mixed",
+  Boys = "Boys",
+  Girls = "Girls"
 }
 
 export interface DivisionSchema {
@@ -33,8 +33,8 @@ export const DivisionSchema = new Schema({
   },
   teams: [
     {
-      ref: "Team",
-      type: Schema.Types.ObjectId
+    ref: "Team",
+    type: Schema.Types.ObjectId
     }
   ],
   tournament: {

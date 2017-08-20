@@ -99,6 +99,7 @@
     "mongoose-unique-validator": "^1.0.5",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
+    "npx": "^9.6.0",
     "pretty-error": "^2.1.1",
     "raven": "^2.1.2",
     "raven-js": "^3.17.0",

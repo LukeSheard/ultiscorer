@@ -29,6 +29,7 @@ import { userIsNotAuthenticated } from "./wrappers/user-not-authenticated";
     /tournaments/:id/view                 - View Tournament
     /tournaments/:id/edit                 - View Tournament
     /tournaments/:id/divisions/:division  - View Tournament Divison
+    /tournaments/:id/divisions/:division/edit  - Edit Tournament Divison
 */
 
 export default function(store: IAppStore) {
@@ -115,6 +116,12 @@ export default function(store: IAppStore) {
             path=":division"
             getComponent={loadModule(() =>
               import(/* webpackChunkName: "/tournament/divisions" */ "../pages/tournament/view/division")
+            )}
+          />
+          <Route
+            path=":division/edit"
+            getComponent={loadModule(() =>
+              import(/* webpackChunkName: "/tournament/division/edit" */ "../pages/tournament/view/division/edit")
             )}
           />
         </Route>
