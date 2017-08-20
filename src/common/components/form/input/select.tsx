@@ -1,3 +1,5 @@
+import { Classes } from "@blueprintjs/core";
+import * as cx from "classnames";
 import * as React from "react";
 import { Field, WrappedFieldProps } from "redux-form";
 
@@ -21,14 +23,14 @@ export class Select extends React.Component<
   public render() {
     const { children, disabled, input, label, name, required } = this.props;
     return (
-      <label className="pt-label" htmlFor={name}>
-        <div>
-          {label}
-        </div>
-        {required ? <span className="pt-text-muted"> (required)</span> : null}
-        <div className="pt-select pt-fill">
+      <label className={Classes.INPUT_GROUP} htmlFor={name}>
+        {label}
+        {required
+          ? <span className={Classes.TEXT_MUTED}> (required)</span>
+          : null}
+        <div className={cx(Classes.SELECT, Classes.FILL)}>
           <select
-            className="pt-fill"
+            className={Classes.FILL}
             disabled={disabled}
             name={name}
             required={required}

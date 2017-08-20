@@ -1,14 +1,16 @@
 export { default as saga } from "./saga";
 
-import { Button, Intent } from "@blueprintjs/core"
+import { Button, Intent } from "@blueprintjs/core";
 import * as React from "react";
 import { connect } from "react-redux";
 import { FieldArray } from "redux-form";
-import Form from "../../../components/form";
-import DateRangeInput from "../../../components/form/date-range";
-import Input from "../../../components/form/input";
-import Select from "../../../components/form/select";
-import TextArea from "../../../components/form/textarea";
+import {
+  DateRangePicker,
+  Form,
+  Input,
+  Select,
+  TextArea
+} from "../../../components/form";
 import { IAppState } from "../../../reducers";
 import { TOURNAMENT_ACTION_TYPES } from "../../../reducers/tournament";
 
@@ -24,7 +26,11 @@ enum Genders {
 const renderDivisions = ({ fields }) =>
   <div>
     <div>
-      <Button type="button" intent={Intent.PRIMARY} onClick={() => fields.push({})}>
+      <Button
+        type="button"
+        intent={Intent.PRIMARY}
+        onClick={() => fields.push({})}
+      >
         Add Division
       </Button>
     </div>
@@ -42,7 +48,7 @@ const renderDivisions = ({ fields }) =>
         <hr />
       </div>
     )}
-  </div>
+  </div>;
 
 export class NewTournamentPage extends React.Component<any, any> {
   public render() {
@@ -58,7 +64,7 @@ export class NewTournamentPage extends React.Component<any, any> {
         <Input name="name" label="Tournament Name" required />
         <Input name="location" label="Location" required />
         <TextArea name="description" label="Description" />
-        <DateRangeInput name="date" label="Tournament Date" required />
+        <DateRangePicker name="date" label="Tournament Date" required />
         <h2>Divisions</h2>
         <FieldArray name="divisions" component={renderDivisions as any} />
       </Form>

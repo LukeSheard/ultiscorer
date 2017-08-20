@@ -1,8 +1,8 @@
-// import { Classes } from "@blueprintjs/core";
+import { Classes } from "@blueprintjs/core";
 import { DateRangeInput, IDateRangePickerProps } from "@blueprintjs/datetime";
 import * as React from "react";
 import { Field, WrappedFieldInputProps, WrappedFieldProps } from "redux-form";
-const style = require("./form.css");
+const style = require("./style.css");
 
 export interface DateInputProps
   extends WrappedFieldProps,
@@ -26,9 +26,11 @@ export class DateInput extends React.Component<DateInputProps, {}> {
     const { input, label, required, ...props } = this.props;
 
     return (
-      <label className="pt-label" htmlFor={name}>
+      <label className={Classes.INPUT_GROUP} htmlFor={name}>
         {label}
-        {required ? <span className="pt-text-muted"> (required)</span> : null}
+        {required
+          ? <span className={Classes.TEXT_MUTED}> (required)</span>
+          : null}
         <div className={style.datepicker}>
           <DateRangeInput
             {...props}

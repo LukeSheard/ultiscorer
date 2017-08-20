@@ -1,3 +1,5 @@
+import { Classes } from "@blueprintjs/core";
+import * as cx from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
@@ -8,14 +10,14 @@ const style = require("./header.css");
 
 export function LoggedinNavbar() {
   return (
-    <div className="pt-navbar-group pt-align-right">
+    <div className={cx(Classes.NAVBAR_GROUP, Classes.ALIGN_RIGHT)}>
       <NavLink
         to="/tournaments"
         iconName="timeline-events"
         text="Tournaments"
       />
       <NavLink to="/clubs" iconName="people" text="Clubs" />
-      <span className="pt-navbar-divider" />
+      <span className={cx(Classes.NAVBAR_DIVIDER)} />
       <UserMenu />
     </div>
   );
@@ -23,9 +25,9 @@ export function LoggedinNavbar() {
 
 export function LoggedoutNavbar() {
   return (
-    <div className="pt-navbar-group pt-align-right">
+    <div className={cx(Classes.NAVBAR_GROUP, Classes.ALIGN_RIGHT)}>
       <NavLink to="/tournaments" iconName="heat-grid" text="Tournaments" />
-      <span className="pt-navbar-divider" />
+      <span className={Classes.NAVBAR_DIVIDER} />
       <NavLink to="/sign-up" iconName="user" text="Sign Up" />
       <NavLink to="/sign-in" iconName="log-in" text="Sign In" />
     </div>
@@ -36,11 +38,11 @@ export class Header extends React.Component<any, any> {
   public render() {
     const { loggedin } = this.props;
     return (
-      <nav className="pt-navbar">
+      <nav className={cx(Classes.NAVBAR)}>
         <div className={style.navbar}>
-          <div className="pt-navbar-group pt-align-left">
+          <div className={cx(Classes.NAVBAR_GROUP, Classes.ALIGN_LEFT)}>
             <Link to="/">
-              <div className="pt-navbar-heading">Ultiscorer</div>
+              <div className={Classes.NAVBAR_HEADING}>Ultiscorer</div>
             </Link>
           </div>
           {loggedin ? <LoggedinNavbar /> : <LoggedoutNavbar />}
