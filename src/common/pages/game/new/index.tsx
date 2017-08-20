@@ -7,6 +7,7 @@ import Form from "../../../components/form";
 import Select from "../../../components/form/select";
 import Loading from "../../../components/loading";
 import { IAppState } from "../../../reducers";
+import { GAME_ACTION_TYPES } from "../../../reducers/game";
 
 export class NewGameTeamSelection extends React.Component<any, any> {
   public static defaultProps = {
@@ -45,7 +46,7 @@ export class NewGamePage extends React.Component<any, any> {
     }
 
     return (
-      <Form name="new-game" action={"LOL"}>
+      <Form name="new-game" action={GAME_ACTION_TYPES.GAME_CREATE_REQUEST}>
         <h1>Create Game</h1>
         <Select name="tournament" label="Tournament">
           {tournaments.map(tournament =>

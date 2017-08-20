@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.button {
+  margin: 10px;
+  flex-basis: calc(25% - 20px);
+  flex: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    flex-basis: calc(50% - 20px);
+  }
+}

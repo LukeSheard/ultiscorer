@@ -1,4 +1,3 @@
-import { push } from "react-router-redux";
 import { put } from "redux-saga/effects";
 import request from "../../../api";
 import { createNotification } from "../../../reducers/notification";
@@ -26,6 +25,5 @@ export default function*({ params }) {
         message: "Tournament does not exist"
       })
     );
-    yield put(push("/tournaments"));
   }
 }
