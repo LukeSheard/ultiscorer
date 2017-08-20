@@ -2,11 +2,13 @@ import { routerReducer, RouterState } from "react-router-redux";
 import { combineReducers } from "redux";
 import { FormReducer, reducer as formReducer } from "redux-form";
 import notifications, { INotificationState } from "./notification";
+import club, { IClubState } from "./club";
 import team, { ITeamState } from "./team";
 import tournament, { ITournamentState } from "./tournament";
 import user, { IUserState } from "./user";
 
 export interface IAppState {
+  club: IClubState;
   form: FormReducer;
   notifications: INotificationState;
   routing: RouterState;
@@ -16,6 +18,7 @@ export interface IAppState {
 }
 
 export default combineReducers<IAppState>({
+  club,
   form: formReducer,
   notifications,
   routing: routerReducer,

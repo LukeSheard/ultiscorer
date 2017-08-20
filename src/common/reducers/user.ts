@@ -1,4 +1,5 @@
 import * as jwt from "jwt-decode";
+import * as raven from "raven-js";
 import { Action } from "redux";
 import User from "../..//models/user";
 
@@ -83,6 +84,7 @@ export default function(
     case USER_ACTION_TYPES.SIGNUP_SUCCESS:
     case USER_ACTION_TYPES.LOGIN_SUCCESS: {
       const jwtPayload = jwt(action.payload.token);
+      raven.setUserContext(action.payload.user);
       return {
         jwt: jwtPayload,
         loading: false,

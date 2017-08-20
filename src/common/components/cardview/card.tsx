@@ -9,14 +9,10 @@ export interface CardProps extends React.Props<Card> {
   subtitle?: string;
   message?: string;
   link: string;
-  tags: string[];
+  tags?: string[];
 }
 
 export default class Card extends React.Component<CardProps, {}> {
-  public static defaultProps = {
-    tags: [] as string[]
-  };
-
   public render() {
     const { title, subtitle, message, link, tags } = this.props;
     return (
@@ -35,7 +31,7 @@ export default class Card extends React.Component<CardProps, {}> {
                 {message}
               </p>
             : null}
-          {tags.length
+          {tags && tags.length
             ? <div className={style.tags}>
                 {tags.map((tag, index) =>
                   <Tag className={cx(style.tag)} key={index}>

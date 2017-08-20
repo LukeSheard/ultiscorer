@@ -14,10 +14,6 @@ export const NON_IDEAL_PROPS: INonIdealStateProps = {
 };
 
 export default class CardView extends React.Component<CardViewProps, {}> {
-  public static defaultProps = {
-    tags: [] as string[]
-  };
-
   public render() {
     const { cards, nonIdealProps } = this.props;
     return (

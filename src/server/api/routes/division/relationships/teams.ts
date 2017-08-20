@@ -12,6 +12,7 @@ export default function(req: Request, res: Response) {
       res.json(TeamSerializer.serialize(division.teams));
     })
     .catch(error => {
+      console.error(error);
       res.status(500);
       return res.json({
         error
