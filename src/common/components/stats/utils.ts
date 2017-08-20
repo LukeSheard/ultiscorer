@@ -4,7 +4,7 @@ export function mapActionsToRows(actions) {
   let point = 0;
   return actions.reduce(
     (acc, action) => {
-      switch (action.action) {
+      switch (action.type) {
         case POINT_ACTIONS.HALF: {
           acc[point].push(action);
           point += 1;

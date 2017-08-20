@@ -73,8 +73,8 @@ export default function(
             actions: [
               ...game.actions,
               {
-                action: action.payload,
-                time: new Date()
+                time: new Date(),
+                type: action.payload
               }
             ]
           }

@@ -21,6 +21,8 @@ mongoimport --db $DBNAME --verbose --collection tournaments --jsonArray --file .
 
 mongoimport --db $DBNAME --verbose --collection divisions --jsonArray --file ./data/tour1/divisions.json
 
+mongoimport --db $DBNAME --verbose --collection games --jsonArray --file ./data/tour1/games.json
+
 mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour1/teams-a-men.json
 mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour1/teams-b-men.json
 mongoimport --db $DBNAME --verbose --collection teams --jsonArray --file ./data/tour1/teams-c-men.json
