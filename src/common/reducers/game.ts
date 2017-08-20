@@ -6,6 +6,10 @@ export enum GAME_ACTION_TYPES {
   GAME_CREATE_FAILURE = "GAME_CREATE_FAILURE",
   GAME_CREATE_SUCCESS = "GAME_CREATE_SUCCESS",
 
+  // Update
+  GAME_UPDATE_FAILURE = "GAME_UPDATE_FAILURE",
+  GAME_UPDATE_SUCCESS = "GAME_UPDATE_SUCCESS",
+
   // Get
   GAME_GET_REQUEST = "GAME_GET_REQUEST",
   GAME_GET_FAILURE = "GAME_GET_FAILURE",
@@ -70,7 +74,7 @@ export default function(
               ...game.actions,
               {
                 action: action.payload,
-                date: new Date()
+                time: new Date()
               }
             ]
           }

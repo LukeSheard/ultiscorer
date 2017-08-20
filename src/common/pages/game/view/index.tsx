@@ -3,6 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 export { default as prefetch } from "./saga";
 import Loading from "../../../components/loading";
+import GameStatistics from "../../../components/stats";
 import { IAppState } from "../../../reducers";
 
 export class GameView extends React.Component<any, any> {
@@ -27,6 +28,7 @@ export class GameView extends React.Component<any, any> {
           </h1>
         </header>
         {children}
+        <GameStatistics game={game} />
       </div>
     );
   }

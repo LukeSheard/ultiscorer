@@ -1,3 +1,5 @@
+export { saga } from "./saga";
+
 import { Button, Classes, Intent } from "@blueprintjs/core";
 import * as cx from "classnames";
 import * as React from "react";
@@ -8,7 +10,7 @@ const style = require("./style.css");
 
 export class GamePlayView extends React.Component<any, any> {
   public render() {
-    const { enabled, points, half, score, turn, undo } = this.props;
+    const { enabled, half, score, turn, undo } = this.props;
 
     return (
       <section>
@@ -31,75 +33,28 @@ export class GamePlayView extends React.Component<any, any> {
             intent={Intent.PRIMARY}
             className={cx(Classes.FILL, style.button)}
             onClick={half}
-            disabled={!enabled.half}
+            disabled={enabled && !enabled.half}
           />
           <Button
             text="Undo"
             intent={Intent.WARNING}
             className={cx(Classes.FILL, style.button)}
             onClick={undo}
-            disabled={!enabled.undo}
+            disabled={enabled && !enabled.undo}
           />
-        </div>
-        <div>
-          {points &&
-            <table className="pt-table pt-interactive">
-              <tbody>
-                {points.map((point, index) =>
-                  <tr key={index}>
-                    <td>
-                      {JSON.stringify(point)}
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>}
         </div>
       </section>
     );
   }
 }
 
-function mapActionsToRows(actions) {
-  let point = 0;
-  return actions.reduce(
-    (acc, action) => {
-      switch (action.action) {
-        case POINT_ACTIONS.HALF: {
-          acc[point].push(action);
-          point += 1;
-          acc.push([]);
-          break;
-        }
-        case POINT_ACTIONS.TURN: {
-          acc[point].push(action);
-          break;
-        }
-        case POINT_ACTIONS.SCORE: {
-          acc[point].push(action);
-          point += 1;
-          acc.push([]);
-          break;
-        }
-        default: {
-          return acc;
-        }
-      }
-      return acc;
-    },
-    [[]]
-  );
-}
-
 export function mapStateToProps(state: IAppState) {
   const game = state.game.selected
     ? state.game.games[state.game.selected]
     : void 0;
-  const props: any = {
-    game
-  };
+  const props: any = {};
 
-  if (props.game) {
+  if (game) {
     props.enabled = {
       half:
         game.actions.filter(p => p.action === POINT_ACTIONS.SCORE).length &&
@@ -107,7 +62,6 @@ export function mapStateToProps(state: IAppState) {
         !game.actions.filter(p => p.action === POINT_ACTIONS.HALF).length,
       undo: game.actions.length > 0
     };
-    props.points = mapActionsToRows(game.actions);
   }
 
   return props;
