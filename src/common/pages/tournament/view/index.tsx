@@ -1,4 +1,4 @@
-export { default as prefetch } from "./saga";
+export { prefetch } from "./saga";
 
 import { Classes, Intent, Tag } from "@blueprintjs/core";
 import * as React from "react";
@@ -39,23 +39,10 @@ export class TournamentsView extends React.Component<
           </p>
         </header>
         <section className={style.divisions}>
-          {tournament.divisions.length > 1
-            ? <Link
-                className={style.division}
-                to={`/tournaments/${tournament.id}`}
-              >
-                <Tag
-                  className={Classes.LARGE}
-                  intent={!params.division ? Intent.PRIMARY : Intent.NONE}
-                >
-                  View All
-                </Tag>
-              </Link>
-            : null}
           {tournament.divisions.map(division =>
             <Link
               className={style.division}
-              to={`/tournaments/${tournament.id}/${division.id}`}
+              to={`/tournaments/${tournament.id}/division/${division.id}`}
               key={division.id}
             >
               <Tag

@@ -14,5 +14,14 @@
     "password": "$2a$10$fBE2.kSKp7wI5lhMVO94t.RdfhEssJdJm6XooPBw4NZPicjn0ALb.",
     "ukuusername": "",
     "__v": 0
+  },
+  {
+    "_id": "599ae3091fe0304d74d6396f",
+    "created": "2017-08-21T13:41:29.252Z",
+    "updated": "2017-08-21T13:41:29.252Z",
+    "email": "a@b.c",
+    "name": "Luke",
+    "password": "$2a$10$X6LAG0rLDQuWecnmXwaWMebAqHPIIAuX8ooDeyHboWzYiw/NFIOya",
+    "__v": 0
   }
 ]

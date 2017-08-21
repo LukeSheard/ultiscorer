@@ -9,13 +9,13 @@ export default interface Point {
 export interface IPointModel extends Point, Document {}
 
 export default new Schema({
-  action: {
-    enum: Object.values(POINT_ACTIONS),
-    required: true,
-    type: String
-  },
   time: {
     required: true,
     type: Date
+  },
+  type: {
+    enum: Object.values(POINT_ACTIONS),
+    required: true,
+    type: String
   }
 });

@@ -33,8 +33,8 @@ export const DivisionSchema = new Schema({
   },
   teams: [
     {
-    ref: "Team",
-    type: Schema.Types.ObjectId
+      ref: "Team",
+      type: Schema.Types.ObjectId
     }
   ],
   tournament: {

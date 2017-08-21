@@ -1,5 +1,6 @@
 import {
   Button,
+  Classes,
   Menu,
   MenuDivider,
   Popover,
@@ -14,7 +15,7 @@ export default class UserMenu extends React.Component<{}, {}> {
       <Popover
         content={this.renderMenu()}
         position={Position.BOTTOM_RIGHT}
-        target={<Button iconName="person" className="pt-minimal" />}
+        target={<Button iconName="person" className={Classes.MINIMAL} />}
       />
     );
   }

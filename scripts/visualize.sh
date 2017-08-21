@@ -32,7 +32,12 @@ echo ""
 echo "Exporting Divisions"
 mongoexport --jsonArray --db $DBNAME --verbose --collection divisions | json -e 'this.__collection="divisions"; this.__label=this.name' > ./export/divisions.in
 
+# Games
+echo ""
+echo "Exporting Games"
+mongoexport --jsonArray --db $DBNAME --verbose --collection games | json -e 'this.__collection="games";' > ./export/games.in
+
 
 echo ""
 echo "Visualizing Database"
-cat ./export/users.in ./export/tournaments.in ./export/clubs.in ./export/teams.in ./export/divisions.in | mongo-graph | dot -Tpng -o ./export/out.png && open ./export/out.png
+cat ./export/users.in ./export/tournaments.in ./export/clubs.in ./export/teams.in ./export/divisions.in ./export/games.in | mongo-graph | dot -Tpng -o ./export/out.png && open ./export/out.png
