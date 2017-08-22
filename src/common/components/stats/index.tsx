@@ -66,12 +66,12 @@ export default class GameStats extends React.Component<any, any> {
     }
 
     const computedData = (data) => {
-      let cols = () => ({
+      const cols = () => ({
         "home": {"O": 0, "D": 0},
         "away": {"O": 0, "D": 0}
       });
 
-      let results = {
+      const results = {
         "PointsPlayed": cols(),
         "GoalsScored": cols(),
         "Turnovers": cols(),
